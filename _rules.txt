@@ -1,0 +1,50 @@
+## Coding rules
+
+|--public   - фавикон фото, картинки
+|--src      - весь код
+    |--app - глобальні стилі, layout головний, page Home та стилі до неї.
+        |--(pages)  - сюди будуть імпортуватися screens з відповідними назвами (розробники сюди НЕ ЛІЗУТЬ)
+            |--aboutUs  -  Route to page
+                |--page.jsx
+            |--products  -  Route to page
+                |--[model]  -  Route to page
+                        |--page.jsx
+                |--page.jsx
+            |--contacts  -  Route to page
+                |--page.jsx
+        |-- api  -  Backend
+            |--auth
+                |--route.js
+        |-- favicon.ico
+        |-- globals.css  -  глобальні стилі (розробники сюди НЕ ЛІЗУТЬ)
+        |-- layout.js  -  фонти та завантаження на усіх сторінках по дефолту
+        |-- page.js  -  початкова сторінка Home (розробники сюди НЕ ЛІЗУТЬ)
+    |--components
+        |--forLayout   - завантажуються на всіх роутах
+            |--Footer   - підвал сайту
+            |--Header   - шапка сайту
+        |--screens   - компоненти, які будуть завантажуватись на відповідну Page
+            |--Home
+            |--AboutUs
+            |--Products  -  групи карток продуктів по моделі авто
+            |--ProductsModel  -  картки по фільтровані по ID
+            |--Contacts
+            |--NotFound
+        |--share //* inputs, buttons, list (перевикористовувані малі компоненти)
+            |--Button    - кнопка, в яку пропсами будуть задаватися необхідні властивості
+            |--Input    - поле вводу
+            |--Loader   -  завантажувач
+            |--Modal     - модальне вікно
+            |--SocialLinks    - links на соціальні мережі
+            |--SocialLinkItem    - link на соціальну мережу (1шт)
+        |--ui   - функціонал для зручного користування юзера
+            |--BackToTop   - кнопка до гори (на базі Button з share)
+    |--data  -  інформаційна база у вигляді масиву об'єктів або об'єкту масивів
+        |--contacts.data.js  -   контакти (ПРИКЛАД НАЙМЕНУВАННЯ ЕКПОРТУ)
+    |--hooks   - хуки
+    |--service  -  для роботи з бекендом (на майбутнє)
+        |--get-products.jsx  -  fetch(all products)
+
+
+// стандарт імпортування стилів
+    import styles  from './Header.module.css';
