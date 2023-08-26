@@ -1,10 +1,22 @@
 import mongoose, { Schema } from "mongoose";
 
 
-const headlightSchema = new Schema({
+const detailSchema = new Schema({
     article: {
         type: String,
         unique: true,
+        required: true,
+    },
+    title: {
+        type: String,
+        required: true,
+    },
+    brand: {
+        type: String,
+        required: true,
+    },
+    direction: {
+        type: String,
         required: true,
     },
     photo: {
@@ -14,6 +26,9 @@ const headlightSchema = new Schema({
         type: Array,
     },
     description: {
+        type: String,
+    },
+    side: {
         type: String,
     },
     price: {
@@ -32,11 +47,14 @@ const headlightSchema = new Schema({
         type: String,
     },
     carBody: {
-        type: Array,
-        required: true, // ????
+        type: String,
+        required: true,
     }
 },
     { timestamps: true },
 )
 
-export default mongoose.model("Headlight", headlightSchema)
+
+// export default mongoose.model("Detail", detailSchema);
+//If the Detail collection does not exist - create a new one.
+export default mongoose.models.Detail || mongoose.model("Detail", detailSchema);
