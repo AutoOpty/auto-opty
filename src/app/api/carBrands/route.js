@@ -10,7 +10,7 @@ export const GET = async (request) => {
 
         const data = await Detail.find();
 
-        return new NextResponse(data, { status: 200 })
+        return new NextResponse(JSON.stringify(data), { status: 200 })
 
     } catch (error) {
         return new NextResponse("Database Error.", { status: 500 })
