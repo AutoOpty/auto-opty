@@ -17,7 +17,7 @@ const CarModels = async ({ params }) => {
     const data = await getData(params.carBrand);
 
     return (
-        <>
+        <div>
             <h1>{params.carBrand}</h1>
 
             {/* это нужно если указаны несколько моделей и с разными типами кузова... но существует ли такое в реальности ?!?!?! */}
@@ -32,7 +32,7 @@ const CarModels = async ({ params }) => {
                     <Link href={"/products"} > {item.carModel} - {item.carBody}</Link>
                 </li>)}
             </ul>
-        </>
+        </div>
     )
 }
 
