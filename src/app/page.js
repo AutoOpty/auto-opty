@@ -22,18 +22,16 @@ async function getData() {
   return data;
 }
 
-const HomePage = () => {
-  // const data = await getData();
-  // console.log(data);
-  // const uniqueDataByCarBrands = filterByProp(data, "carBrand")
+const HomePage = async () => {
+  const data = await getData();
+  const uniqueDataByCarBrands = filterByProp(data, "carBrand")
 
-  return <div>HomePage</div>
-  // <ul>
-  //   {uniqueDataByCarBrands?.map((item, index) =>
-  //     <li key={index}>
-  //       <Link href={`/${item.carBrand}`} >{item.carBrand}</Link>
-  //     </li>)}
-  // </ul>;
+  return <ul>
+    {uniqueDataByCarBrands?.map((item, index) =>
+      <li key={index}>
+        <Link href={`/${item.carBrand}`} >{item.carBrand}</Link>
+      </li>)}
+  </ul>;
 };
 
 
