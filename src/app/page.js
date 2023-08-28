@@ -1,11 +1,3 @@
-// export default function Home() {
-//   return (
-//     <main>
-//     </main>
-//   );
-// }
-
-
 import React from "react";
 import Link from "next/link";
 import filterByProp from "@/utils/filterByProps";
@@ -22,18 +14,19 @@ async function getData() {
   return data;
 }
 
-const HomePage = () => {
-  // const data = await getData();
-  // console.log(data);
-  // const uniqueDataByCarBrands = filterByProp(data, "carBrand")
+const data = await getData();
 
-  return <div>HomePage</div>
-  // <ul>
-  //   {uniqueDataByCarBrands?.map((item, index) =>
-  //     <li key={index}>
-  //       <Link href={`/${item.carBrand}`} >{item.carBrand}</Link>
-  //     </li>)}
-  // </ul>;
+
+const HomePage = () => {
+
+  const uniqueDataByCarBrands = filterByProp(data, "carBrand")
+
+  return <ul>
+    {uniqueDataByCarBrands?.map((item, index) =>
+      <li key={index}>
+        <Link href={`/${item.carBrand}`} >{item.carBrand}</Link>
+      </li>)}
+  </ul>;
 };
 
 
