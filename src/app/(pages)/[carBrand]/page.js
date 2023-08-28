@@ -28,7 +28,7 @@ const CarModels = async ({ params }) => {
                 )}
             </ul> */}
             <ul>
-                {data.map((item, index) => <li key={index}>
+                {data?.map((item, index) => <li key={index}>
                     <Link href={"/products"} > {item.carModel} - {item.carBody}</Link>
                 </li>)}
             </ul>
