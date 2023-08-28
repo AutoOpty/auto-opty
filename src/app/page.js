@@ -4,7 +4,7 @@ import filterByProp from "@/utils/filterByProps";
 
 
 async function getData() {
-  const result = await fetch(`${process.env.URL}/api/carBrands`, { cache: "no-store" })
+  const result = await fetch(`${process.env.NEXTAUTH_URL}/api/carBrands`, { cache: "no-store" })
 
   if (!result.ok) {
     throw new Error("Failed to fetch data.")

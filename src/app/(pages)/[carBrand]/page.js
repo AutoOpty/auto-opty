@@ -3,7 +3,7 @@ import React from 'react';
 
 
 async function getData(carBrand) {
-    const result = await fetch(`${process.env.URL}/api/carBrands/${carBrand}`, { cache: "no-store" })
+    const result = await fetch(`${process.env.NEXTAUTH_URL}/api/carBrands/${carBrand}`, { cache: "no-store" })
 
     if (!result.ok) {
         throw new Error("Failed to fetch data.")
