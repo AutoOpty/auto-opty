@@ -1,11 +1,3 @@
-// export default function Home() {
-//   return (
-//     <main>
-//     </main>
-//   );
-// }
-
-
 import React from "react";
 import Link from "next/link";
 import filterByProp from "@/utils/filterByProps";
@@ -22,8 +14,11 @@ async function getData() {
   return data;
 }
 
-const HomePage = async () => {
-  const data = await getData();
+const data = await getData();
+
+
+const HomePage = () => {
+
   const uniqueDataByCarBrands = filterByProp(data, "carBrand")
 
   return <ul>
