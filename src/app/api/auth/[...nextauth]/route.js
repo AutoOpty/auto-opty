@@ -22,7 +22,7 @@ const handler = NextAuth({
 
                 try {
                     // ищет пользователя по имэйлу в БД
-                    const user = User.findOne({ email: credentials.email })
+                    const user = await User.findOne({ email: credentials.email })
 
                     if (user) {
                         const isPasswordCorrect = await bcrypt.compare(credentials.password, user.password);
@@ -45,6 +45,10 @@ const handler = NextAuth({
             }
         })
     ],
+    pages: {
+        // про ошибке при логине переходит на указанную ниже страницу (в нашем случае остается на той же)
+        error: "/dashboard/login"
+    },
 })
 
 
