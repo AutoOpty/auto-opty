@@ -1,7 +1,8 @@
 :root {
-  --main-bg-color: #161616;
+  --main-bg-color: #000000;
+  /* --main-bg-color: #161616; */
   --second-bg-color: #101010;
-  --main-color: #fff;
+  --main-color: #ffffff;
   --second-color: #febb12;
 }
 
@@ -10,6 +11,11 @@ html {
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 100vh;
   margin: 0;
   box-sizing: border-box;
   background-color: var(--main-bg-color);
@@ -63,4 +69,28 @@ button {
 ::-webkit-scrollbar-thumb {
   background: linear-gradient(to bottom, #020b11, rgba(192, 215, 244, 0.5));
   border-radius: 8px;
+}
+
+header,
+footer,
+section {
+  width: inherit;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  flex: 1;
+  padding: 0 16px;
+  /* outline: 2px solid tomato; */
+
+  @media screen and (min-width: 360px) {
+    width: 360px;
+  }
+  @media screen and (min-width: 768px) {
+    width: 768px;
+  }
+  @media screen and (min-width: 1440px) {
+    width: 1440px;
+  }
 }
