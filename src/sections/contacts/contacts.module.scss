@@ -30,19 +30,28 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    // justify-content: center;
+    margin-right: 72px;
+  }
+  @media screen and (min-width: 1024px) {
+    margin-right: 42px;
+  }
+  @media screen and (min-width: 1440px) {
     margin-right: 168px;
   }
 }
 
 .contactTitle {
   color: var(--main-color);
-  font-size: 36px;
+  font-size: 26px;
   font-weight: 500;
   margin-bottom: 16px;
 
   @media screen and (min-width: 768px) {
     margin-bottom: 50px;
+  }
+  @media screen and (min-width: 1440px) {
+    font-size: 36px;
   }
 }
 
@@ -61,9 +70,13 @@
 }
 
 .contactAddressContainer {
+  width: max-content;
   margin-bottom: 16px;
   @media screen and (min-width: 1024px) {
     margin-bottom: 0px;
+    margin-right: 42px;
+  }
+  @media screen and (min-width: 1440px) {
     margin-right: 168px;
   }
 }
@@ -76,8 +89,11 @@
   margin-bottom: 24px;
 
   @media screen and (min-width: 768px) {
-    font-size: 16px;
+    // font-size: 16px;
     margin-bottom: 40px;
+  }
+  @media screen and (min-width: 1440px) {
+    font-size: 16px;
   }
 }
 
@@ -94,23 +110,50 @@
   }
 }
 
+.iconContainer {
+  display: flex;
+  align-items: center;
+  column-gap: 16px;
+  cursor: pointer;
+  color: var(--main-color);
+  &:hover {
+    color: #979797;
+  }
+  &:hover .icon {
+    stroke: #737373;
+  }
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  stroke: var(--main-color);
+}
+
 .contactSity {
   font-size: 16px;
   font-weight: 400;
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 1440px) {
     font-size: 20px;
   }
 }
 .contactStreet {
   color: #737373;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 200;
+  @media screen and (min-width: 1440px) {
+    font-size: 16px;
+  }
 }
 
 .contactTel {
   font-size: 14px;
   font-weight: 300;
   @media screen and (min-width: 768px) {
+    // font-size: 16px;
+    // font-weight: 400;
+  }
+  @media screen and (min-width: 1440px) {
     font-size: 16px;
     font-weight: 400;
   }
@@ -128,11 +171,13 @@
 }
 
 .SocialLink {
-  color: var(--main-color);
   font-size: 14px;
   font-weight: 300;
   @media screen and (min-width: 768px) {
-    font-size: 16px;
+    // font-size: 16px;
     font-weight: 400;
+  }
+  @media screen and (min-width: 1440px) {
+    font-size: 16px;
   }
 }

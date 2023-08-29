@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React from 'react';
 import Link from 'next/link';
 import styles from './header.module.scss';
@@ -8,12 +8,13 @@ const Header = () => {
   const session = useSession();
   // console.log("session header", session);
 
-
   return (
     <header className={styles.header}>
       <div className={`${styles.headerContainer} container`}>
-        <Link href="/" className={styles.headerLogo}>
-          Logo
+        <Link href="/">
+          <svg className={styles.headerLogo}>
+            <use href="symbol-defs.svg#icon-logo" />
+          </svg>
         </Link>
         <div className={styles.headerNav}>
           <Link href="/products" className={styles.headerLink}>
@@ -25,7 +26,11 @@ const Header = () => {
           <Link href="/dashboard" className={styles.headerLink}>
             Dashboard
           </Link>
-          {session.status === "authenticated" && <button onClick={signOut} style={{ padding: "5px" }}>Logout</button>}
+          {session.status === 'authenticated' && (
+            <button onClick={signOut} style={{ padding: '5px' }}>
+              Logout
+            </button>
+          )}
         </div>
       </div>
     </header>

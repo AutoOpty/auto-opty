@@ -1,0 +1,23 @@
+.swiper {
+  padding: 10px 114px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 550px;
+  @media screen and (min-width: 768px) {
+    width: 1180px;
+  }
+}
+
+.swiperProduct {
+}
+
+.icon {
+  width: 48px;
+  height: 48px;
+  fill: #fff;
+  @media screen and (min-width: 768px) {
+    width: 104px;
+    height: 104px;
+  }
+}
