@@ -1,8 +1,14 @@
+"use client";
 import React from 'react';
 import Link from 'next/link';
 import styles from './header.module.scss';
+import { signOut, useSession } from 'next-auth/react';
 
 const Header = () => {
+  const session = useSession();
+  // console.log("session header", session);
+
+
   return (
     <header className={styles.header}>
       <div className={`${styles.headerContainer} container`}>
@@ -16,6 +22,10 @@ const Header = () => {
           <Link href="/contact" className={styles.headerLink}>
             Contact
           </Link>
+          <Link href="/dashboard" className={styles.headerLink}>
+            Dashboard
+          </Link>
+          {session.status === "authenticated" && <button onClick={signOut} style={{ padding: "5px" }}>Logout</button>}
         </div>
       </div>
     </header>
