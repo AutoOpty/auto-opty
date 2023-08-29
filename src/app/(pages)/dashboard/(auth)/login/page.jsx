@@ -17,8 +17,12 @@ const Login = () => {
     }
 
     // перенаправляет на другую страницу за счет роутера
-    if (session.status === "authenticated") {
-        router?.push("/dashboard");
+    if (session.status === "authenticated" && session.data.user.email !== "autoopty@gmail.com") {
+        router?.push("/");
+    }
+
+    if (session.status === "authenticated" && session.data.user.email === "autoopty@gmail.com") {
+        router.push("/dashboard");
     }
 
     const handleSubmit = async (e) => {
