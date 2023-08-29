@@ -1,0 +1,138 @@
+.contacts {
+  width: 100%;
+  padding: 71px 46px 41px 46px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  // padding: 0px 46px 41px 46px;
+  @media screen and (min-width: 768px) {
+    padding: 104px 0;
+    // padding: 104px 165px;
+    flex-direction: row;
+  }
+}
+
+// .contactList {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   @media screen and (min-width: 768px) {
+//     padding: 104px 165px;
+//     flex-direction: row;
+//     justify-content: space-between;
+//   }
+// }
+
+.contactNav {
+  display: none;
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-right: 168px;
+  }
+}
+
+.contactTitle {
+  color: var(--main-color);
+  font-size: 36px;
+  font-weight: 500;
+  margin-bottom: 16px;
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 50px;
+  }
+}
+
+.map {
+  display: block;
+  width: 226px;
+  height: 169px;
+  background-color: var(--main-color);
+}
+
+.contactAddressBox {
+  @media screen and (min-width: 1024px) {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.contactAddressContainer {
+  margin-bottom: 16px;
+  @media screen and (min-width: 1024px) {
+    margin-bottom: 0px;
+    margin-right: 168px;
+  }
+}
+
+.contactSubtitle {
+  color: var(--main-color);
+  font-size: 14px;
+  font-weight: 300;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+    margin-bottom: 40px;
+  }
+}
+
+.contactAddress {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  row-gap: 16px;
+  color: var(--main-color);
+  font-style: normal;
+  padding: 0 13px;
+  @media screen and (min-width: 768px) {
+    padding: 0;
+  }
+}
+
+.contactSity {
+  font-size: 16px;
+  font-weight: 400;
+  @media screen and (min-width: 768px) {
+    font-size: 20px;
+  }
+}
+.contactStreet {
+  color: #737373;
+  font-size: 16px;
+  font-weight: 200;
+}
+
+.contactTel {
+  font-size: 14px;
+  font-weight: 300;
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+    font-weight: 400;
+  }
+}
+
+.contactSocialLinks {
+  display: flex;
+  padding: 0 13px;
+  flex-direction: column;
+  row-gap: 16px;
+  @media screen and (min-width: 768px) {
+    row-gap: 26px;
+    padding: 0;
+  }
+}
+
+.SocialLink {
+  color: var(--main-color);
+  font-size: 14px;
+  font-weight: 300;
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+    font-weight: 400;
+  }
+}
