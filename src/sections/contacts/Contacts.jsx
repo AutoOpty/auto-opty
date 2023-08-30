@@ -3,7 +3,7 @@ import styles from './contacts.module.scss';
 
 const Contacts = () => {
   return (
-    <section className={styles.contacts}>
+    <section className={styles.contacts} id="contact">
       <div className={styles.contactNav}>
         <h2 className={styles.contactTitle}>LOGO NAME</h2>
         <div className={styles.map}></div>
@@ -30,17 +30,31 @@ const Contacts = () => {
           </address>
         </div>
         <div className={styles.contactSocialLinks}>
-          <span className={styles.iconContainer}>
+          <a
+            href="https://www.instagram.com/web.every/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="instagram"
+            className={styles.iconContainer}
+          >
             <svg className={styles.icon}>
               <use href="symbol-defs.svg#icon-instagram" />
             </svg>
             <p className={styles.SocialLink}>autoopty</p>
-          </span>
+          </a>
           <span className={styles.iconContainer}>
             <svg className={styles.icon}>
               <use href="symbol-defs.svg#icon-mail" />
             </svg>
-            <p className={styles.SocialLink}>autoopty@gmail.com</p>
+            <a
+              href="mailto:inbox.webevery@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Mail"
+              className={styles.SocialLink}
+            >
+              autoopty@gmail.com
+            </a>
           </span>
         </div>
       </div>
