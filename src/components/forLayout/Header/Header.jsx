@@ -3,6 +3,7 @@ import React from 'react';
 import Link from 'next/link';
 import styles from './header.module.scss';
 import { signOut, useSession } from 'next-auth/react';
+import { handleScroll } from '@/helpers/handleScroll';
 
 const Header = () => {
   const session = useSession();
@@ -20,7 +21,11 @@ const Header = () => {
           <Link href="/products" className={styles.headerLink}>
             Products
           </Link>
-          <Link href="/contact" className={styles.headerLink}>
+          <Link
+            href="#contact"
+            className={styles.headerLink}
+            onClick={handleScroll}
+          >
             Contact
           </Link>
           <Link href="/dashboard" className={styles.headerLink}>

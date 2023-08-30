@@ -1,15 +1,16 @@
 .swiper {
-  padding: 10px 114px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 550px;
+  width: 318px;
+  padding-bottom: 32px;
   @media screen and (min-width: 768px) {
+    width: 720px;
+    padding-bottom: 104px;
+  }
+  @media screen and (min-width: 1440px) {
     width: 1180px;
   }
-}
-
-.swiperProduct {
 }
 
 .icon {

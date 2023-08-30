@@ -1,10 +1,12 @@
 import React from 'react';
-import Link from 'next/link';
+// import Link from 'next/link';
 import filterByProp from '@/utils/filterByProps';
 import ProductSwiper from '@/sections/productSwiper/ProductSwiper';
 import Contacts from '@/sections/contacts/Contacts';
 
 import styles from './page.module.scss';
+import Hero from '@/sections/hero/Hero';
+import Advantages from '@/sections/advantages/Advantages';
 
 async function getData() {
   const result = await fetch(`${process.env.NEXTAUTH_URL}/api/carBrands`, {
@@ -26,6 +28,7 @@ const HomePage = () => {
 
   return (
     <div className={styles.home}>
+      <Hero />
       <ProductSwiper items={uniqueDataByCarBrands} />
       {/* <ul>
       {uniqueDataByCarBrands?.map((item, index) => (
@@ -43,6 +46,7 @@ const HomePage = () => {
         turpis varius placerat. Sed viverra aliquam habitant habitant eu ac
         cursus vel. Tincidunt at porttitor eget consequat mi velit leo amet ac.
       </p>
+      <Advantages />
       <Contacts />
     </div>
   );
