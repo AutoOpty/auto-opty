@@ -19,16 +19,14 @@ const Dashboard = () => {
         router.push("/dashboard/login")
     }
 
-    if (session.status === "authenticated" && session.data.user.email === process.env.NEXT_PUBLIC_ADMIN) {
-        return <p style={{ color: "red" }}>Welcome, ADMIN</p>
-    }
-
     if (session.status === "authenticated" && session.data.user.email !== process.env.NEXT_PUBLIC_ADMIN) {
         router.push("/")
     }
+
+    if (session.status === "authenticated" && session.data.user.email === process.env.NEXT_PUBLIC_ADMIN) {
+        return <p style={{ color: "red" }}>Welcome, ADMIN</p>
+    }
 }
-
-
 
 
 export default Dashboard
