@@ -5,8 +5,10 @@
   --main-color: #ffffff;
   --second-color: #febb12;
 }
-
-html {
+html,
+body {
+  width: 100vw;
+  overflow-x: hidden;
   scroll-behavior: smooth;
 }
 
