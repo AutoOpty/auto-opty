@@ -40,9 +40,9 @@
   height: 33px;
   background-color: transparent;
   outline: none;
-  color: #fff;
+  color: var(--main-color);
   border-radius: 1px;
-  border: 1px solid #fff;
+  border: 1px solid var(--main-color);
   padding: 8px 8px 8px 55px;
 
   font-size: 12px;
@@ -80,7 +80,7 @@
 .icon {
   width: 16px;
   height: 16px;
-  stroke: #ffffff;
+  stroke: var(--main-color);
   @media screen and (min-width: 768px) {
     width: 24px;
     height: 24px;
