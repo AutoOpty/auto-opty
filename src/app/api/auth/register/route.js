@@ -30,6 +30,7 @@ export const POST = async (request) => {
         })
 
     } catch (err) {
+        console.log("User with this email already exists.")
         return new NextResponse(err.message, {
             status: 500,
         })
