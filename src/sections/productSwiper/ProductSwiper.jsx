@@ -19,7 +19,7 @@ const ProductSwiper = ({ items }) => {
   const item = items?.map((item, index) => (
     <SwiperSlide key={index}>
       <Link href={`/${item.carBrand}`} className={styles.swiperProduct}>
-        <svg className={styles.icon}>
+        <svg className={`${styles.icon} ${styles[item.carBrand]}`}>
           <use href={`symbol-defs.svg#${[item.carBrand]}`} />
         </svg>
       </Link>
