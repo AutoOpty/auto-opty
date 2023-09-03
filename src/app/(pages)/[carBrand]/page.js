@@ -42,7 +42,7 @@ const CarModels = async ({ params }) => {
                   fill={true}
                 />
                 <div className={styles.cardContent}>
-                  {item.carModel} - {item.carBody}
+                  {item.carModel.map((item, index) => <span key={index}>{item}</span>)} - {item.carBody.map((item, index) => <span key={index}>{item}</span>)}
                 </div>
               </div>
             </Link>
