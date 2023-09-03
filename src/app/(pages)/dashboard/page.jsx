@@ -10,10 +10,11 @@ import Image from 'next/image';
 const Dashboard = () => {
     const session = useSession();
     const [sideValue, setSideValue] = useState("");
+    const [carBodyValues, setCarBodyValues] = useState([]);
 
 
     const fetcher = (...args) => fetch(...args).then(res => res.json())
-    const { data, mutate, error, isLoading } = useSWR(`/api/details?username=${session?.data?.user.name}`, fetcher);
+    const { data, mutate, error, isLoading } = useSWR(`/api/base?username=${session?.data?.user.name}`, fetcher);
 
     const router = useRouter();
 
@@ -29,9 +30,26 @@ const Dashboard = () => {
         router.push("/")
     }
 
+    const changeSide = (e) => {
+        setSideValue(e.target.value);
+    }
+
+    const changeCarBody = (e) => {
+        // проверяет есть ли кузов в массиве кузовов
+        const isCarBodyIn = carBodyValues.find(item => item === e.target.value);
+        if (isCarBodyIn) {
+            // если есть - он удаляется и создается новый массив, который далее сохраняется
+            const newArr = carBodyValues.filter(item => item !== e.target.value)
+            setCarBodyValues(newArr);
+        } else {
+            // если кузова нет - добавляется в массив
+            const newArray = [...carBodyValues, e.target.value];
+            setCarBodyValues(newArray);
+        };
+    }
+
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log("e.target", e.target);
         const article = e.target[0].value;
         const title = e.target[1].value;
         const brand = e.target[2].value;
@@ -44,10 +62,10 @@ const Dashboard = () => {
         const carBrand = e.target[12].value;
         const carModel = e.target[13].value;
         const carPhoto = e.target[14].value;
-        const carBody = e.target[15].value;
+        const carBody = carBodyValues;
 
         try {
-            await fetch("/api/details", {
+            await fetch("/api/base", {
                 method: "POST",
                 body: JSON.stringify({
                     article,
@@ -108,13 +126,13 @@ const Dashboard = () => {
                 <input type='text' placeholder='Videos' className={styles.input} />
                 <input type='text' placeholder='Description' className={styles.input} />
                 <fieldset className={styles.side}><legend>Choose headlight`s side:</legend>
-                    <input type="radio" id="leftSide" name="side" value="left" onClick={() => setSideValue('left')} />
+                    <input type="radio" id="leftSide" name="side" value="left" onChange={changeSide} />
                     <label htmlFor="leftSide">Left</label>
                     <input type="radio" id="rightSide" name="side" value="right"
-                        onClick={() => setSideValue('right')} />
+                        onChange={changeSide} />
                     <label htmlFor="rightSide">Right</label>
                     <input type="radio" id="bothSide" name="side" value="both"
-                        onClick={() => setSideValue("both")} />
+                        onChange={changeSide} />
                     <label htmlFor="bothSide">Both</label>
                 </fieldset>
                 <input type='text' placeholder='Price' className={styles.input} />
@@ -124,35 +142,35 @@ const Dashboard = () => {
                 <fieldset className={styles.carBody}><legend>Choose car`s body:</legend>
 
                     <label htmlFor="Hatchback">
-                        <input type="checkbox" id="Hatchback" name="Hatchback" value="Hatchback" />
+                        <input type="checkbox" id="Hatchback" name="Hatchback" value="Hatchback" onChange={changeCarBody} />
                         Hatchback
                     </label>
                     <label htmlFor="Sedan">
-                        <input type="checkbox" id="Sedan" name="Sedan" value="Sedan" />
+                        <input type="checkbox" id="Sedan" name="Sedan" value="Sedan" onChange={changeCarBody} />
                         Sedan
                     </label>
                     <label htmlFor="Coupe">
-                        <input type="checkbox" id="Coupe" name="Coupe" value="Coupe" />
+                        <input type="checkbox" id="Coupe" name="Coupe" value="Coupe" onChange={changeCarBody} />
                         Coupe
                     </label>
                     <label htmlFor="SUV">
-                        <input type="checkbox" id="SUV" name="SUV" value="SUV" />
+                        <input type="checkbox" id="SUV" name="SUV" value="SUV" onChange={changeCarBody} />
                         SUV
                     </label>
                     <label htmlFor="Station Wagon">
-                        <input type="checkbox" id="Station Wagon" name="Station Wagon" value="Station Wagon" />
+                        <input type="checkbox" id="Station Wagon" name="Station Wagon" value="Station Wagon" onChange={changeCarBody} />
                         Station Wagon
                     </label>
                     <label htmlFor="Minivan">
-                        <input type="checkbox" id="Minivan" name="Minivan" value="Minivan" />
+                        <input type="checkbox" id="Minivan" name="Minivan" value="Minivan" onChange={changeCarBody} />
                         Minivan
                     </label>
                     <label htmlFor="Crossover">
-                        <input type="checkbox" id="Crossover" name="Crossover" value="Crossover" />
+                        <input type="checkbox" id="Crossover" name="Crossover" value="Crossover" onChange={changeCarBody} />
                         Crossover
                     </label>
                     <label htmlFor="Van">
-                        <input type="checkbox" id="Van" name="Van" value="Van" />
+                        <input type="checkbox" id="Van" name="Van" value="Van" onChange={changeCarBody} />
                         Van
                     </label>
                 </fieldset>
