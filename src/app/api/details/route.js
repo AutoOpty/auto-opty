@@ -17,3 +17,24 @@ export const GET = async (request) => {
         return new NextResponse("DataBase Error", { status: 500 })
     }
 }
+
+
+export const POST = async (request) => {
+    const body = await request.json();
+    console.log("body in POST", body)
+
+    const newDetail = new Detail(body);
+    console.log("newDetail", newDetail)
+
+    try {
+
+        await connect();
+        console.log("after connect()")
+        await newDetail.save();
+        console.log("after newDetail.save()")
+
+        return new NextResponse("Detail has been created.", { status: 201 })
+    } catch (err) {
+        return new NextResponse(err, { status: 500 })
+    }
+}
