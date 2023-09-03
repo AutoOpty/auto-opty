@@ -91,6 +91,17 @@ const Dashboard = () => {
         }
     }
 
+    const handleDelete = async (id) => {
+        try {
+            await fetch(`/api/base/${id}`, { method: "DELETE" });
+            // автоматически обновляет страницу при изменении кол-ва карточек
+            mutate();
+        } catch (error) {
+            console.log(error);
+        }
+
+    }
+
     if (session.status === "authenticated" && session.data.user.email === process.env.NEXT_PUBLIC_ADMIN) {
 
         return <div className={styles.container}>
@@ -111,7 +122,7 @@ const Dashboard = () => {
                             </div>
 
                             <span className={styles.delete}
-                            // onClick={() => handleDelete(card._id)}
+                                onClick={() => handleDelete(card._id)}
                             >X</span>
                         </div>))}
             </div>
