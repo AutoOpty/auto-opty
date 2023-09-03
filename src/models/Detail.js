@@ -47,7 +47,7 @@ const detailSchema = new Schema({
         type: String,
     },
     carBody: {
-        type: String,
+        type: Array,
         required: true,
     },
     username: {
