@@ -5,6 +5,7 @@ import React, { useState } from 'react';
 import useSWR from 'swr';
 import styles from './page.module.css';
 import Image from 'next/image';
+import Link from 'next/link';
 
 
 const Dashboard = () => {
@@ -34,7 +35,7 @@ const Dashboard = () => {
         setSideValue(e.target.value);
     }
 
-    const changeCarBody = (e) => {
+    const changeCarBodies = (e) => {
         // проверяет есть ли кузов в массиве кузовов
         const isCarBodyIn = carBodyValues.find(item => item === e.target.value);
         if (isCarBodyIn) {
@@ -54,15 +55,15 @@ const Dashboard = () => {
         const title = e.target[1].value;
         const brand = e.target[2].value;
         const direction = e.target[3].value;
-        const photo = e.target[4].value;
-        const video = e.target[5].value;
+        const photos = e.target[4].value;
+        const videos = e.target[5].value;
         const description = e.target[6].value;
         const side = sideValue;
         const price = e.target[11].value;
         const carBrand = e.target[12].value;
-        const carModel = e.target[13].value;
+        const carModels = e.target[13].value;
         const carPhoto = e.target[14].value;
-        const carBody = carBodyValues;
+        const carBodies = carBodyValues;
 
         try {
             await fetch("/api/base", {
@@ -72,15 +73,15 @@ const Dashboard = () => {
                     title,
                     brand,
                     direction,
-                    photo,
-                    video,
+                    photos,
+                    videos,
                     description,
                     side,
                     price,
                     carBrand,
-                    carModel,
+                    carModels,
                     carPhoto,
-                    carBody,
+                    carBodies,
                     username: session.data.user.name,
                 })
             })
@@ -111,15 +112,28 @@ const Dashboard = () => {
                     ? <p>Loading...</p>
                     : data?.map(card => (
                         <div key={card._id} className={styles.card}>
-                            <div className={styles.imgContainer}>
-                                <Image src={card.carPhoto} alt={card.title} fill={true} />
-                            </div>
-                            <div className={styles.infoWrapper}>
-                                <p>{card.article}</p>
-                                <h2 className={styles.title}>{card.title}</h2>
-                                <p>{card.direction}</p>
-                                <p>{card.carBrand}</p>
-                                <p>{card.carModel}</p>
+                            <div>
+                                <p>Article: {card.article}</p>
+                                <h2 className={styles.title}>Title: {card.title}</h2>
+                                <p>Brand: {card.brand}</p>
+                                <p>Direction: {card.direction}</p>
+                                <p>Description: {card.description}</p>
+                                <div className={styles.photosWrapper}> Photos:
+                                    {card.photos.map((item, index) => (<div key={index} className={styles.imgContainer}>
+                                        <Image src={item} alt={card.title} fill={true} />
+                                    </div>))}
+                                </div>
+                                <div className={styles.videosWrapper}>Videos:
+                                    {card.videos.map((item, index) => (<Link key={index} href={item}> {item}</Link>))}
+                                </div>
+                                <p>Side: {card.side}</p>
+                                <p>Price: {card.price}</p>
+                                <p>Car Brand: {card.carBrand}</p>
+                                <div className={styles.carModelsWrapper}>Car Models: {card.carModels.map((item, index) => (<p key={index}>{item}</p>))}</div>
+                                <div className={styles.imgContainer}>
+                                    <Image src={card.carPhoto} alt={card.title} fill={true} />
+                                </div>
+                                <div className={styles.carBodiesWrapper}>Car Bodies: {card.carBodies.map((item, index) => (<p key={index}>{item}</p>))}</div>
                             </div>
 
                             <span className={styles.delete}
@@ -151,38 +165,38 @@ const Dashboard = () => {
                 <input type='text' placeholder='Car Brand' className={styles.input} />
                 <input type='text' placeholder='Car Models' className={styles.input} />
                 <input type='text' placeholder='Car Photo' className={styles.input} />
-                <fieldset className={styles.carBody}><legend>Choose car`s body:</legend>
+                <fieldset className={styles.carBodies}><legend>Choose car`s body:</legend>
 
                     <label htmlFor="Hatchback">
-                        <input type="checkbox" id="Hatchback" name="Hatchback" value="Hatchback" onChange={changeCarBody} />
+                        <input type="checkbox" id="Hatchback" name="Hatchback" value="Hatchback" onChange={changeCarBodies} />
                         Hatchback
                     </label>
                     <label htmlFor="Sedan">
-                        <input type="checkbox" id="Sedan" name="Sedan" value="Sedan" onChange={changeCarBody} />
+                        <input type="checkbox" id="Sedan" name="Sedan" value="Sedan" onChange={changeCarBodies} />
                         Sedan
                     </label>
                     <label htmlFor="Coupe">
-                        <input type="checkbox" id="Coupe" name="Coupe" value="Coupe" onChange={changeCarBody} />
+                        <input type="checkbox" id="Coupe" name="Coupe" value="Coupe" onChange={changeCarBodies} />
                         Coupe
                     </label>
                     <label htmlFor="SUV">
-                        <input type="checkbox" id="SUV" name="SUV" value="SUV" onChange={changeCarBody} />
+                        <input type="checkbox" id="SUV" name="SUV" value="SUV" onChange={changeCarBodies} />
                         SUV
                     </label>
                     <label htmlFor="Station Wagon">
-                        <input type="checkbox" id="Station Wagon" name="Station Wagon" value="Station Wagon" onChange={changeCarBody} />
+                        <input type="checkbox" id="Station Wagon" name="Station Wagon" value="Station Wagon" onChange={changeCarBodies} />
                         Station Wagon
                     </label>
                     <label htmlFor="Minivan">
-                        <input type="checkbox" id="Minivan" name="Minivan" value="Minivan" onChange={changeCarBody} />
+                        <input type="checkbox" id="Minivan" name="Minivan" value="Minivan" onChange={changeCarBodies} />
                         Minivan
                     </label>
                     <label htmlFor="Crossover">
-                        <input type="checkbox" id="Crossover" name="Crossover" value="Crossover" onChange={changeCarBody} />
+                        <input type="checkbox" id="Crossover" name="Crossover" value="Crossover" onChange={changeCarBodies} />
                         Crossover
                     </label>
                     <label htmlFor="Van">
-                        <input type="checkbox" id="Van" name="Van" value="Van" onChange={changeCarBody} />
+                        <input type="checkbox" id="Van" name="Van" value="Van" onChange={changeCarBodies} />
                         Van
                     </label>
                 </fieldset>

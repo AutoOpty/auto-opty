@@ -16,7 +16,7 @@ async function getData(carBrand) {
   return result.json();
 }
 
-const CarModels = async ({ params }) => {
+const CarModelsPage = async ({ params }) => {
   const data = await getData(params.carBrand);
 
   return (
@@ -25,7 +25,7 @@ const CarModels = async ({ params }) => {
 
       {/* это нужно если указаны несколько моделей и с разными типами кузова... но существует ли такое в реальности ?!?!?! */}
       {/* <ul>
-                {data.map((item) => item.carModel.map((model, ind) => {
+                {data.map((item) => item.carModels.map((model, ind) => {
                     return <li key={ind} > {model}</li>
                 })
                 )}
@@ -42,7 +42,7 @@ const CarModels = async ({ params }) => {
                   fill={true}
                 />
                 <div className={styles.cardContent}>
-                  {item.carModel.map((item, index) => <span key={index}>{item}</span>)} - {item.carBody.map((item, index) => <span key={index}>{item}</span>)}
+                  {item.carModels.map((item, index) => <span key={index}>{item}</span>)} - {item.carBodies.map((item, index) => <span key={index}>{item}</span>)}
                 </div>
               </div>
             </Link>
@@ -53,4 +53,4 @@ const CarModels = async ({ params }) => {
   );
 };
 
-export default CarModels;
+export default CarModelsPage;
