@@ -19,10 +19,10 @@ const detailSchema = new Schema({
         type: String,
         required: true,
     },
-    photo: {
+    photos: {
         type: Array,
     },
-    video: {
+    videos: {
         type: Array,
     },
     description: {
@@ -39,14 +39,14 @@ const detailSchema = new Schema({
         type: String,
         required: true,
     },
-    carModel: {
+    carModels: {
         type: Array,
         required: true,
     },
     carPhoto: {
         type: String,
     },
-    carBody: {
+    carBodies: {
         type: Array,
         required: true,
     },

@@ -17,6 +17,18 @@
     border-radius: 5px;
 }
 
+.photosWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.videosWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
 .imgContainer {
     width: 200px;
     height: 100px;
@@ -27,8 +39,14 @@
     object-fit: cover;
 }
 
-.infoWrapper {
-    padding: 0 10px;
+.carModelsWrapper {
+    display: flex;
+    gap: 10px;
+}
+
+.carBodiesWrapper {
+    display: flex;
+    gap: 10px;
 }
 
 .delete {
@@ -61,13 +79,13 @@ fieldset.side {
     gap: 10px;
 }
 
-fieldset.carBody {
+fieldset.carBodies {
     padding: 5px 10px;
     display: flex;
     flex-direction: column;
 }
 
-.carBody input {
+.carBodies input {
     margin-right: 10px;
 }
 
