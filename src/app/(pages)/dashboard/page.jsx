@@ -86,6 +86,7 @@ const Dashboard = () => {
             })
             // автоматически обновляет страницу при изменении кол-ва карточек
             mutate();
+            e.target.reset();
         } catch (err) {
             console.log(err);
         }
