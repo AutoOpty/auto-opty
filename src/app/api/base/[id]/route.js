@@ -8,7 +8,7 @@ export const GET = async (request, { params }) => {
     try {
         await connect();
 
-        const data = await Detail.find(id);
+        const data = await Detail.findById(id);
 
         return new NextResponse(JSON.stringify(data), { status: 200 })
 

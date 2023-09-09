@@ -1,0 +1,46 @@
+.container {
+    display: flex;
+    gap: 100px;
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px 0px;
+    padding: 10px;
+    background-color: #8c878fd6;
+    border-radius: 5px;
+}
+
+.photosWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.videosWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.imgContainer {
+    width: 200px;
+    height: 100px;
+    position: relative;
+}
+
+.img {
+    object-fit: cover;
+}
+
+.carModelsWrapper {
+    display: flex;
+    gap: 10px;
+}
+
+.carBodiesWrapper {
+    display: flex;
+    gap: 10px;
+}
