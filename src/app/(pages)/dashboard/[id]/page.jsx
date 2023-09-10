@@ -3,6 +3,7 @@ import styles from './page.module.css';
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import UpdatingForm from '@/components/UpdatingForm/UpdatingForm';
 
 
 async function getDataById(id) {
@@ -51,6 +52,8 @@ const EditCard = async ({ params }) => {
                 </div>
             </div>
         </div>
+
+        <UpdatingForm />
 
 
     </div>
