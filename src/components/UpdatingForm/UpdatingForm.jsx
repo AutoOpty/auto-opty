@@ -1,22 +1,58 @@
 "use client";
-import React from 'react';
+import React, { useState } from 'react';
 import styles from "./UpdatingForm.module.css";
 
 
-const UpdatingForm = () => {
+const UpdatingForm = ({ id, card }) => {
+    const { article, title, brand, direction, photos, videos, description, side, price, carBrand, carModels, carPhoto, carBodies } = card;
+    const [newArticle, setNewArticle] = useState(article);
+    const [newTitle, setNewTitle] = useState(title);
+    const [newBrand, setNewBrand] = useState(brand);
+    const [newDirection, setNewDirection] = useState(direction);
+    const [newPhotos, setNewPhotos] = useState(photos);
+    const [newVideos, setNewVideos] = useState(videos);
+    const [newDescription, setNewDescription] = useState(description);
+    const [newSide, setNewSide] = useState(side);
+    const [newPrice, setNewPrice] = useState(price);
+    const [newCarBrand, setNewCarBrand] = useState(carBrand);
+    const [newCarModels, setNewCarModels] = useState(carModels);
+    const [newCarPhoto, setNewCarPhoto] = useState(carPhoto);
+    const [newCarBodies, setNewCarBodies] = useState(carBodies);
+
+
+
+    const changeSide = (e) => {
+        setNewSide(e.target.value);
+    }
+
+    const changeCarBodies = (e) => {
+        // проверяет есть ли кузов в массиве кузовов
+        const isCarBodyIn = carBodies.find(item => item === e.target.value);
+        if (isCarBodyIn) {
+            // если есть - он удаляется и создается новый массив, который далее сохраняется
+            const newArr = carBodies.filter(item => item !== e.target.value)
+            setNewCarBodies(newArr);
+        } else {
+            // если кузова нет - добавляется в массив
+            const newArray = [...carBodies, e.target.value];
+            setNewCarBodies(newArray);
+        };
+    }
+
+
     return (
         <div>
             <form className={styles.new}
             // onSubmit={handleSubmit}
             >
                 <h1>Add New Detail</h1>
-                <input type='text' placeholder='Article' className={styles.input} />
-                <input type='text' placeholder='Title' className={styles.input} />
-                <input type='text' placeholder='Brand' className={styles.input} />
-                <input type='text' placeholder='Direction' className={styles.input} />
-                <input type='text' placeholder='Photos' className={styles.input} />
-                <input type='text' placeholder='Videos' className={styles.input} />
-                <input type='text' placeholder='Description' className={styles.input} />
+                <input type='text' placeholder='Article' className={styles.input} value={article} />
+                <input type='text' placeholder='Title' className={styles.input} value={title} />
+                <input type='text' placeholder='Brand' className={styles.input} value={brand} />
+                <input type='text' placeholder='Direction' className={styles.input} value={direction} />
+                <input type='text' placeholder='Photos' className={styles.input} value={photos} />
+                <input type='text' placeholder='Videos' className={styles.input} value={videos} />
+                <input type='text' placeholder='Description' className={styles.input} value={description} />
                 <fieldset className={styles.side}><legend>Choose headlight`s side:</legend>
                     <input type="radio" id="leftSide" name="side" value="left" onChange={changeSide} />
                     <label htmlFor="leftSide">Left</label>
@@ -27,10 +63,10 @@ const UpdatingForm = () => {
                         onChange={changeSide} />
                     <label htmlFor="bothSide">Both</label>
                 </fieldset>
-                <input type='text' placeholder='Price' className={styles.input} />
-                <input type='text' placeholder='Car Brand' className={styles.input} />
-                <input type='text' placeholder='Car Models' className={styles.input} />
-                <input type='text' placeholder='Car Photo' className={styles.input} />
+                <input type='text' placeholder='Price' className={styles.input} value={price} />
+                <input type='text' placeholder='Car Brand' className={styles.input} value={carBrand} />
+                <input type='text' placeholder='Car Models' className={styles.input} value={carModels} />
+                <input type='text' placeholder='Car Photo' className={styles.input} value={carPhoto} />
                 <fieldset className={styles.carBodies}><legend>Choose car`s body:</legend>
 
                     <label htmlFor="Hatchback">

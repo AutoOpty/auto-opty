@@ -5,12 +5,12 @@
 
 .card {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    flex-direction: column;
     margin: 20px 0px;
     padding: 10px;
     background-color: #8c878fd6;
     border-radius: 5px;
+    height: fit-content;
 }
 
 .photosWrapper {
