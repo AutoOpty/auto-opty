@@ -5,6 +5,7 @@ import styles from "./UpdatingForm.module.css";
 
 const UpdatingForm = ({ id, card }) => {
     const { article, title, brand, direction, photos, videos, description, side, price, carBrand, carModels, carPhoto, carBodies } = card;
+
     const [newArticle, setNewArticle] = useState(article);
     const [newTitle, setNewTitle] = useState(title);
     const [newBrand, setNewBrand] = useState(brand);
@@ -18,7 +19,6 @@ const UpdatingForm = ({ id, card }) => {
     const [newCarModels, setNewCarModels] = useState(carModels);
     const [newCarPhoto, setNewCarPhoto] = useState(carPhoto);
     const [newCarBodies, setNewCarBodies] = useState(carBodies);
-
 
 
     const changeSide = (e) => {
@@ -54,13 +54,19 @@ const UpdatingForm = ({ id, card }) => {
                 <input type='text' placeholder='Videos' className={styles.input} value={videos} />
                 <input type='text' placeholder='Description' className={styles.input} value={description} />
                 <fieldset className={styles.side}><legend>Choose headlight`s side:</legend>
-                    <input type="radio" id="leftSide" name="side" value="left" onChange={changeSide} />
+                    <input type="radio" id="leftSide" name="side" value="left" onChange={changeSide}
+                    // {...newSide === "left" ? checked : null}
+                    />
                     <label htmlFor="leftSide">Left</label>
                     <input type="radio" id="rightSide" name="side" value="right"
-                        onChange={changeSide} />
+                        onChange={changeSide}
+                    // {...newSide === "right" ? checked : null}
+                    />
                     <label htmlFor="rightSide">Right</label>
                     <input type="radio" id="bothSide" name="side" value="both"
-                        onChange={changeSide} />
+                        onChange={changeSide}
+                    // {...newSide === "both" ? checked : null}
+                    />
                     <label htmlFor="bothSide">Both</label>
                 </fieldset>
                 <input type='text' placeholder='Price' className={styles.input} value={price} />
