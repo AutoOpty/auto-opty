@@ -136,9 +136,13 @@ const Dashboard = () => {
                                 <div className={styles.carBodiesWrapper}>Car Bodies: {card.carBodies.map((item, index) => (<p key={index}>{item}</p>))}</div>
                             </div>
 
-                            <span className={styles.delete}
-                                onClick={() => handleDelete(card._id)}
-                            >X</span>
+                            <div className={styles.btnsWrapper}>
+                                {/* <button className={styles.editBtn} onClick={handleEdit}>Edit</button> */}
+                                <Link href={`/dashboard/${card._id}`}>Edit Card</Link>
+                                <span className={styles.delete}
+                                    onClick={() => handleDelete(card._id)}
+                                >X</span>
+                            </div>
                         </div>))}
             </div>
 
