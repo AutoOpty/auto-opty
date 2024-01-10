@@ -15,14 +15,7 @@ const detailSchema = new Schema({
         type: String,
         required: true,
     },
-    direction: {
-        type: String,
-        required: true,
-    },
     photos: {
-        type: Array,
-    },
-    videos: {
         type: Array,
     },
     description: {
@@ -50,7 +43,11 @@ const detailSchema = new Schema({
         type: Array,
         required: true,
     },
-    username: {
+    producedFrom: {
+        type: String,
+        required: true,
+    },
+    producedTo: {
         type: String,
         required: true,
     }

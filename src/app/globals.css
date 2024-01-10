@@ -1,6 +1,5 @@
-:root {
+/* :root {
   --main-bg-color: #000000;
-  /* --main-bg-color: #161616; */
   --second-bg-color: #101010;
   --main-color: #ffffff;
   --second-color: #febb12;
@@ -84,7 +83,6 @@ section {
   margin: 0 auto;
   flex: 1;
   padding: 0 16px;
-  /* outline: 2px solid tomato; */
 
   @media screen and (min-width: 360px) {
     width: 360px;
@@ -95,4 +93,4 @@ section {
   @media screen and (min-width: 1440px) {
     width: 1440px;
   }
-}
+} */
