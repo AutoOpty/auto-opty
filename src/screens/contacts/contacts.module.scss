@@ -1,0 +1,173 @@
+// .contacts {
+//   width: 100%;
+//   padding: 0px 46px 41px 46px;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: center;
+//   @media screen and (min-width: 768px) {
+//     padding-bottom: 104px;
+//     flex-direction: row;
+//   }
+// }
+
+// .contactNav {
+//   display: none;
+//   @media screen and (min-width: 768px) {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     margin-right: 72px;
+//   }
+//   @media screen and (min-width: 1024px) {
+//     margin-right: 42px;
+//   }
+//   @media screen and (min-width: 1440px) {
+//     margin-right: 168px;
+//   }
+// }
+
+// .contactTitle {
+//   color: var(--main-color);
+//   font-size: 26px;
+//   font-weight: 500;
+//   margin-bottom: 16px;
+
+//   @media screen and (min-width: 768px) {
+//     margin-bottom: 50px;
+//   }
+//   @media screen and (min-width: 1440px) {
+//     font-size: 36px;
+//   }
+// }
+
+// .map {
+//   position: relative;
+//   display: block;
+//   width: 226px;
+//   height: 169px;
+//   background-color: var(--main-color);
+//   overflow: hidden;
+//   & iframe {
+//     left: 0;
+//     top: 0;
+//     height: 100%;
+//     width: 100%;
+//     position: absolute;
+//     border: none;
+//   }
+// }
+
+// .contactAddressBox {
+//   @media screen and (min-width: 1024px) {
+//     display: flex;
+//     align-items: center;
+//   }
+// }
+
+// .contactAddressContainer {
+//   width: max-content;
+//   margin-bottom: 16px;
+//   @media screen and (min-width: 1024px) {
+//     margin-bottom: 0px;
+//     margin-right: 42px;
+//   }
+//   @media screen and (min-width: 1440px) {
+//     margin-right: 168px;
+//   }
+// }
+
+// .contactSubtitle {
+//   color: var(--main-color);
+//   font-size: 14px;
+//   font-weight: 300;
+//   text-transform: uppercase;
+//   margin-bottom: 24px;
+
+//   @media screen and (min-width: 768px) {
+//     margin-bottom: 40px;
+//   }
+//   @media screen and (min-width: 1440px) {
+//     font-size: 16px;
+//   }
+// }
+
+// .contactAddress {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: flex-start;
+//   row-gap: 16px;
+//   color: var(--main-color);
+//   font-style: normal;
+//   padding: 0 13px;
+//   @media screen and (min-width: 768px) {
+//     padding: 0;
+//   }
+// }
+
+// .iconContainer {
+//   display: flex;
+//   align-items: center;
+//   column-gap: 16px;
+//   cursor: pointer;
+//   color: var(--main-color);
+//   &:hover {
+//     color: #979797;
+//   }
+//   &:hover .icon {
+//     stroke: #737373;
+//   }
+// }
+
+// .icon {
+//   width: 24px;
+//   height: 24px;
+//   stroke: var(--main-color);
+// }
+
+// .contactSity {
+//   font-size: 16px;
+//   font-weight: 400;
+//   @media screen and (min-width: 1440px) {
+//     font-size: 20px;
+//   }
+// }
+// .contactStreet {
+//   color: #737373;
+//   font-size: 14px;
+//   font-weight: 200;
+//   @media screen and (min-width: 1440px) {
+//     font-size: 16px;
+//   }
+// }
+
+// .contactTel {
+//   font-size: 14px;
+//   font-weight: 300;
+//   @media screen and (min-width: 1440px) {
+//     font-size: 16px;
+//     font-weight: 400;
+//   }
+// }
+
+// .contactSocialLinks {
+//   display: flex;
+//   padding: 0 13px;
+//   flex-direction: column;
+//   row-gap: 16px;
+//   @media screen and (min-width: 768px) {
+//     row-gap: 26px;
+//     padding: 0;
+//   }
+// }
+
+// .SocialLink {
+//   font-size: 14px;
+//   font-weight: 300;
+//   @media screen and (min-width: 768px) {
+//     font-weight: 400;
+//   }
+//   @media screen and (min-width: 1440px) {
+//     font-size: 16px;
+//   }
+// }

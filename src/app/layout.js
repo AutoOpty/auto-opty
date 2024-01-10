@@ -3,7 +3,7 @@ import './globals.css';
 import { Hahmlet } from 'next/font/google';
 import Header from '@/components/forLayout/Header/Header';
 import Footer from '@/components/forLayout/Footer/Footer';
-import AuthProvider from '@/components/AuthProvider/AuthProvider';
+import AuthProvider from '@/helpers/AuthProvider/AuthProvider';
 
 const hahmlet = Hahmlet({ subsets: ['latin'] });
 // const inter = Inter({ subsets: ['latin'] });

@@ -4,17 +4,7 @@
 |--src      - весь код
     |--app - глобальні стилі, layout головний, page Home та стилі до неї.
         |--(pages)  - сюди будуть імпортуватися screens з відповідними назвами (розробники сюди НЕ ЛІЗУТЬ)
-            |--aboutUs  -  Route to page
-                |--page.jsx
-            |--products  -  Route to page
-                |--[model]  -  Route to page
-                        |--page.jsx
-                |--page.jsx
-            |--contacts  -  Route to page
-                |--page.jsx
         |-- api  -  Backend
-            |--auth
-                |--route.js
         |-- favicon.ico
         |-- globals.css  -  глобальні стилі (розробники сюди НЕ ЛІЗУТЬ)
         |-- layout.js  -  фонти та завантаження на усіх сторінках по дефолту
@@ -23,12 +13,12 @@
         |--forLayout   - завантажуються на всіх роутах
             |--Footer   - підвал сайту
             |--Header   - шапка сайту       
-        |--share //* inputs, buttons, list (перевикористовувані малі компоненти)   
         |--ui   - функціонал для зручного користування юзера
             |--BackToTop   - кнопка до гори (на базі Button з share)
-    |--data  -  інформаційна база у вигляді масиву об'єктів або об'єкту масивів
-        |--contacts.data.js  -   контакти (ПРИКЛАД НАЙМЕНУВАННЯ ЕКПОРТУ)
+    |--helpers - допоміжні функції
     |--hooks   - хуки   
+    |--models - моделі БД
+    |--screens - сторінки сайту
 
 
 // стандарт імпортування стилів
