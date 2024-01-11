@@ -1,10 +1,10 @@
-import Hero from '@/screens/hero/Hero'
+import Home from '@/screens/home/Home'
 import React from 'react'
 
-export default function Home  (){
+export default function HomePage  (){
   return (
     <>
-      <Hero />
+      <Home />
     </>
   )
 }
