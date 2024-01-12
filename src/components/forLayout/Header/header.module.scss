@@ -1,6 +1,16 @@
+@import "../../../styles/variables";
+
 .header {
   width: 100%;
   padding: 10px 0;
+  height: 80px;
+  background-color: aqua;
+  @media screen and (min-width: $tablet) {
+    height: 136px;
+  }
+  @media screen and (min-width: $desktop) {
+    height: 152px;
+  }
 }
 
 .headerContainer {

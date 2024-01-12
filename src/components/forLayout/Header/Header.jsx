@@ -4,10 +4,10 @@ import styles from "./header.module.scss";
 
 const Header = () => {
   return (
-    <div className={styles.headerContainer}>
+    <header className={styles.header}>
       <p>Header</p>
       <LogoutBtn />
-    </div>
+    </header>
   );
 };
 
