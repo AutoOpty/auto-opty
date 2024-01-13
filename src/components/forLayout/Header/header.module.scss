@@ -5,11 +5,31 @@
   padding: 10px 0;
   height: 80px;
   background-color: aqua;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  & .container {
+    background-color: beige;
+    width: 100%;
+    display: flex;
+    margin: 0px 24px;
+    align-items: center;
+    justify-content: space-between;
+  }
   @media screen and (min-width: $tablet) {
     height: 136px;
+    & .container {
+      width: 100%;
+      margin: 0px 68px;
+    }
   }
   @media screen and (min-width: $desktop) {
     height: 152px;
+    & .container {
+      width: 100%;
+      margin: 0px 36px;
+    }
   }
 }
 
