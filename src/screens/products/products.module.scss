@@ -1,0 +1,102 @@
+@import '@/styles/_variables.scss';
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 100px 20px 32px 20px;
+
+  @media screen and (min-width: $tablet) {
+    padding: 118px 36px 0px 36px;
+  }
+
+  @media screen and (min-width: 1366px) {
+    padding: 200px 86px 0px 86px;
+  }
+  @media screen and (min-width: 1440px) {
+    max-width: 1920px;
+  }
+}
+
+.filterContainer {
+  height: 16px;
+  position: relative;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin-bottom: 25px;
+  @media screen and (min-width: $tablet) {
+    margin-bottom: 35px;
+  }
+  @media screen and (min-width: 1366px) {
+    margin-bottom: 16px;
+  }
+}
+
+.backContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-column-gap: 13px;
+  -moz-column-gap: 13px;
+  column-gap: 13px;
+}
+
+.containerProducts {
+  display: -ms-grid;
+  display: grid;
+  grid-template-columns: repeat(1, 328px);
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
+  -webkit-column-gap: 16px;
+  -moz-column-gap: 16px;
+  column-gap: 16px;
+  row-gap: 40px;
+  padding: 40px 0;
+  @media screen and (min-width: $tablet) {
+    grid-template-columns: repeat(2, 324px);
+  }
+  @media screen and (min-width: $desktop) {
+    grid-template-columns: repeat(4, 300px);
+  }
+}
+
+.notFoundTextStyles {
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+  color: #6d6d6d;
+  // font-family: var(--font--crimsonPro);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  @media screen and (min-width: $tablet) {
+    font-size: 28px;
+  }
+  @media screen and (min-width: $desktop) {
+    font-size: 32px;
+  }
+}
+
+.loading {
+  width: 100%;
+  margin: 0 auto;
+}
