@@ -1,0 +1,121 @@
+@import '../../styles/_variables.scss';
+
+.productContainer {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 32px;
+}
+
+.imgContainer {
+  position: relative;
+  width: 328px;
+  height: 365px;
+  @media screen and (min-width: $tablet) {
+    width: 324px;
+    height: 360px;
+  }
+  @media screen and (min-width: $desktop) {
+    width: 296px;
+    height: 333px;
+  }
+}
+
+.img {
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+.codeProduct {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  border-bottom: 34px solid #373737;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+}
+
+.codeProductItem {
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 700;
+  position: absolute;
+  bottom: -25px;
+  left: 35%;
+}
+
+.productContent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  row-gap: 12px;
+}
+
+.infoProduct {
+  // font-family: Pridi;
+  color: #6d6d6d;
+  font-size: 16px;
+  font-weight: 400;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  &:first-child {
+    font-size: 20px;
+  }
+}
+
+.priceProduct {
+  // font-family: Pridi;
+  color: #373737;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.codeRooms {
+  color: #6d6d6d;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.btnProduct {
+  // position: absolute;
+  // bottom: 0;
+  // right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 10px 24px;
+  gap: 10px;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+  border: 1px solid #373737;
+  color: #373737;
+  // font-family: Segoe UI;
+  font-size: 14px;
+  font-weight: 400;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    background-color: #373737;
+    color: #ffffff;
+  }
+}
