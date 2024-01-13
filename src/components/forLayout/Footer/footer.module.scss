@@ -1,10 +1,11 @@
+@import "../../../styles/variables";
+
 .footer {
-  width: 328px;
-  @media screen and (min-width: 768px) {
-    width: 665px;
-  }
-  @media screen and (min-width: 1024px) {
-    width: 965px;
+  width: 100%;
+  height: 252px;
+  background-color: bisque;
+  @media screen and (min-width: $tablet) {
+    height: 280px;
   }
 }
 

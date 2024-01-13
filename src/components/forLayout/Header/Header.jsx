@@ -8,12 +8,12 @@ const Header = () => {
   const session = useSession();
 
   return (
-    <div className={styles.headerContainer}>
+    <header className={styles.header}>
       <p>Header</p>
 
       {/* {session.status === "authenticated" && !isLoading && <LogoutBtn />} */}
       {session.status === "authenticated" && <LogoutBtn />}
-    </div>
+    </header>
   );
 };
 
