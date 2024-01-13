@@ -5,6 +5,7 @@ import React from "react";
 import styles from "./header.module.scss";
 import { useSession } from "next-auth/react";
 import TranslatorBtnBlock from "./TranslatorBtnBlock/TranslatorBtnBlock";
+import Logo from "@/components/Logo/Logo";
 
 const Header = () => {
   const session = useSession();
@@ -13,10 +14,13 @@ const Header = () => {
     <header className={styles.header}>
       <div className={`container ${styles.container}`}>
         <BurgerMenuBtn />
-        <TranslatorBtnBlock />
-        {/* {session.status === "authenticated" && !isLoading &&   {/* <LogoutBtn />} */}
-        {/* {session.status === "authenticated" && <LogoutBtn />} */}
-        <LogoutBtn />
+        <Logo className={styles.logo} />
+        <div className={styles.btnsBlock}>
+          <TranslatorBtnBlock />
+          {/* {session.status === "authenticated" && !isLoading &&   {/* <LogoutBtn />} */}
+          {/* {session.status === "authenticated" && <LogoutBtn />} */}
+          {/* <LogoutBtn /> */}
+        </div>
       </div>
     </header>
   );

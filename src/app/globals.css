@@ -48,3 +48,7 @@ section {
 .container {
   max-width: 1440px;
 }
+
+a {
+  text-decoration: none;
+}
