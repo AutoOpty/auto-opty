@@ -36,9 +36,9 @@ const detailSchema = new Schema({
         type: Array,
         required: true,
     },
-    carPhoto: {
-        type: String,
-    },
+    // carPhoto: {
+    //     type: String,
+    // },
     carBodies: {
         type: Array,
         required: true,
