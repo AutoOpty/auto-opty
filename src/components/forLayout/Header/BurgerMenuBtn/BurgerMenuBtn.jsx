@@ -18,18 +18,18 @@ const BurgerMenuBtn = () => {
       aria-label="Button burger menu"
       title="Burger Menu"
     >
-      <svg>
+      {/* <svg>
         <use href="symbol-defs.svg#icon-burgerMenu"></use>
-      </svg>
-      {/* {burgerMenu ? (
+      </svg> */}
+      {burgerMenu ? (
         <svg className={styles.iconClose}>
-          <use href="/sprite.svg#icon-close" />
+          <use href="/symbol-defs.svg#icon-close" />
         </svg>
       ) : (
         <svg>
           <use href="symbol-defs.svg#icon-burgerMenu"></use>
         </svg>
-      )} */}
+      )}
     </button>
   );
 };
