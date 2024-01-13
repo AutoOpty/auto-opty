@@ -1,7 +1,12 @@
+import Login from "@/screens/dashboard/Login";
 import React from "react";
 
 const LoginPage = () => {
-  return <div>Login</div>;
+  return (
+    <>
+      <Login />
+    </>
+  );
 };
 
 export default LoginPage;
