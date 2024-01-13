@@ -1,5 +1,5 @@
 import User from "@/models/User";
-import connect from "@/helpers/dbConnection";
+import connect from "@/helpers/connectDB";
 import { NextResponse } from "next/server";
 import bcrypt from "bcryptjs";
 
