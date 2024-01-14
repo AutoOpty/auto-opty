@@ -1,6 +1,7 @@
 @import "../../../styles/variables";
 
 .header {
+  z-index: 10;
   width: 100%;
   padding: 10px 0;
   height: 80px;
@@ -9,6 +10,7 @@
   align-items: center;
   justify-content: center;
   background-color: $headerBg;
+  position: relative;
 
   & .container {
     width: 100%;
@@ -52,18 +54,6 @@
   }
 }
 
-.headerNav {
-  display: flex;
-  align-items: center;
-  column-gap: 24px;
-  @media screen and (min-width: 768px) {
-    column-gap: 44px;
-  }
-  @media screen and (min-width: 1024px) {
-    column-gap: 99px;
-  }
-}
-
 .headerLink {
   color: var(--main-color);
   font-size: 12px;
@@ -91,4 +81,38 @@
   display: flex;
   align-items: center;
   gap: 12px;
+}
+
+.mobileNavigation,
+.mobileNavigationVisible {
+  position: absolute;
+  top: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  background-color: $lightFontColor;
+  font-size: 16px;
+  // background-color: aqua;
+  transform: translateY(0%);
+
+  // transition-duration: 1s;
+  @media (min-width: 580px) {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+.mobileNavigation {
+  height: 1px;
+  & li {
+    margin-top: -28px;
+  }
+}
+
+.mobileNavigationVisible {
+  height: fit-content;
+  padding: 20px;
+  gap: 20px;
 }

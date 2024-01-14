@@ -1,0 +1,13 @@
+@import "../../styles/variables";
+.leftlinks,
+.rightLinks {
+  display: flex;
+  gap: 20px;
+
+  color: #242424;
+
+  font-size: clamp(12px, 1.5vw, 20px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}

@@ -1,0 +1,1 @@
+export { navigationData } from "./navigation";
