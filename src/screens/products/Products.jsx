@@ -3,6 +3,8 @@ import React from 'react';
 
 import styles from './products.module.scss';
 import autoProducts from './auto-products.png';
+import FilterButton from '@/components/share/FilterButton/FilterButton';
+import BreadCrumbs from '@/components/share/BreadCrumbs/BreadCrumbs';
 
 const data = [
   {
@@ -57,21 +59,23 @@ const data = [
 
 const Products = () => {
   return (
-    // <section>
-    <ul className={styles.containerProducts}>
-      {data.map((item) => (
-        <ProductItem
-          key={item._id}
-          title={item.title}
-          code={item.code}
-          price={item.price}
-          type={item.type}
-          photos={item.photos}
-          id={item._id}
-        />
-      ))}
-    </ul>
-    // </section>
+    <section className={styles.container}>
+      <BreadCrumbs title="Запчастини" />
+      <FilterButton />
+      <ul className={styles.containerProducts}>
+        {data.map((item) => (
+          <ProductItem
+            key={item._id}
+            title={item.title}
+            code={item.code}
+            price={item.price}
+            type={item.type}
+            photos={item.photos}
+            id={item._id}
+          />
+        ))}
+      </ul>
+    </section>
   );
 };
 

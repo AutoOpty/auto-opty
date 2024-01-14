@@ -1,0 +1,48 @@
+@import '@/styles/_variables.scss';
+
+.filterContainer {
+  width: 75px;
+  height: 24px;
+  @media screen and (min-width: $tablet) {
+    // position: absolute;
+    // top: 50%;
+    // right: 50%;
+    // -webkit-transform: translate(50%, -60%);
+    // -ms-transform: translate(50%, -60%);
+    // transform: translate(50%, -60%);
+  }
+}
+
+.filterBtnContainer {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-column-gap: 16px;
+  -moz-column-gap: 16px;
+  column-gap: 16px;
+  // &:hover > .filterSvg {
+  //   stroke: #cd5d12;
+  // }
+  // &:hover > .filter {
+  //   color: #cd5d12;
+  // }
+}
+
+.filterSvg {
+  width: 24px;
+  height: 24px;
+  stroke: #373737;
+}
+
+.filter {
+  color: #373737;
+  font-size: 16px;
+  font-weight: 400;
+  cursor: pointer;
+}
