@@ -5,6 +5,7 @@ export const SiteContext = createContext();
 
 export const SiteProvider = ({ children }) => {
   const [burgerMenu, setBurgerMenu] = useState(false);
+  const [isMobile, setIsMobile] = useState(true);
 
   const [language, setLanguage] = useState("en");
 
@@ -29,6 +30,8 @@ export const SiteProvider = ({ children }) => {
       value={{
         burgerMenu,
         setBurgerMenu,
+        isMobile,
+        setIsMobile,
         language,
         setLanguage,
         scrollY,
