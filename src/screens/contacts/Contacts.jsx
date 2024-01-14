@@ -1,6 +1,8 @@
 'use client';
 
+import BreadCrumbs from '@/components/share/BreadCrumbs/BreadCrumbs';
 import Image from 'next/image';
+import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 import styles from './contacts.module.scss';
 
@@ -16,17 +18,9 @@ const Contacts = () => {
       {/* <h1 className={seoStyles.titleHidden}>
         Оренда квартири Суми. Сумы квартиры. Квартири подобово.
       </h1> */}
-      <nav className={styles.toBackContainer}>
-        {!isLoading && (
-          <article className="textLink">
-            {/* <h2 className={seoStyles.titleHidden}>Navigation</h2> */}
-            {/* <Link href="/" prefetch={false} className="textLinkAnimation">
-              {t('Navigation.MainPage')}
-            </Link> */}
-            {/* / <span className="active">{t('Navigation.Contacts')}</span> */}
-          </article>
-        )}
-      </nav>
+      <figure className={styles.toBackContainer}>
+        <BreadCrumbs title="Контакти" />
+      </figure>
 
       <div className={styles.contactContainer}>
         <article className={styles.titleContainer}>
@@ -55,7 +49,7 @@ const Contacts = () => {
           </figure>
           <address className={styles.addressContainer}>
             <figure className={styles.cityContainer}>
-              <svg width="36" height="36" className={styles.citySvg}>
+              <svg className={styles.citySvg}>
                 <use href="symbol-defs.svg#icon-flag-ukraine" />
               </svg>
               {!isLoading && (
@@ -80,20 +74,48 @@ const Contacts = () => {
 
               {!isLoading && <figcaption>вул.Степана Бандери, 3</figcaption>}
             </a>
+
+            <figure className={styles.cityContainerMobile}>
+              <svg width="36" height="36" className={styles.citySvg}>
+                <use href="symbol-defs.svg#icon-flag-ukraine" />
+              </svg>
+              {!isLoading && (
+                <figcaption className={styles.city}>
+                  Суми,
+                  <a
+                    href="https://maps.app.goo.gl/NTDTgDfgvo4h1nPj7"
+                    target="_blank"
+                    className={styles.addressMobile}
+                  >
+                    {!isLoading && (
+                      <figcaption>вул.Степана Бандери, 3</figcaption>
+                    )}
+                  </a>
+                </figcaption>
+              )}
+            </figure>
             <address className={styles.telContainer}>
-              <a href="tel:+380357960808" className={styles.tel}>
-                +38 035 796 08 08
-              </a>
-              <a href="tel:+380357960808" className={styles.tel}>
-                +38 035 796 08 08
-              </a>
+              <svg className={styles.svg}>
+                <use href="symbol-defs.svg#icon-phone" />
+              </svg>
+              <figure className={styles.telContent}>
+                <a href="tel:+380357960808" className={styles.tel}>
+                  +38 035 796 08 08
+                </a>
+                <a href="tel:+380357960808" className={styles.tel}>
+                  +38 035 796 08 08
+                </a>
+              </figure>
             </address>
-            <address className={styles.box}>
-              <div className={styles.socialLinks}>{/* <SocialLinks /> */}</div>
+            <address className={styles.mailContainer}>
+              <svg className={styles.svg}>
+                <use href="symbol-defs.svg#icon-mail" />
+              </svg>
               <a href="mailto:AutoOpti23@gmail.com" className={styles.mail}>
                 AutoOpti23@gmail.com
               </a>
             </address>
+            <div className={styles.socialLinks}>{/* <SocialLinks /> */}</div>
           </address>
         </article>
       </div>
