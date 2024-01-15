@@ -1,4 +1,7 @@
-import { CldImage } from 'next-cloudinary';
+'use client';
+
+import Image from 'next/image';
+// import { CldImage } from 'next-cloudinary';
 import Link from 'next/link';
 import React from 'react';
 
@@ -9,7 +12,7 @@ const ProductItem = ({ photos, title, price, id, code, type }) => {
     <li className={styles.productContainer}>
       <Link href={`/products/${id}`}>
         <figure className={styles.imgContainer}>
-          <CldImage
+          <Image
             src={photos}
             alt="apartment"
             fill
