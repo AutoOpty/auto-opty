@@ -42,7 +42,6 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: rgba(137, 43, 226, 0.453);
 }
 
 /* it is temporarily dimensions */
@@ -51,11 +50,9 @@ section {
 }
 
 a {
-  color: inherit;
   text-decoration: none;
+  color: inherit;
 }
-
-ul,
-ol {
+ul {
   list-style: none;
 }

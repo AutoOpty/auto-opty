@@ -1,0 +1,18 @@
+@import "../../styles/_variables.scss";
+
+.container {
+  color: $darckFontColor;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 1.28px;
+  text-align: center;
+
+  @media screen and (min-width: $tablet) {
+    font-size: 24px;
+  }
+  @media screen and (min-width: $desktop) {
+    font-size: 36px;
+  }
+}

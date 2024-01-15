@@ -1,20 +1,20 @@
 @import '@/styles/_variables.scss';
 
 .container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  padding: 100px 20px 32px 20px;
+  // display: -webkit-box;
+  // display: -ms-flexbox;
+  // display: flex;
+  // -webkit-box-align: center;
+  // -ms-flex-align: center;
+  // align-items: center;
+  // padding: 100px 20px 32px 20px;
 
   @media screen and (min-width: $tablet) {
-    padding: 118px 36px 0px 36px;
+    // padding: 118px 36px 0px 36px;
   }
 
   @media screen and (min-width: 1366px) {
-    padding: 200px 86px 0px 86px;
+    padding: 40px 86px 0px 86px;
   }
   @media screen and (min-width: 1440px) {
     max-width: 1920px;

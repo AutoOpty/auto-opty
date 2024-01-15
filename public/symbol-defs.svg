@@ -1,5 +1,14 @@
 <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <defs>
+<symbol id="icon-burgerMenu" viewBox="0 0 43 32">
+<path d="M2.133 0.533h38.4c1.178 0 2.133 0.955 2.133 2.133s-0.955 2.133-2.133 2.133h-38.4c-1.178 0-2.133-0.955-2.133-2.133s0.955-2.133 2.133-2.133z"></path>
+<path d="M2.133 13.867h38.4c1.178 0 2.133 0.955 2.133 2.133s-0.955 2.133-2.133 2.133h-38.4c-1.178 0-2.133-0.955-2.133-2.133s0.955-2.133 2.133-2.133z"></path>
+<path d="M2.133 27.2h38.4c1.178 0 2.133 0.955 2.133 2.133s-0.955 2.133-2.133 2.133h-38.4c-1.178 0-2.133-0.955-2.133-2.133s0.955-2.133 2.133-2.133z"></path>
+</symbol>
+<symbol id="icon-close" viewBox="0 0 32 32">
+<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2" d="M24 8l-16 16"></path>
+<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2" d="M8 8l16 16"></path>
+</symbol>
 <symbol id="icon-logo" viewBox="0 0 32 32">
 <path fill="#fff" style="fill: var(--color1, #fff)" d="M4.224 21.242c0.279 0 0.506-2.347 0.506-5.242s-0.226-5.242-0.506-5.242c-0.279 0-0.506 2.347-0.506 5.242s0.226 5.242 0.506 5.242z"></path>
 <path fill="#fff" style="fill: var(--color1, #fff)" d="M5.568 21.824c0.311 0 0.563-2.607 0.563-5.824s-0.252-5.824-0.563-5.824c-0.311 0-0.563 2.607-0.563 5.824s0.252 5.824 0.563 5.824z"></path>
@@ -63,6 +72,26 @@
 </symbol>
 <symbol id="Toyota" viewBox="0 0 32 32">
 <path d="M15.959 5.816c-8.724 0-15.842 4.555-15.842 10.143s7.118 10.143 15.842 10.143 15.842-4.555 15.842-10.143-7.118-10.143-15.842-10.143zM20.345 7.696c1.401 0.269 2.715 0.666 3.895 1.168 1.016 0.526 1.612 1.145 1.612 1.816 0 1.355-2.429 2.528-5.898 3.042-0.239-2.616-0.882-4.853-1.746-6.283 0.747 0.058 1.46 0.146 2.137 0.257zM15.959 7.352c1.314 0 2.418 2.785 2.727 6.528-0.87 0.082-1.781 0.128-2.727 0.128s-1.863-0.047-2.727-0.128c0.309-3.749 1.419-6.528 2.727-6.528zM7.679 8.864c1.18-0.502 2.493-0.893 3.895-1.168 0.672-0.111 1.39-0.199 2.137-0.257-0.864 1.431-1.507 3.673-1.746 6.283-3.469-0.52-5.898-1.688-5.898-3.042 0-0.672 0.596-1.296 1.612-1.816zM1.524 15.959c0-2.038 1.18-3.912 3.147-5.396-0.006 0.070-0.012 0.14-0.012 0.21 0 1.991 3.001 3.702 7.218 4.385-0.012 0.286-0.012 0.572-0.012 0.864 0 3.527 0.712 6.645 1.799 8.496-6.867-0.66-12.14-4.251-12.14-8.561zM16.309 24.631h-0.701c-1.39-0.531-2.47-4.193-2.47-8.607 0-0.234 0.006-0.461 0.012-0.689 0.899 0.093 1.839 0.146 2.809 0.146s1.91-0.053 2.809-0.146c0.006 0.228 0.012 0.461 0.012 0.689-0.006 4.415-1.086 8.076-2.47 8.607zM18.254 24.526c1.086-1.851 1.799-4.969 1.799-8.496 0-0.292-0.006-0.578-0.012-0.864 4.216-0.683 7.218-2.394 7.218-4.385 0-0.070-0.006-0.14-0.012-0.21 1.968 1.483 3.147 3.358 3.147 5.396 0 4.304-5.273 7.895-12.14 8.561z"></path>
+</symbol>
+<symbol id="icon-flag-ukraine" viewBox="0 0 32 32">
+<path fill="#005bbb" style="fill: var(--color1, #005bbb)" d="M28.444 4.444h-24.889c-0.943 0-1.847 0.375-2.514 1.041s-1.041 1.571-1.041 2.514v8h32v-8c0-0.943-0.375-1.847-1.041-2.514s-1.571-1.041-2.514-1.041z"></path>
+<path fill="#ffd500" style="fill: var(--color2, #ffd500)" d="M32 24c0 0.943-0.375 1.847-1.041 2.514s-1.571 1.041-2.514 1.041h-24.889c-0.943 0-1.847-0.375-2.514-1.041s-1.041-1.571-1.041-2.514v-8h32v8z"></path>
+</symbol>
+<symbol id="icon-arrow-left-circle" viewBox="0 0 32 32">
+<path fill="none" stroke="#636363" style="stroke: var(--color1, #636363)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="1.3333" d="M16 29.333c7.364 0 13.333-5.97 13.333-13.333s-5.97-13.333-13.333-13.333c-7.364 0-13.333 5.97-13.333 13.333s5.97 13.333 13.333 13.333z"></path>
+<path fill="none" stroke="#636363" style="stroke: var(--color1, #636363)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="1.3333" d="M16 10.667l-5.333 5.333 5.333 5.333"></path>
+<path fill="none" stroke="#636363" style="stroke: var(--color1, #636363)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="1.3333" d="M21.333 16h-10.667"></path>
+</symbol>
+<symbol id="icon-sliders" viewBox="0 0 32 32">
+<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M5.333 28v-9.333"></path>
+<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M5.333 13.333v-9.333"></path>
+<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 28v-12"></path>
+<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 10.667v-6.667"></path>
+<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M26.667 28v-6.667"></path>
+<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M26.667 16v-12"></path>
+<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M1.333 18.667h8"></path>
+<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M12 10.667h8"></path>
+<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M22.667 21.333h8"></path>
 </symbol>
 </defs>
 </svg>
