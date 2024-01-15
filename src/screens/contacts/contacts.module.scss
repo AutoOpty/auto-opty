@@ -7,8 +7,7 @@
   -webkit-box-align: start;
   -ms-flex-align: start;
   align-items: flex-start;
-  padding: 24px 0px 24px 0px;
-  // padding: 21px 20px 24px 20px;
+  padding: 24px 0px 35px 0px;
 
   @media screen and (min-width: $tablet) {
     padding: 40px 24px 72px 24px;
@@ -34,8 +33,13 @@
 }
 
 .titleContainer {
+  height: 164px;
   margin-bottom: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
   align-items: flex-start;
   @media screen and (min-width: 511px) {
     height: 117px;
@@ -89,9 +93,9 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  // -webkit-box-align: center;
-  // -ms-flex-align: center;
-  // align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
@@ -106,13 +110,6 @@
     -ms-flex-direction: row;
     flex-direction: row;
     -ms-flex-pack: distribute;
-    // -webkit-box-align: start;
-    // -ms-flex-align: start;
-    // align-items: flex-start;
-  }
-  @media screen and (min-width: $desktop) {
-    // justify-content: center;
-    // column-gap: 120px;
   }
 }
 
@@ -135,10 +132,6 @@
   @media screen and (min-width: $desktop) {
     margin-right: 15%;
   }
-  // @media screen and (min-width: 1920px) {
-  //   width: 800px;
-  //   height: 675px;
-  // }
 }
 
 .mapImg {
@@ -156,9 +149,11 @@
   flex-direction: column;
   padding: 0px 20px;
   @media screen and (min-width: $tablet) {
-    // padding: 0px 20px;
+    position: relative;
+    width: 100%;
   }
   @media screen and (min-width: 1024px) {
+    width: max-content;
   }
 }
 
@@ -185,15 +180,14 @@
 
 .cityContainer {
   display: none;
-  // margin-bottom: 20px;
   @media screen and (min-width: 1024px) {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
-    // margin-bottom: 25px;
     margin-bottom: 46px;
-  }
-  @media screen and (min-width: $desktop) {
-    // margin-bottom: 46px;
   }
 }
 
@@ -215,7 +209,11 @@
 }
 
 .cityContainerMobile {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   margin-bottom: 8px;
 
@@ -241,10 +239,6 @@
 
 .address {
   display: none;
-
-  // // font-family: var(--font--crimsonPro);
-  // font-size: 20px;
-  // margin-bottom: 20px;
   @media screen and (min-width: 1024px) {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -259,12 +253,8 @@
     font-weight: 400;
     font-size: 24px;
     margin-bottom: 33px;
-    // margin-bottom: 22px;
     line-height: normal;
     color: #373737;
-  }
-  @media screen and (min-width: $desktop) {
-    // margin-bottom: 33px;
   }
 }
 
@@ -352,11 +342,6 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  // -webkit-box-align: center;
-  // -ms-flex-align: center;
-  // align-items: center;
-  @media screen and (min-width: $tablet) {
-  }
   @media screen and (min-width: $desktop) {
     -webkit-box-orient: vertical;
     -webkit-box-direction: reverse;
@@ -373,9 +358,14 @@
   font-weight: 400;
   line-height: normal;
   text-align: center;
+  margin-bottom: 35px;
   @media screen and (min-width: $tablet) {
     font-size: 36px;
     text-align: start;
+    margin-bottom: 0px;
+  }
+  @media screen and (min-width: 1024px) {
+    margin-bottom: 35px;
   }
   &:hover,
   &:focus {
@@ -383,22 +373,34 @@
   }
 }
 
-.socialLinks {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+.socialLinksContainer {
+  gap: 16px;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
   @media screen and (min-width: $tablet) {
-    -webkit-box-align: start;
-    -ms-flex-align: start;
-    align-items: flex-start;
+    position: absolute;
+    right: 20px;
+    top: 44px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+  @media screen and (min-width: 1024px) {
+    position: static;
     -webkit-box-pack: start;
     -ms-flex-pack: start;
     justify-content: start;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-pack: distribute;
   }
+}
+
+.socialLinks {
+  width: 34px;
+  height: 34px;
 }
