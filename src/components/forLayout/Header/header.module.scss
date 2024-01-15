@@ -69,6 +69,7 @@
 }
 
 .logo {
+  margin-left: clamp(1px, 6vw, 100px);
   & span {
     color: $lightFontColor;
     background-color: $darckFontColor;
@@ -80,7 +81,14 @@
 .btnsBlock {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 24px;
+
+  & .desktopBtnsWrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
 }
 
 .mobileNavigation,
@@ -94,25 +102,34 @@
   align-items: center;
   background-color: $lightFontColor;
   font-size: 16px;
-  // background-color: aqua;
-  transform: translateY(0%);
-
-  // transition-duration: 1s;
-  @media (min-width: 580px) {
-    flex-direction: row;
-    justify-content: center;
-  }
 }
 
 .mobileNavigation {
   height: 1px;
-  & li {
-    margin-top: -28px;
-  }
 }
 
 .mobileNavigationVisible {
   height: fit-content;
   padding: 20px;
   gap: 20px;
+}
+
+.navLinks {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 20px;
+  align-items: center;
+  @media (min-width: 580px) {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+.socLinks {
+  gap: 16px;
+  & li {
+    width: 28px;
+    height: 28px;
+  }
 }

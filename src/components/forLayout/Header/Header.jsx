@@ -10,13 +10,12 @@ import Navigation from "@/components/Navigation/Navigation";
 import { SiteContext } from "@/context/SiteContext";
 import LeftLinks from "../../Navigation/LeftLinks";
 import RightLinks from "@/components/Navigation/RightLinks";
+import SocialLinks from "@/components/SocialLinks/SocialLinks";
 
 const Header = () => {
   const session = useSession();
   const { burgerMenu, setBurgerMenu, isMobile, setIsMobile } =
     useContext(SiteContext);
-
-  console.log(isMobile);
 
   const closeBurgerMenu = () => {
     setTimeout(() => {
@@ -25,7 +24,7 @@ const Header = () => {
   };
 
   const handleResize = useCallback(() => {
-    if (window.innerWidth <= 767) {
+    if (window.innerWidth <= 1279) {
       setIsMobile(true);
     } else {
       setIsMobile(false);
@@ -49,22 +48,27 @@ const Header = () => {
         <Logo className={styles.logo} />
         <RightLinks />
         <div className={styles.btnsBlock}>
-          <TranslatorBtnBlock />
+          <div className={styles.desktopBtnsWrap}>
+            {!isMobile && <SocialLinks className={styles.socLinks} />}
+
+            <TranslatorBtnBlock />
+          </div>
           {/* {session.status === "authenticated" && !isLoading &&   {/* <LogoutBtn />} */}
           {session.status === "authenticated" && <LogoutBtn />}
           {/* <LogoutBtn /> */}
         </div>
       </div>
       {isMobile && (
-        <Navigation
+        <nav
           className={
             burgerMenu
               ? styles.mobileNavigationVisible
               : styles.mobileNavigation
           }
-          // className={styles.mobileNavigationVisible}
-          onClick={closeBurgerMenu}
-        />
+        >
+          <Navigation className={styles.navLinks} onClick={closeBurgerMenu} />
+          <SocialLinks className={styles.socLinks} />
+        </nav>
       )}
     </header>
   );
