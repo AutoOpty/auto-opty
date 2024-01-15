@@ -1,10 +1,11 @@
 'use client';
 
 import BreadCrumbs from '@/components/share/BreadCrumbs/BreadCrumbs';
+import SocialLinks from '@/components/SocialLinks/SocialLinks';
 import Image from 'next/image';
-import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 import styles from './contacts.module.scss';
+import seoStyles from '@/app/seoStyles.module.css';
 
 const Contacts = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -15,9 +16,9 @@ const Contacts = () => {
 
   return (
     <section className={styles.container}>
-      {/* <h1 className={seoStyles.titleHidden}>
+      <h1 className={seoStyles.titleHidden}>
         Оренда квартири Суми. Сумы квартиры. Квартири подобово.
-      </h1> */}
+      </h1>
       <figure className={styles.toBackContainer}>
         <BreadCrumbs title="Контакти" />
       </figure>
@@ -35,7 +36,7 @@ const Contacts = () => {
           )}
         </article>
         <article className={styles.content}>
-          {/* <h4 className={seoStyles.titleHidden}>Contact information</h4> */}
+          <h4 className={seoStyles.titleHidden}>Contact information</h4>
           <figure className={styles.mapImgContainer}>
             <Image
               src="/BasemapAutoOpty.webp"
@@ -115,7 +116,12 @@ const Contacts = () => {
                 AutoOpti23@gmail.com
               </a>
             </address>
-            <div className={styles.socialLinks}>{/* <SocialLinks /> */}</div>
+            <div>
+              <SocialLinks
+                className={styles.socialLinksContainer}
+                iconSocialLink={styles.socialLinks}
+              />
+            </div>
           </address>
         </article>
       </div>
