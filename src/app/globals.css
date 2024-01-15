@@ -53,6 +53,6 @@ a {
   text-decoration: none;
   color: inherit;
 }
-ul {
+ul,ol {
   list-style: none;
 }
