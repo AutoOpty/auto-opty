@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { registerSchema } from "@/yupSchemas/registerSchema";
-import styles from "./register.module.scss";
+import styles from "./Register.module.scss";
 
 const Register = () => {
   const [err, setErr] = useState(false);

@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 import { signIn, useSession } from "next-auth/react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { loginSchema } from "@/yupSchemas/loginSchema";
-import styles from "./login.module.scss";
+import styles from "./Login.module.scss";
 
 const Login = () => {
   // дает данные о пользователе - data, залогинен он или нет - status
