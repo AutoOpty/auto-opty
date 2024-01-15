@@ -64,7 +64,9 @@
   "Navigation": {
     "MainPage": "Main",
     "Apartments": "Apartments",
+    
     "Contacts": "Contacts",
+    
     "Documents": "Documents",
     "Rules": "Rules"
   },
