@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./LogoutBtn.module.scss";
+import styles from "./logoutBtn.module.scss";
 import { signOut } from "next-auth/react";
 
 const LogoutBtn = () => {

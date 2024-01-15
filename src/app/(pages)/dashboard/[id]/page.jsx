@@ -1,10 +1,10 @@
 import BoardId from "@/screens/dashboard/BoardId";
 import React from "react";
 
-const DashboardIdPage = () => {
+const DashboardIdPage = ({ params }) => {
   return (
     <>
-      <BoardId />
+      <BoardId params={params} />
     </>
   );
 };

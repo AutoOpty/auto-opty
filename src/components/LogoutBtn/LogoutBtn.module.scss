@@ -1,3 +1,10 @@
+@import "../../styles/variables";
+
 .logoutBtn {
-  cursor: pointer;
+  display: none;
+
+  @media screen and (min-width: $tablet) {
+    display: block;
+    cursor: pointer;
+  }
 }
