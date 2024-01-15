@@ -1,7 +1,7 @@
 "use client";
 import BurgerMenuBtn from "@/components/forLayout/Header/BurgerMenuBtn/BurgerMenuBtn";
 import LogoutBtn from "@/components/LogoutBtn/LogoutBtn";
-import React, { useCallback, useContext, useEffect } from "react";
+import React, {useState, useCallback, useContext, useEffect } from "react";
 import styles from "./header.module.scss";
 import { useSession } from "next-auth/react";
 import TranslatorBtnBlock from "./TranslatorBtnBlock/TranslatorBtnBlock";
@@ -14,6 +14,10 @@ import SocialLinks from "@/components/SocialLinks/SocialLinks";
 
 const Header = () => {
   const session = useSession();
+  const [isLoad,setIsLoad]=useState(true);
+
+  useEffect(()=>{setIsLoad(false)},[])
+
   const { burgerMenu, setBurgerMenu, isMobile, setIsMobile } =
     useContext(SiteContext);
 
@@ -44,9 +48,9 @@ const Header = () => {
     <header className={styles.header}>
       <div className={`container ${styles.container}`}>
         {isMobile && <BurgerMenuBtn />}
-        <LeftLinks />
+        {!isLoad && <LeftLinks />}
         <Logo className={styles.logo} />
-        <RightLinks />
+        {!isLoad && <RightLinks />}
         <div className={styles.btnsBlock}>
           <div className={styles.desktopBtnsWrap}>
             {!isMobile && <SocialLinks className={styles.socLinks} />}
@@ -66,7 +70,7 @@ const Header = () => {
               : styles.mobileNavigation
           }
         >
-          <Navigation className={styles.navLinks} onClick={closeBurgerMenu} />
+          {!isLoad && <Navigation className={styles.navLinks} onClick={closeBurgerMenu}/>}
           <SocialLinks className={styles.socLinks} />
         </nav>
       )}
