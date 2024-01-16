@@ -4,8 +4,13 @@ import { useState, createContext } from "react";
 export const SiteContext = createContext();
 
 export const SiteProvider = ({ children }) => {
+  const [state, setState] = useState(true);
+
   const [burgerMenu, setBurgerMenu] = useState(false);
+
   const [isMobile, setIsMobile] = useState(true);
+
+  const [isXs, setIsXs] = useState(true);
 
   const [language, setLanguage] = useState("en");
 
@@ -28,10 +33,14 @@ export const SiteProvider = ({ children }) => {
   return (
     <SiteContext.Provider
       value={{
+        state,
+        setState,
         burgerMenu,
         setBurgerMenu,
         isMobile,
         setIsMobile,
+        isXs,
+        setIsXs,
         language,
         setLanguage,
         scrollY,
