@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, createContext } from "react";
+import { useState, createContext } from "react";
 
 export const SiteContext = createContext();
 
@@ -18,17 +18,17 @@ export const SiteProvider = ({ children }) => {
 
   //   const [filterShown, setFilterShown] = useState(false);
 
-  //   const [isModalOpen, setModalOpen] = useState(false);
+  const [isModalOpen, setModalOpen] = useState(false);
 
   //   const [scrolledWindow, setScrolledWindow] = useState(0);
 
-  //   const openModal = () => {
-  //     setModalOpen(true);
-  //   };
+  const openModal = () => {
+    setModalOpen(true);
+  };
 
-  //   const closeModal = () => {
-  //     setModalOpen(false);
-  //   };
+  const closeModal = () => {
+    setModalOpen(false);
+  };
 
   return (
     <SiteContext.Provider
@@ -47,9 +47,9 @@ export const SiteProvider = ({ children }) => {
         setScrollY,
         // filterShown,
         // setFilterShown,
-        // isModalOpen,
-        // openModal,
-        // closeModal,
+        isModalOpen,
+        openModal,
+        closeModal,
         // scrolledWindow,
         // setScrolledWindow,
       }}
