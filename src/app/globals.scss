@@ -1,0 +1,114 @@
+@import "../styles/_variables";
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  -webkit-transition-duration: 250ms;
+  -o-transition-duration: 250ms;
+  transition-duration: 250ms;
+  /* outline: red 1px solid; */
+}
+
+html,
+body {
+  width: 100vw;
+  min-height: 100vh;
+}
+
+body,
+main,
+section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+main {
+  width: 100%;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+article,
+section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* it is temporarily dimensions */
+.container {
+  width: 100%;
+  max-width: 1440px;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+button {
+  cursor: pointer;
+}
+
+.btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 128px;
+  padding: 8px 0px 9px;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 24px;
+  border: 1px solid #000;
+  background-color: transparent;
+  color: $darckFontColor;
+  font-family: inherit;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+
+  width: 128px;
+  height: 32px;
+
+  &:focus,
+  &:hover {
+    background: transparent;
+    border-color: $darckFontColor;
+    color: $darckFontColor;
+    scale: 0.96;
+  }
+
+  @media screen and (min-width: $tablet) {
+    width: 128px;
+    height: 34px;
+    border-width: 1px;
+    font-size: 14px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    width: 288px;
+    height: 53px;
+    font-size: 16px;
+  }
+}
