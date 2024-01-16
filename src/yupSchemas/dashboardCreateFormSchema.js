@@ -34,13 +34,9 @@ export const dashboardCreateFormSchema = Yup.object({
         .required("Ціна це обовʼязкове поле"),
     carBrand: Yup.string()
         .required("Марка авто це обовʼязкове поле"),
-    // carModels: Yup.array()
-    //     .required("Моделі авто це обовʼязкове поле"),
     carModels: Yup.string()
         .required("Моделі авто це обовʼязкове поле"),
-    // carBodies: Yup.array()
-    //     .required("Кузови це обовʼязкове поле"),
-    carBodies: Yup.string()
+    carBodies: Yup.array()
         .required("Кузови це обовʼязкове поле"),
     installedFrom: Yup.number()
         .moreThan(-1, "Тільки додатні числа")

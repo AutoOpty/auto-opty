@@ -83,15 +83,15 @@ const Dashboard = () => {
                   Марка авто: {product.carBrand}
                 </p>
                 <ul className={styles.models}>
-                  Моделі авто:{" "}
+                  Моделі авто:
                   {product.carModels.map((item, index) => (
-                    <li key={index}>{item}</li>
+                    <li key={index}>-{item}</li>
                   ))}
                 </ul>
                 <ul className={styles.bodies}>
-                  Кузови авто:{" "}
+                  Кузови авто:
                   {product.carBodies.map((item, index) => (
-                    <li key={index}>{item}</li>
+                    <li key={index}>-{item}</li>
                   ))}
                 </ul>
                 <p className={styles.textContent}>

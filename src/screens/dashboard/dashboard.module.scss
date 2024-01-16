@@ -97,13 +97,13 @@
 .models {
   list-style: none;
   display: flex;
-  gap: 10px;
+  flex-direction: column;
 }
 
 .bodies {
   list-style: none;
   display: flex;
-  gap: 10px;
+  flex-direction: column;
 }
 
 .btnsWrapper {

@@ -5,12 +5,12 @@
 // func - в данном случае mutate from fetcher
 
 export  const handleDeleteImgFromMongoDB = async (data, id, item, func) => {
-    const newArr = data.imgs.filter((el) => el !== item);
+    const newArr = data.photos.filter((el) => el !== item);
     try {
-      await fetch(`/api/apartments/${id}`, {
+      await fetch(`/api/products/${id}`, {
         method: "PATCH",
         body: JSON.stringify({
-          imgs: newArr,
+          photos: newArr,
         }),
       });
       // автоматически обновляет страницу при изменении кол-ва карточек (mutate from fetcher)

@@ -155,12 +155,12 @@ const DashboardCreateForm = () => {
             <ErrorMessage name="side" className={styles.error} component="p" />
             <fieldset className={styles.side}>
               <legend>Сторона:</legend>
-              <Field type="radio" id="left" name="side" value="Ліва" />
-              <label htmlFor="left">Ліва</label>
-              <Field type="radio" id="right" name="side" value="Права" />
-              <label htmlFor="right">Права</label>
-              <Field type="radio" id="both" name="side" value="Обидві" />
-              <label htmlFor="both">Обидві</label>
+              <Field type="radio" id="left" name="side" value="L" />
+              <label htmlFor="left">L</label>
+              <Field type="radio" id="right" name="side" value="R" />
+              <label htmlFor="right">R</label>
+              <Field type="radio" id="both" name="side" value="L+R" />
+              <label htmlFor="both">L+R</label>
             </fieldset>
 
             <label htmlFor="price">Ціна:</label>
@@ -204,20 +204,103 @@ const DashboardCreateForm = () => {
               className={styles.input}
             />
 
-            <label htmlFor="carBodies">Кузови авто:</label>
-            <ErrorMessage
-              name="carBodies"
-              className={styles.error}
-              component="p"
-            />
-            <Field
-              type="text"
-              name="carBodies"
-              id="carBodies"
-              maxLength="200"
-              placeholder="Sedan"
-              className={styles.input}
-            />
+            <fieldset className={styles.carBodies}>
+              <legend>Кузови авто:</legend>
+              <label htmlFor="sedan">
+                <Field
+                  type="checkbox"
+                  id="sedan"
+                  name="carBodies"
+                  value="Sedan"
+                />
+                Sedan
+              </label>
+              <label htmlFor="coupe">
+                <Field
+                  type="checkbox"
+                  id="coupe"
+                  name="carBodies"
+                  value="Coupe"
+                />
+                Coupe
+              </label>
+              <label htmlFor="sportsCar">
+                <Field
+                  type="checkbox"
+                  id="sportsCar"
+                  name="carBodies"
+                  value="Sports car"
+                />
+                Sports car
+              </label>
+              <label htmlFor="stationWagon">
+                <Field
+                  type="checkbox"
+                  id="stationWagon"
+                  name="carBodies"
+                  value="Station Wagon"
+                />
+                Station Wagon
+              </label>
+              <label htmlFor="hatchback">
+                <Field
+                  type="checkbox"
+                  id="hatchback"
+                  name="carBodies"
+                  value="Hatchback"
+                />
+                Hatchback
+              </label>
+              <label htmlFor="suv">
+                <Field
+                  type="checkbox"
+                  id="suv"
+                  name="carBodies"
+                  value="Sport-Utility Vehicle (SUV)"
+                />
+                Sport-Utility Vehicle (SUV)
+              </label>
+              <label htmlFor="minivan">
+                <Field
+                  type="checkbox"
+                  id="minivan"
+                  name="carBodies"
+                  value="Minivan"
+                />
+                Minivan
+              </label>
+              <label htmlFor="pickupTruck">
+                <Field
+                  type="checkbox"
+                  id="pickupTruck"
+                  name="carBodies"
+                  value="Pickup Truck"
+                />
+                Pickup Truck
+              </label>
+              <label htmlFor="cov">
+                <Field
+                  type="checkbox"
+                  id="cov"
+                  name="carBodies"
+                  value="Cross Over Vehicle (CUV)"
+                />
+                Cross Over Vehicle (CUV)
+              </label>
+              <label htmlFor="convertible">
+                <Field
+                  type="checkbox"
+                  id="convertible"
+                  name="carBodies"
+                  value="Convertible"
+                />
+                Convertible
+              </label>
+              <label htmlFor="van">
+                <Field type="checkbox" id="van" name="carBodies" value="Van" />
+                Van
+              </label>
+            </fieldset>
 
             <label htmlFor="installedFrom">Початок використання:</label>
             <ErrorMessage

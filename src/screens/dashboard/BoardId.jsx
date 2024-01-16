@@ -81,15 +81,15 @@ const BoardId = ({ params }) => {
             <p className={styles.textContent}>Ціна: {data.price}</p>
             <p className={styles.textContent}>Марка авто: {data.carBrand}</p>
             <ul className={styles.models}>
-              Моделі авто:{" "}
+              Моделі авто:
               {data.carModels.map((item, index) => (
-                <li key={index}>{item}</li>
+                <li key={index}>{-item}</li>
               ))}
             </ul>
             <ul className={styles.bodies}>
-              Кузови авто:{" "}
+              Кузови авто:
               {data.carBodies.map((item, index) => (
-                <li key={index}>{item}</li>
+                <li key={index}>-{item}</li>
               ))}
             </ul>
             <p className={styles.textContent}>
