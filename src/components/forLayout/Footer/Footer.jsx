@@ -13,15 +13,19 @@ const Footer = () => {
       <ModalR isOpen={isModalOpen} closeModal={closeModal}>
         <h2>Here will be Form</h2>
       </ModalR>
-      <Mobile Footer />
+      <button
+        onClick={openModal}
+        style={{ position: "absolute", right: "32px", bottom: "100px" }}
+      >
+        Open modal
+      </button>
+      <MobileFooter />
       <div className={styles.caption}>
         <p>ⓒ all rights reserved. Made by </p>{" "}
         <Link target="_blank" href="https://webevery.dev/">
           Webevery.dev
         </Link>
       </div>
-
-      <button onClick={openModal}>Open modal</button>
     </footer>
   );
 };
