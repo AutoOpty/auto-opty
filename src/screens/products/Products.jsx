@@ -54,19 +54,20 @@ const Products = () => {
       ) : (
         <ul ref={containerRef} className={styles.containerProducts}>
           {data?.length > 0 &&
-            data
-              .slice(0, loadedCount)
-              .map((item) => (
-                <ProductItem
-                  key={item._id}
-                  article={item.article}
-                  carBrand={item.carBrand}
-                  price={item.price}
-                  side={item.side}
-                  photos={item.photos}
-                  id={item._id}
-                />
-              ))}
+            data.slice(0, loadedCount).map((item) => (
+              <ProductItem
+                key={item._id}
+                // item={item}
+                title={item.title}
+                article={item.article}
+                carBrand={item.carBrand}
+                brand={item.brand}
+                price={item.price}
+                side={item.side}
+                photos={item.photos}
+                id={item._id}
+              />
+            ))}
         </ul>
       )}
       {data?.length <= 0 && (
