@@ -1,6 +1,5 @@
 'use client';
 
-// import ProductsIdItem from '@/components/ProductIdItem/ProductIdItem';
 import { GetDataById } from '@/fetch/clientFetch';
 // import Link from 'next/link';
 import React from 'react';
@@ -9,6 +8,7 @@ import seoStyles from '@/app/seoStyles.module.css';
 import BreadCrumbs from '@/components/share/BreadCrumbs/BreadCrumbs';
 import ProductSlider from '@/components/ProductSlider/ProductSlider';
 import IsLoading from '@/components/share/IsLoading/IsLoading';
+import ProductsIdItem from '@/components/ProductIdItem/ProductIdItem';
 
 const ProductId = ({ params }) => {
   const { id } = params;
@@ -16,6 +16,7 @@ const ProductId = ({ params }) => {
 
   const dataId = data && !isLoading ? data : error;
 
+  console.log(dataId);
   return (
     <section className={styles.container}>
       <h1 className={seoStyles.titleHidden}>
@@ -35,19 +36,20 @@ const ProductId = ({ params }) => {
       {isLoading ? (
         <IsLoading />
       ) : (
-        <article className={styles.apartContent}>
+        <article className={styles.productContent}>
           <h3 className={seoStyles.titleHidden}>
             Detailed information about the apartments
           </h3>
           <ProductSlider dataId={dataId} />
           <article className={styles.content}>
-            <h4 className={seoStyles.titleHidden}>
+            {/* <h4 className={seoStyles.titleHidden}>
               Detailed information about the amenities
-            </h4>
-            {/* <ApartDataList dataId={dataId} /> */}
-            <hr style={{ width: '100%' }} />
-            {/* <Amenities dataId={dataId} /> */}
-            {/* <ApartStar dataId={dataId} /> */}
+            </h4> */}
+            {/* <hr style={{ width: '100%' }} /> */}
+            <ProductsIdItem dataId={dataId} />
+            <button type="button" className={styles.orderBtn}>
+              Забронювати
+            </button>
             {/* <OrderBtn className={styles.orderBtn} openModal={openModal} /> */}
           </article>
         </article>

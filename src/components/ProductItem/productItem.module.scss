@@ -28,28 +28,28 @@
 }
 
 .img {
-  -o-object-fit: cover;
-  object-fit: cover;
+  -o-object-fit: contain;
+  object-fit: contain;
 }
 
-.codeProduct {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  border-bottom: 34px solid #373737;
-  border-left: 50px solid transparent;
-  border-right: 50px solid transparent;
-}
+// .codeProduct {
+//   position: absolute;
+//   bottom: 0;
+//   left: 0;
+//   width: 100%;
+//   border-bottom: 34px solid #373737;
+//   border-left: 50px solid transparent;
+//   border-right: 50px solid transparent;
+// }
 
-.codeProductItem {
-  color: #ffffff;
-  font-size: 13px;
-  font-weight: 700;
-  position: absolute;
-  bottom: -25px;
-  left: 35%;
-}
+// .codeProductItem {
+//   color: #ffffff;
+//   font-size: 13px;
+//   font-weight: 700;
+//   position: absolute;
+//   bottom: -25px;
+//   left: 35%;
+// }
 
 .productContent {
   display: -webkit-box;
@@ -75,18 +75,12 @@
   }
 }
 
-.priceProduct {
-  // font-family: Pridi;
-  color: #373737;
-  font-size: 20px;
-  font-weight: 400;
-}
-
-.codeRooms {
-  color: #6d6d6d;
-  font-size: 13px;
-  font-weight: 400;
-}
+// .priceProduct {
+//   // font-family: Pridi;
+//   color: #373737;
+//   font-size: 20px;
+//   font-weight: 400;
+// }
 
 .btnProduct {
   display: -webkit-box;
