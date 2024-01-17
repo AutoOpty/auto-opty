@@ -3,8 +3,8 @@
 import { SiteContext } from "@/context/SiteContext";
 import { useContext } from "react";
 import Modal from "react-modal";
+import OrderForm from "../OrderForm/OrderForm";
 import "./Modal.css";
-import Modalform from "./Modalform/Modalform";
 
 // this modal is in the Layout now :)
 
@@ -21,7 +21,7 @@ const ModalR = () => {
       ariaHideApp={false}
     >
       {/* here must be imported children  like this < Child/>*/}
-      <Modalform />
+      <OrderForm />
       {/* {children} */}
     </Modal>
   );
