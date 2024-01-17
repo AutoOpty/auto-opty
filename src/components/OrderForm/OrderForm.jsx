@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import { useTranslation } from "react-i18next";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -31,8 +30,6 @@ const handleSubmit = (values, actions, closeModal) => {
 };
 
 const OrderForm = ({ isOpen, closeModal }) => {
-    const { t } = useTranslation();
-
     useEffect(() => {
         if (isOpen) {
             document.body.style.overflow = "hidden";
@@ -60,10 +57,9 @@ const OrderForm = ({ isOpen, closeModal }) => {
                             onClick={closeModal}
                             className={styles.closeBtn}
                         >
-                            X
-                            {/* <svg className={styles.iconBtnClose}>
+                            <svg className={styles.iconBtnClose}>
                                 <use href='/sprite.svg#close' />
-                            </svg> */}
+                            </svg>
                         </button>
                         <h2 className={styles.title}>Auto Opti</h2>
 
@@ -73,9 +69,9 @@ const OrderForm = ({ isOpen, closeModal }) => {
                             <Form className={styles.form}>
                                 <div className={styles.innerWrap}>
                                     <div className={styles.wrapError}>
-                                        {/* <svg className={styles.icon}>
+                                        <svg className={styles.icon}>
                                             <use href='/sprite.svg#icon-user' />
-                                        </svg> */}
+                                        </svg>
                                         <Field
                                             type='text'
                                             name='userName'
@@ -97,9 +93,9 @@ const OrderForm = ({ isOpen, closeModal }) => {
                                         />
                                     </div>
                                     <div className={styles.wrapError}>
-                                        {/* <svg className={styles.icon}>
+                                        <svg className={styles.icon}>
                                             <use href='/sprite.svg#icon-phone' />
-                                        </svg> */}
+                                        </svg>
                                         <Field
                                             type='text'
                                             name='phone'
@@ -122,7 +118,7 @@ const OrderForm = ({ isOpen, closeModal }) => {
                                 </div>
                                 <div className={styles.innerWrap}>
                                     <div className={styles.wrapError}>
-                                        {/* <svg
+                                        <svg
                                             className={`${styles.icon} ${styles.iconPicker}`}
                                         >
                                             <use href='/sprite.svg#icon-calendar' />
@@ -131,71 +127,36 @@ const OrderForm = ({ isOpen, closeModal }) => {
                                             className={`${styles.icon} ${styles.iconPickerRight}`}
                                         >
                                             <use href='/sprite.svg#icon-chevron-down' />
-                                        </svg> */}
-                                        {/* <label htmlFor='checkIn' className={styles.label}>
-                                              'Дата заїзду
-                                          </label> */}
-                                        <Field name='checkIn' id='checkIn'>
+                                        </svg>
+                                        <Field name='sendDate' id='sendDate'>
                                             {({ form, field }) => {
                                                 const { setFieldValue } = form;
                                                 const { value } = field;
 
                                                 return (
                                                     <DatePicker
-                                                        id='checkIn'
+                                                        id='sendDate'
                                                         autoComplete='off'
                                                         dateFormat='dd/MM/yyyy'
                                                         selectsStart
                                                         className={
-                                                            errors.checkIn &&
-                                                            touched.checkIn
+                                                            errors.sendDate &&
+                                                            touched.sendDate
                                                                 ? `${styles.input} ${styles.inputError}`
                                                                 : styles.input
                                                         }
-                                                        placeholderText={t(
-                                                            "Form.dateOfEntry"
-                                                        )}
+                                                        placeholder='Дата відправки'
                                                         {...field}
                                                         selected={value}
                                                         onFocus={(e) =>
                                                             e.target.blur()
                                                         }
-                                                        onChange={(val) =>
-                                                            setFieldValue(
-                                                                "checkIn",
-                                                                val
-                                                            )
-                                                        }
-                                                        excludeDateIntervals={[
-                                                            {
-                                                                start: subDays(
-                                                                    new Date(),
-                                                                    100
-                                                                ),
-                                                                end: addDays(
-                                                                    new Date(),
-                                                                    0
-                                                                ),
-                                                            },
-                                                        ]}
-                                                        includeDateIntervals={[
-                                                            {
-                                                                start: subDays(
-                                                                    new Date(),
-                                                                    2
-                                                                ),
-                                                                end: addDays(
-                                                                    new Date(),
-                                                                    700
-                                                                ),
-                                                            },
-                                                        ]}
                                                     />
                                                 );
                                             }}
                                         </Field>
                                         <ErrorMessage
-                                            name='checkIn'
+                                            name='sendDate'
                                             className={styles.error}
                                             component='p'
                                         />
@@ -212,61 +173,22 @@ const OrderForm = ({ isOpen, closeModal }) => {
                                         >
                                             <use href='/sprite.svg#icon-chevron-down' />
                                         </svg>
-                                        {/* <label htmlFor='checkIn' className={styles.label}>
-                                              'Дата заїзду
-                                        </label> */}
-                                        <Field name='checkOut' id='checkOut'>
-                                            {({ form, field }) => {
-                                                const { setFieldValue } = form;
-                                                const { value } = field;
-                                                return (
-                                                    <DatePicker
-                                                        id='checkOut'
-                                                        autoComplete='off'
-                                                        dateFormat='dd/MM/yyyy'
-                                                        disabled={
-                                                            !values.checkIn
-                                                        }
-                                                        selectsEnd
-                                                        minDate={values.checkIn}
-                                                        className={
-                                                            errors.checkOut &&
-                                                            touched.checkOut
-                                                                ? `${styles.input} ${styles.inputError}`
-                                                                : styles.input
-                                                        }
-                                                        placeholderText={t(
-                                                            "Form.departureDate"
-                                                        )}
-                                                        {...field}
-                                                        selected={value}
-                                                        onFocus={(e) =>
-                                                            e.target.blur()
-                                                        }
-                                                        onChange={(val) =>
-                                                            setFieldValue(
-                                                                "checkOut",
-                                                                val
-                                                            )
-                                                        }
-                                                        includeDateIntervals={[
-                                                            {
-                                                                start: subDays(
-                                                                    new Date(),
-                                                                    2
-                                                                ),
-                                                                end: addDays(
-                                                                    new Date(),
-                                                                    700
-                                                                ),
-                                                            },
-                                                        ]}
-                                                    />
-                                                );
-                                            }}
-                                        </Field>
+                                        <Field
+                                            type='text'
+                                            name='postOfficeNumber'
+                                            id='postOfficeNumber'
+                                            placeholder='Відділення пошти'
+                                            autoComplete='off'
+                                            maxLength='30'
+                                            className={
+                                                errors.postOfficeNumber &&
+                                                touched.postOfficeNumber
+                                                    ? `${styles.input} ${styles.inputError}`
+                                                    : styles.input
+                                            }
+                                        />
                                         <ErrorMessage
-                                            name='checkOut'
+                                            name='postOfficeNumber'
                                             className={styles.error}
                                             component='p'
                                         />
@@ -277,33 +199,29 @@ const OrderForm = ({ isOpen, closeModal }) => {
                                         <svg className={styles.icon}>
                                             <use href='/sprite.svg#icon-hash' />
                                         </svg>
-                                        {/* <label htmlFor='objNumber' className={styles.label}>
-                                               Номер об’єкту
-                                            </label> */}
+
                                         <Field
                                             type='text'
-                                            name='objNumber'
-                                            id='objNumber'
+                                            name='itemNumber'
+                                            id='itemNumber'
                                             autoComplete='off'
                                             maxLength='3'
-                                            placeholder={t(
-                                                "Form.numberOfObject"
-                                            )}
+                                            placeholder='Номер запчастини'
                                             className={
-                                                errors.objNumber &&
-                                                touched.objNumber
+                                                errors.itemNumber &&
+                                                touched.itemNumber
                                                     ? `${styles.input} ${styles.inputError}`
                                                     : styles.input
                                             }
                                         />
                                         <ErrorMessage
-                                            name='objNumber'
+                                            name='itemNumber'
                                             className={styles.error}
                                             component='p'
                                         />
                                     </div>
                                     <p className={styles.explainText}>
-                                        * - {t("Form.fieldsDesc")}
+                                        * - поле, обовʼязкове для заповнення
                                     </p>
                                 </div>
 
@@ -316,7 +234,7 @@ const OrderForm = ({ isOpen, closeModal }) => {
                                             : styles.button
                                     }
                                 >
-                                    {t("Buttons.OrderBtn")}
+                                    Забронювати
                                 </button>
                             </Form>
                         )}
