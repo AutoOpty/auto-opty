@@ -1,7 +1,7 @@
 "use client";
 import BurgerMenuBtn from "@/components/forLayout/Header/BurgerMenuBtn/BurgerMenuBtn";
 import LogoutBtn from "@/components/LogoutBtn/LogoutBtn";
-import React, {useState, useCallback, useContext, useEffect } from "react";
+import React, { useState, useCallback, useContext, useEffect } from "react";
 import styles from "./header.module.scss";
 import { useSession } from "next-auth/react";
 import TranslatorBtnBlock from "./TranslatorBtnBlock/TranslatorBtnBlock";
@@ -14,11 +14,13 @@ import SocialLinks from "@/components/SocialLinks/SocialLinks";
 
 const Header = () => {
   const session = useSession();
-  const [isLoad,setIsLoad]=useState(true);
+  const [isLoad, setIsLoad] = useState(true);
 
-  useEffect(()=>{setIsLoad(false)},[])
+  useEffect(() => {
+    setIsLoad(false);
+  }, []);
 
-  const { burgerMenu, setBurgerMenu, isMobile, setIsMobile } =
+  const { burgerMenu, setBurgerMenu, isMobile, setIsMobile, isXs, setIsXs } =
     useContext(SiteContext);
 
   const closeBurgerMenu = () => {
@@ -28,12 +30,16 @@ const Header = () => {
   };
 
   const handleResize = useCallback(() => {
-    if (window.innerWidth <= 1279) {
+    if (window.innerWidth < 768) {
+      setIsXs(true);
+    } else if (window.innerWidth >= 768) {
+      setIsXs(false);
+    } else if (window.innerWidth <= 1279) {
       setIsMobile(true);
     } else {
       setIsMobile(false);
     }
-  }, [setIsMobile]);
+  }, [setIsMobile, setIsXs]);
   useEffect(() => {
     window.addEventListener("resize", handleResize);
 
@@ -70,7 +76,9 @@ const Header = () => {
               : styles.mobileNavigation
           }
         >
-          {!isLoad && <Navigation className={styles.navLinks} onClick={closeBurgerMenu}/>}
+          {!isLoad && (
+            <Navigation className={styles.navLinks} onClick={closeBurgerMenu} />
+          )}
           <SocialLinks className={styles.socLinks} />
         </nav>
       )}

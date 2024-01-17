@@ -1,4 +1,4 @@
-import "./globals.css";
+import "./globals.scss";
 // import { Inter } from 'next/font/google';
 import { Hahmlet } from "next/font/google";
 import Header from "@/components/forLayout/Header/Header";
