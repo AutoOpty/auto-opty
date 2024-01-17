@@ -1,17 +1,7 @@
 import * as Yup from "yup";
 
-import i18n from 'i18next';
-
 const regexPhone = /^\+\d{12}$/;
 
-// const initialValues = {
-//     userName: "",
-//     phone: "",
-//     sendDate: "",
-//     postOfficeNumber: "",
-//     itemNumber: "",
-//     paymentMethod: "",
-// };
 
 export const orderSchema = Yup.object({
     userName: Yup.string()
@@ -28,6 +18,4 @@ export const orderSchema = Yup.object({
         .typeError("Only numbers"),
     sendDate: Yup.date()
         .nullable(),
-
-
 })

@@ -5,15 +5,9 @@ import React, { useContext } from "react";
 import styles from "./Button.module.scss";
 
 const Button = ({ className, type }) => {
-  const { state, setState } = useContext(SiteContext);
+  const { openModal } = useContext(SiteContext);
   return (
-    <button
-      type="button"
-      className={`btn ${className}`}
-      onClick={() => {
-        console.log("Button is clicked"), setState(!state);
-      }}
-    >
+    <button type="button" className={`btn ${className}`} onClick={openModal}>
       Забронювати
     </button>
   );
