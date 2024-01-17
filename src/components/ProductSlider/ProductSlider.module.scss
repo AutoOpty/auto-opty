@@ -1,0 +1,15 @@
+@import '../../styles/_variables.scss';
+
+.swiperContainer {
+  width: 272px;
+  height: 323px;
+  background-color: tomato;
+  @media screen and (min-width: $tablet) {
+    width: 719px;
+    height: 621px;
+  }
+  @media screen and (min-width: $desktop) {
+    width: 712px;
+    height: 621px;
+  }
+}

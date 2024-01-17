@@ -15,10 +15,10 @@
 
 .imgContainer {
   position: relative;
-  width: 328px;
+  width: 272px;
   height: 365px;
   @media screen and (min-width: $tablet) {
-    width: 324px;
+    width: 352px;
     height: 360px;
   }
   @media screen and (min-width: $desktop) {
@@ -89,9 +89,6 @@
 }
 
 .btnProduct {
-  // position: absolute;
-  // bottom: 0;
-  // right: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

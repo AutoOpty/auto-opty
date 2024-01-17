@@ -5,7 +5,7 @@ import SocialLinks from '@/components/SocialLinks/SocialLinks';
 import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
 import styles from './contacts.module.scss';
-import seoStyles from '@/app/seoStyles.module.css';
+// import seoStyles from '@/app/seoStyles.module.css';
 
 const Contacts = () => {
   const [isLoading, setIsLoading] = useState(true);
