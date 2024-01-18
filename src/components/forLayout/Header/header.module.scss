@@ -45,14 +45,14 @@
   color: var(--main-color);
   font-size: 12px;
   font-weight: 300;
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: $tablet) {
     font-size: 16px;
     font-weight: 400;
   }
-  @media screen and (min-width: 1024px) {
-    font-size: 20px;
-    font-weight: 500;
-  }
+  // @media screen and (min-width: 1024px) {
+  //   font-size: 20px;
+  //   font-weight: 500;
+  // }
 }
 
 .logo {

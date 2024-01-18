@@ -64,9 +64,9 @@ const Header = () => {
     <header className={styles.header}>
       <div className={`container ${styles.container}`}>
         <BurgerMenuBtn />
-        {!isLoad && <LeftLinks />}
+        {!isLoad && <LeftLinks className={styles.headerLink} />}
         <Logo className={styles.logo} />
-        {!isLoad && <RightLinks />}
+        {!isLoad && <RightLinks className={styles.headerLink} />}
         <div className={styles.btnsBlock}>
           <div className={styles.desktopBtnsWrap}>
             {!isMobile && <SocialLinks className={styles.socLinks} />}

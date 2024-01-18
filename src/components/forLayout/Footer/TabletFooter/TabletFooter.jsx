@@ -7,6 +7,8 @@ import Logo from "@/components/Logo/Logo";
 import Navigation from "@/components/Navigation/Navigation";
 import { SiteContext } from "@/context/SiteContext";
 import React, { useContext } from "react";
+import LeftNav from "./LeftNav/LeftNav";
+import RightNav from "./RightNav/RightNav";
 import styles from "./TabletFooter.module.scss";
 
 const TabletFooter = () => {
@@ -20,11 +22,10 @@ const TabletFooter = () => {
           <Logo className={styles.logo} />
           <Contacts className={styles.contacts} />
         </div>
-        {/* <div className={styles.nav}>
-          <div className={styles.navLeft}></div>
-          <div className={styles.navRigut}></div>
-        </div> */}
-        <Navigation className={styles.nav} />
+        {/* <div className={styles.nav}> */}
+        <LeftNav className={styles.nav} />
+        <RightNav className={styles.nav} />
+        {/* </div> */}
 
         <div className={styles.btnsBlock}>
           <CallBtn className={styles.btn} />
