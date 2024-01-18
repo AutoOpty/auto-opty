@@ -13,7 +13,7 @@ const CallBtn = ({ className }) => {
     setIsLoading(false);
   }, []);
   return (
-    <Link href="tel:+380503738465" className={`btn ${className}`}>
+    <Link href="tel:+380503738465" className={`btn ${styles.btn} ${className}`}>
       {!isLoading && t("Buttons.CalltBtn")}
     </Link>
   );

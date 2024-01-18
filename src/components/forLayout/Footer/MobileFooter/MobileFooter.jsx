@@ -10,7 +10,7 @@ import React, { useContext } from "react";
 import styles from "./MobileFooter.module.scss";
 
 const MobileFooter = () => {
-  const { isXs, setIsXs } = useContext(SiteContext);
+  const { isXs } = useContext(SiteContext);
   if (!isXs) {
     return;
   } else {

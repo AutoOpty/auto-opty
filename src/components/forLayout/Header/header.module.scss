@@ -10,7 +10,7 @@
   align-items: center;
   justify-content: center;
   background-color: $headerBg;
-  position: relative;
+  position: fixed;
 
   & .container {
     width: 100%;
@@ -27,7 +27,7 @@
     }
   }
   @media screen and (min-width: $desktop) {
-    height: 152px;
+    height: 85px;
     & .container {
       width: 100%;
       margin: 0px 36px;
@@ -41,35 +41,22 @@
   align-items: center;
 }
 
-.headerLogo {
-  width: 24px;
-  height: 24px;
-  @media screen and (min-width: 768px) {
-    width: 36px;
-    height: 36px;
-  }
-  @media screen and (min-width: 1440px) {
-    width: 48px;
-    height: 48px;
-  }
-}
-
 .headerLink {
   color: var(--main-color);
   font-size: 12px;
   font-weight: 300;
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: $tablet) {
     font-size: 16px;
     font-weight: 400;
   }
-  @media screen and (min-width: 1024px) {
-    font-size: 20px;
-    font-weight: 500;
-  }
+  // @media screen and (min-width: 1024px) {
+  //   font-size: 20px;
+  //   font-weight: 500;
+  // }
 }
 
 .logo {
-  margin-left: clamp(1px, 6vw, 100px);
+  margin-left: clamp(1px, 8vw, 172px);
   & span {
     color: $lightFontColor;
     background-color: $darckFontColor;

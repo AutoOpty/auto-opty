@@ -1,0 +1,64 @@
+@import "../../../../styles/variables";
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 148px;
+}
+
+.contactsWrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.logo {
+  color: $footerLogoColor;
+  font-size: 24px;
+  @media (min-width: $desktop) {
+    font-size: 20px;
+  }
+}
+
+.contacts {
+  flex-direction: column-reverse;
+  align-items: flex-start;
+  gap: 16px;
+  font-size: 16px;
+  @media (min-width: $desktop) {
+    gap: 8px;
+    font-size: 20px;
+  }
+}
+.nav {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 32px;
+  font-size: 16px;
+  @media (min-width: $desktop) {
+    font-size: 20px;
+  }
+}
+
+.btnsBlock {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  & .btn {
+    width: 174px;
+    height: 53px;
+    @media (min-width: $desktop) {
+      width: 296px;
+      height: 53px;
+    }
+  }
+}
