@@ -27,7 +27,7 @@
     }
   }
   @media screen and (min-width: $desktop) {
-    height: 152px;
+    height: 85px;
     & .container {
       width: 100%;
       margin: 0px 36px;
@@ -39,19 +39,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-.headerLogo {
-  width: 24px;
-  height: 24px;
-  @media screen and (min-width: 768px) {
-    width: 36px;
-    height: 36px;
-  }
-  @media screen and (min-width: 1440px) {
-    width: 48px;
-    height: 48px;
-  }
 }
 
 .headerLink {
@@ -69,7 +56,7 @@
 }
 
 .logo {
-  margin-left: clamp(1px, 6vw, 100px);
+  margin-left: clamp(1px, 8vw, 172px);
   & span {
     color: $lightFontColor;
     background-color: $darckFontColor;

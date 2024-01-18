@@ -1,0 +1,43 @@
+@import "../../../../styles/variables";
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contactsWrapper {
+}
+
+.logo {
+  color: $footerLogoColor;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.contacts {
+  flex-direction: column-reverse;
+  align-items: flex-start;
+  gap: 16px;
+  font-size: 16px;
+}
+.nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  font-size: 16px;
+}
+
+.btnsBlock {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  & .btn {
+    width: 174px;
+    height: 53px;
+  }
+}
