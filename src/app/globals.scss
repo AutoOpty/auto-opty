@@ -79,7 +79,7 @@ button {
   -ms-flex-align: center;
   align-items: center;
   gap: 24px;
-  border: 1px solid #000;
+  border: 1px solid $darckFontColor;
   background-color: transparent;
   color: $darckFontColor;
   font-family: inherit;
@@ -94,8 +94,9 @@ button {
   &:focus,
   &:hover {
     background: transparent;
-    border-color: $darckFontColor;
-    color: $darckFontColor;
+    // border-color: $darckFontColor;
+    background-color: $darckFontColor;
+    color: $lightFontColor;
     scale: 0.96;
   }
 

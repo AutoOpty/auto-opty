@@ -10,7 +10,7 @@
   align-items: center;
   justify-content: center;
   background-color: $headerBg;
-  position: relative;
+  position: fixed;
 
   & .container {
     width: 100%;
