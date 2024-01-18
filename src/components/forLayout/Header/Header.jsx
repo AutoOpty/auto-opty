@@ -29,31 +29,41 @@ const Header = () => {
     }, 250);
   };
 
-  const handleResize = useCallback(() => {
+  // console.log(window.innerWidth);
+
+  const handleResizeXs = useCallback(() => {
     if (window.innerWidth < 768) {
       setIsXs(true);
-    } else if (window.innerWidth >= 768) {
-      setIsXs(false);
-    } else if (window.innerWidth <= 1279) {
+    } else {
+      setIsXs((prev) => prev !== prev);
+    }
+  }, [setIsXs]);
+
+  const handleResizeMobile = useCallback(() => {
+    if (window.innerWidth < 1280) {
       setIsMobile(true);
     } else {
-      setIsMobile(false);
+      setIsMobile((prev) => prev !== prev);
     }
-  }, [setIsMobile, setIsXs]);
-  useEffect(() => {
-    window.addEventListener("resize", handleResize);
+  }, [setIsMobile]);
 
-    handleResize();
+  useEffect(() => {
+    window.addEventListener("resize", handleResizeXs);
+    window.addEventListener("resize", handleResizeMobile);
+
+    handleResizeXs();
+    handleResizeMobile();
 
     return () => {
-      window.addEventListener("resize", handleResize);
+      window.addEventListener("resize", handleResizeXs);
+      window.addEventListener("resize", handleResizeMobile);
     };
-  }, [handleResize]);
+  }, [handleResizeXs, handleResizeMobile]);
 
   return (
     <header className={styles.header}>
       <div className={`container ${styles.container}`}>
-        {isMobile && <BurgerMenuBtn />}
+        <BurgerMenuBtn />
         {!isLoad && <LeftLinks />}
         <Logo className={styles.logo} />
         {!isLoad && <RightLinks />}
@@ -68,7 +78,7 @@ const Header = () => {
           {/* <LogoutBtn /> */}
         </div>
       </div>
-      {isMobile && (
+      {(isXs || isMobile) && (
         <nav
           className={
             burgerMenu

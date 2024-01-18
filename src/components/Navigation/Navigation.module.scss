@@ -2,6 +2,7 @@
 .leftlinks,
 .rightLinks {
   display: flex;
+  // display: none;
   gap: 20px;
 
   color: #242424;
@@ -10,4 +11,7 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  // @media (min-width: $desktop) {
+  //   display: flex;
+  // }
 }
