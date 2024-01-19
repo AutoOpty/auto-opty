@@ -7,9 +7,9 @@ export const SiteProvider = ({ children }) => {
   const [burgerMenu, setBurgerMenu] = useState(false);
 
   const [isMobile, setIsMobile] = useState(false);
-  console.log("isMobile", isMobile);
+  // console.log("isMobile", isMobile);
   const [isXs, setIsXs] = useState(false);
-  console.log("isXs", isXs);
+  // console.log("isXs", isXs);
 
   const [language, setLanguage] = useState("en");
 
