@@ -13,7 +13,7 @@
     -ms-flex-align: center;
     align-items: center;
     width: 360px;
-    height: 600px;
+    height: 680px;
     text-align: center;
     padding: 24px;
     background-color: #fff;
@@ -71,7 +71,7 @@
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    width: 235px;
+    width: 255px;
     @media screen and (min-width: $desktop) {
         width: 921px;
         -webkit-box-orient: horizontal;
@@ -84,7 +84,7 @@
 }
 
 .innerWrap {
-    width: 235px;
+    width: 255px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -106,7 +106,7 @@
 
 .input {
     position: relative;
-    width: 235px;
+    width: 255px;
     height: 35px;
     background-color: transparent;
     margin-bottom: 36px;
@@ -114,11 +114,33 @@
     border: none;
     cursor: pointer;
     border-bottom: 1px solid rgba(199, 199, 199, 1);
-    padding-left: 32px;
+    padding-left: 24px;
     @media screen and (min-width: $desktop) {
         margin: 77px 10px 0;
         width: 440px;
     }
+}
+
+.select {
+    position: relative;
+    width: 255px;
+    height: 35px;
+    background-color: transparent;
+    margin-bottom: 36px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(199, 199, 199, 1);
+    padding-left: 18px;
+    color: #c7c7c7;
+    @media screen and (min-width: $desktop) {
+        margin: 77px 10px 0;
+        width: 440px;
+    }
+}
+
+.paymentMethod {
+    color: #000;
 }
 
 .input[type="date"] {
@@ -159,13 +181,14 @@
 
 .error {
     position: absolute;
-    bottom: 70px;
-    left: 80px;
+    top: -15px;
+    right: 0;
     color: rgba(255, 134, 134, 1);
+    font-family: sans-serif;
     font-size: 14px;
     @media screen and (min-width: $desktop) {
-        bottom: 40px;
-        left: 200px;
+        top: 50px;
+        right: 10;
     }
 }
 
@@ -189,7 +212,7 @@
 
 .iconPickerRight {
     bottom: 45px;
-    left: 210px;
+    left: 240px;
     width: 16px;
     height: 16px;
     @media screen and (min-width: $desktop) {
@@ -243,7 +266,7 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    margin-top: 48px;
+    margin-top: 36px;
     @media screen and (min-width: $desktop) {
         margin: 100px auto;
     }
