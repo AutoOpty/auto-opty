@@ -1,1 +1,15 @@
 @import "../../styles/_variables.scss";
+
+.btn {
+  background: transparent;
+  border-color: $darckFontColor;
+  background-color: $darckFontColor;
+  color: $lightFontColor;
+
+  &:focus,
+  &:hover {
+    background: transparent;
+    background-color: $lightFontColor;
+    color: $lightFontColor;
+  }
+}

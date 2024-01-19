@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
           <TranslatorProvider>
             <AuthProvider>
               <Header />
-              <main className="container">{children}</main>
+              <main>{children}</main>
               <Footer />
               <ModalR />
             </AuthProvider>

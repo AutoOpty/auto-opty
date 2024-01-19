@@ -10,7 +10,7 @@ import { navigationData, currentLanguages } from "@/data";
 const LeftLinks = ({ className }) => {
   const { i18n } = useTranslation();
 
-  const { isMobile, setIsMobile } = useContext(SiteContext);
+  const { isXs, isMobile } = useContext(SiteContext);
 
   const leftLinks = navigationData.slice(0, 3).map((item) => {
     return (

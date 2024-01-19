@@ -6,9 +6,10 @@ export const SiteContext = createContext();
 export const SiteProvider = ({ children }) => {
   const [burgerMenu, setBurgerMenu] = useState(false);
 
-  const [isMobile, setIsMobile] = useState(true);
-
-  const [isXs, setIsXs] = useState(true);
+  const [isMobile, setIsMobile] = useState(false);
+  console.log("isMobile", isMobile);
+  const [isXs, setIsXs] = useState(false);
+  console.log("isXs", isXs);
 
   const [language, setLanguage] = useState("en");
 

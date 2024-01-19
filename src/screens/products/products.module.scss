@@ -1,23 +1,32 @@
 @import '@/styles/_variables.scss';
 
 .container {
-  // display: -webkit-box;
-  // display: -ms-flexbox;
-  // display: flex;
-  // -webkit-box-align: center;
-  // -ms-flex-align: center;
-  // align-items: center;
-  // padding: 100px 20px 32px 20px;
-
+  padding: 24px 0px 0px 0px;
   @media screen and (min-width: $tablet) {
-    // padding: 118px 36px 0px 36px;
+    padding: 40px 24px 0px 24px;
   }
-
   @media screen and (min-width: 1366px) {
     padding: 40px 86px 0px 86px;
   }
   @media screen and (min-width: 1440px) {
     max-width: 1920px;
+  }
+}
+
+.toBackContainer {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-left: 24px;
+  @media screen and (min-width: $tablet) {
+    padding-left: 44px;
+  }
+  @media screen and (min-width: $desktop) {
+    padding-left: 0px;
   }
 }
 
@@ -61,7 +70,7 @@
 .containerProducts {
   display: -ms-grid;
   display: grid;
-  grid-template-columns: repeat(1, 328px);
+  grid-template-columns: repeat(1, 272px);
   -webkit-box-pack: space-evenly;
   -ms-flex-pack: space-evenly;
   justify-content: space-evenly;
@@ -71,10 +80,10 @@
   row-gap: 40px;
   padding: 40px 0;
   @media screen and (min-width: $tablet) {
-    grid-template-columns: repeat(2, 324px);
+    grid-template-columns: repeat(2, 352px);
   }
   @media screen and (min-width: $desktop) {
-    grid-template-columns: repeat(4, 300px);
+    grid-template-columns: repeat(4, 296px);
   }
 }
 
