@@ -17,7 +17,7 @@ const RightLinks = ({ className }) => {
   return (
     <>
       {!isMobile && (
-        <ul className={styles.rightLinks}>
+        <ul className={`${styles.rightLinks} ${className}`}>
           <li>
             <Link href={"/contacts"}>{t("Navigation.Contacts")}</Link>
           </li>
