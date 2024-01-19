@@ -7,7 +7,7 @@
   -webkit-transition-duration: 250ms;
   -o-transition-duration: 250ms;
   transition-duration: 250ms;
-  /* outline: red 1px solid; */
+  // outline: red 1px solid;
 }
 
 html,
@@ -81,6 +81,7 @@ button {
   align-items: center;
   gap: 24px;
   border: 1px solid $darckFontColor;
+  outline: none;
   background-color: transparent;
   color: $darckFontColor;
   font-family: inherit;
