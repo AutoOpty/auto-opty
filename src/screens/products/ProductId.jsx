@@ -16,7 +16,6 @@ const ProductId = ({ params }) => {
 
   const dataId = data && !isLoading ? data : error;
 
-  console.log(dataId);
   return (
     <section className={styles.container}>
       <h1 className={seoStyles.titleHidden}>

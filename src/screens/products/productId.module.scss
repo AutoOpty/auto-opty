@@ -5,13 +5,25 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 24px 16px 14px 16px;
+  padding: 104px 0px 0px 0px;
   @media screen and (min-width: $tablet) {
-    padding: 40px 32px 49px 32px;
+    padding: 176px 24px 0px 24px;
   }
-  @media screen and (min-width: $desktop) {
-    padding: 33px 86px 72px 86px;
+  @media screen and (min-width: 1280px) {
+    padding: 101px 32px 0px 32px;
   }
+  @media screen and (min-width: 1440px) {
+    padding: 101px 24px 0px 24px;
+    // padding: 125px 86px 0px 86px;
+    max-width: 1440px;
+  }
+  // padding: 24px 16px 14px 16px;
+  // @media screen and (min-width: $tablet) {
+  //   padding: 40px 32px 49px 32px;
+  // }
+  // @media screen and (min-width: $desktop) {
+  //   padding: 115px 86px 72px 86px;
+  // }
 }
 
 .backContainer {
@@ -30,7 +42,7 @@
   column-gap: 13px;
   margin-bottom: 12px;
   @media screen and (min-width: $desktop) {
-    margin-bottom: 37px;
+    margin-bottom: 16px;
   }
 }
 
