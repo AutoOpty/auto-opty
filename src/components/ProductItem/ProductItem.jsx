@@ -6,7 +6,15 @@ import React from 'react';
 
 import styles from './productItem.module.scss';
 
-const ProductItem = ({ photos, carBrand, article, id, title, brand }) => {
+const ProductItem = ({
+  photos,
+  carBrand,
+  article,
+  id,
+  title,
+  brand,
+  price,
+}) => {
   return (
     <li className={styles.productContainer}>
       <Link href={`/products/${id}`}>
@@ -29,7 +37,7 @@ const ProductItem = ({ photos, carBrand, article, id, title, brand }) => {
         <p className={styles.infoProduct}>Title : {title}</p>
         <p className={styles.infoProduct}>Brand : {brand}</p>
         <p className={styles.infoProduct}>Car Brand : {carBrand}</p>
-        {/* <p className={styles.priceProduct}>{price}$</p> */}
+        <p className={styles.priceProduct}>{price}$</p>
       </div>
       <Link href={`/products/${id}`} className={styles.btnProduct}>
         Детальніше
