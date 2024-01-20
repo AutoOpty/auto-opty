@@ -1,0 +1,15 @@
+@import "../../styles/variables";
+
+.btn {
+  background: transparent;
+  border-color: $darckFontColor;
+  background-color: $darckFontColor;
+  color: $lightFontColor;
+
+  &:focus,
+  &:hover {
+    background: transparent;
+    background-color: transparent;
+    color: $darckFontColor;
+  }
+}

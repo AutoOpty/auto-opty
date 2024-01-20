@@ -10,7 +10,6 @@ export const getData = async () => {
   return res.json();
 };
 
-
 export const getById = async (id) => {
   try {
     const res = await fetch(`/api/products/${id}`, {
@@ -27,15 +26,11 @@ export const getById = async (id) => {
   }
 };
 
-
 export const getMetaById = async (id) => {
   try {
-    const res = await fetch(
-      `${process.env.NEXTAUTH_URL}/api/products/${id}`,
-      {
-        cache: "no-store",
-      }
-    );
+    const res = await fetch(`${process.env.NEXTAUTH_URL}/api/products/${id}`, {
+      cache: "no-store",
+    });
 
     if (!res.ok) {
       throw new Error("Failed to fetch topic");
@@ -46,3 +41,10 @@ export const getMetaById = async (id) => {
     console.log(error);
   }
 };
+
+// /components/Hero/Hero.jsx (server component)
+// const Hero = async () => {
+// const data = await getData();
+// console.log("server fetch", data[0]);
+// ......
+// }

@@ -1,11 +1,13 @@
+import HomeSlider from "@/components/HomeSlider/HomeSlider";
 import React from "react";
 import Hero from "./Hero/Hero";
 
 const Home = () => {
   return (
-    <article>
+    <>
       <Hero />
-    </article>
+      <HomeSlider />
+    </>
   );
 };
 

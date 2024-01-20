@@ -9,16 +9,18 @@
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  align-items: center;
+  // align-items: center;
   row-gap: 32px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border-radius: 4px;
 }
 
 .imgContainer {
   position: relative;
-  width: 328px;
+  width: 272px;
   height: 365px;
   @media screen and (min-width: $tablet) {
-    width: 324px;
+    width: 352px;
     height: 360px;
   }
   @media screen and (min-width: $desktop) {
@@ -28,28 +30,28 @@
 }
 
 .img {
-  -o-object-fit: cover;
-  object-fit: cover;
+  -o-object-fit: contain;
+  object-fit: contain;
 }
 
-.codeProduct {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  border-bottom: 34px solid #373737;
-  border-left: 50px solid transparent;
-  border-right: 50px solid transparent;
-}
+// .codeProduct {
+//   position: absolute;
+//   bottom: 0;
+//   left: 0;
+//   width: 100%;
+//   border-bottom: 34px solid #373737;
+//   border-left: 50px solid transparent;
+//   border-right: 50px solid transparent;
+// }
 
-.codeProductItem {
-  color: #ffffff;
-  font-size: 13px;
-  font-weight: 700;
-  position: absolute;
-  bottom: -25px;
-  left: 35%;
-}
+// .codeProductItem {
+//   color: #ffffff;
+//   font-size: 13px;
+//   font-weight: 700;
+//   position: absolute;
+//   bottom: -25px;
+//   left: 35%;
+// }
 
 .productContent {
   display: -webkit-box;
@@ -60,43 +62,38 @@
   -ms-flex-direction: column;
   flex-direction: column;
   row-gap: 12px;
+  padding: 0px 15px 15px 15px;
+  @media screen and (min-width: $tablet) {
+    padding: 0px 30px 15px 30px;
+  }
 }
 
 .infoProduct {
-  // font-family: Pridi;
+  font-family: Pridi;
   color: #6d6d6d;
   font-size: 16px;
   font-weight: 400;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  &:first-child {
-    font-size: 20px;
-  }
 }
 
 .priceProduct {
-  // font-family: Pridi;
+  font-family: Pridi;
   color: #373737;
   font-size: 20px;
   font-weight: 400;
-}
-
-.codeRooms {
-  color: #6d6d6d;
-  font-size: 13px;
-  font-weight: 400;
+  margin-top: 12px;
 }
 
 .btnProduct {
-  // position: absolute;
-  // bottom: 0;
-  // right: 0;
+  position: absolute;
+  bottom: 10px;
+  right: 30px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   padding: 10px 24px;
-  gap: 10px;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
@@ -108,7 +105,7 @@
   outline: none;
   border: 1px solid #373737;
   color: #373737;
-  // font-family: Segoe UI;
+  font-family: Segoe UI;
   font-size: 14px;
   font-weight: 400;
   text-decoration: none;

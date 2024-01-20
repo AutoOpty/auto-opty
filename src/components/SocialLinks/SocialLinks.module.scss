@@ -1,4 +1,4 @@
-@import '@/styles/_variables.scss';
+@import "@/styles/_variables.scss";
 
 .socialLinks {
   display: -webkit-box;
@@ -17,6 +17,13 @@
   position: relative;
   width: 24px;
   height: 24px;
+
+  & a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
 }
 .svg {
   -o-object-fit: cover;

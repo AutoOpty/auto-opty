@@ -8,15 +8,16 @@ import Link from "next/link";
 import { navigationData, currentLanguages } from "@/data";
 
 const LeftLinks = ({ className }) => {
-  
-  const{i18n}=useTranslation();
-  
-  const { isMobile, setIsMobile } = useContext(SiteContext);
+  const { i18n } = useTranslation();
+
+  const { isXs, isMobile } = useContext(SiteContext);
 
   const leftLinks = navigationData.slice(0, 3).map((item) => {
     return (
       <li key={item.id}>
-        <Link href={item.path}>{i18n.language=== currentLanguages.EN ? item.titleEN : item.title}</Link>
+        <Link href={item.path}>
+          {i18n.language === currentLanguages.EN ? item.titleEN : item.title}
+        </Link>
       </li>
     );
   });
@@ -31,22 +32,3 @@ const LeftLinks = ({ className }) => {
 };
 
 export default LeftLinks;
-
-// const LeftLinks = () => {
-//   <ul className={styles.navContainer + " " + `${className}`}>
-//     {navigationData.map((item) => {
-//       return (
-//         <li key={item.id} onClick={onClick}>
-//           <Link href={item.path}>
-//             {/* {i18n.language === currentLanguages.EN
-//                     ? item.titleEN
-//                     : item.title} */}
-//             {item.title}
-//           </Link>
-//         </li>
-//       );
-//     })}
-//   </ul>;
-// };
-
-// export default LeftLinks;

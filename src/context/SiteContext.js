@@ -1,11 +1,15 @@
 "use client";
-import React, { useState, createContext } from "react";
+import { useState, createContext } from "react";
 
 export const SiteContext = createContext();
 
 export const SiteProvider = ({ children }) => {
   const [burgerMenu, setBurgerMenu] = useState(false);
-  const [isMobile, setIsMobile] = useState(true);
+
+  const [isMobile, setIsMobile] = useState(false);
+  // console.log("isMobile", isMobile);
+  const [isXs, setIsXs] = useState(false);
+  // console.log("isXs", isXs);
 
   const [language, setLanguage] = useState("en");
 
@@ -13,17 +17,17 @@ export const SiteProvider = ({ children }) => {
 
   //   const [filterShown, setFilterShown] = useState(false);
 
-  //   const [isModalOpen, setModalOpen] = useState(false);
+  const [isModalOpen, setModalOpen] = useState(false);
 
   //   const [scrolledWindow, setScrolledWindow] = useState(0);
 
-  //   const openModal = () => {
-  //     setModalOpen(true);
-  //   };
+  const openModal = () => {
+    setModalOpen(true);
+  };
 
-  //   const closeModal = () => {
-  //     setModalOpen(false);
-  //   };
+  const closeModal = () => {
+    setModalOpen(false);
+  };
 
   return (
     <SiteContext.Provider
@@ -32,15 +36,17 @@ export const SiteProvider = ({ children }) => {
         setBurgerMenu,
         isMobile,
         setIsMobile,
+        isXs,
+        setIsXs,
         language,
         setLanguage,
         scrollY,
         setScrollY,
         // filterShown,
         // setFilterShown,
-        // isModalOpen,
-        // openModal,
-        // closeModal,
+        isModalOpen,
+        openModal,
+        closeModal,
         // scrolledWindow,
         // setScrolledWindow,
       }}

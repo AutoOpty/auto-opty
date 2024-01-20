@@ -1,23 +1,38 @@
 @import '@/styles/_variables.scss';
 
 .container {
-  // display: -webkit-box;
-  // display: -ms-flexbox;
-  // display: flex;
-  // -webkit-box-align: center;
-  // -ms-flex-align: center;
-  // align-items: center;
-  // padding: 100px 20px 32px 20px;
-
+  padding: 104px 0px 0px 0px;
   @media screen and (min-width: $tablet) {
-    // padding: 118px 36px 0px 36px;
+    padding: 176px 24px 0px 24px;
   }
-
-  @media screen and (min-width: 1366px) {
-    padding: 40px 86px 0px 86px;
+  @media screen and (min-width: 1280px) {
+    padding: 101px 32px 0px 32px;
   }
   @media screen and (min-width: 1440px) {
-    max-width: 1920px;
+    padding: 101px 24px 0px 24px;
+    // padding: 125px 24px 0px 24px;
+    max-width: 1440px;
+  }
+}
+
+.toBackContainer {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-left: 24px;
+  margin-bottom: 12px;
+
+  @media screen and (min-width: $tablet) {
+    padding-left: 44px;
+  }
+  @media screen and (min-width: $desktop) {
+    padding-left: 0px;
+
+    margin-bottom: 16px;
   }
 }
 
@@ -61,7 +76,7 @@
 .containerProducts {
   display: -ms-grid;
   display: grid;
-  grid-template-columns: repeat(1, 328px);
+  grid-template-columns: repeat(1, 272px);
   -webkit-box-pack: space-evenly;
   -ms-flex-pack: space-evenly;
   justify-content: space-evenly;
@@ -71,10 +86,10 @@
   row-gap: 40px;
   padding: 40px 0;
   @media screen and (min-width: $tablet) {
-    grid-template-columns: repeat(2, 324px);
+    grid-template-columns: repeat(2, 352px);
   }
   @media screen and (min-width: $desktop) {
-    grid-template-columns: repeat(4, 300px);
+    grid-template-columns: repeat(4, 296px);
   }
 }
 

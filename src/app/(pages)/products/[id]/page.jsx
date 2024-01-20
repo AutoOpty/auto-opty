@@ -1,10 +1,12 @@
-import ProductId from "@/screens/products/ProductId";
-import React from "react";
+// import { getMetaById } from '@/fetch/serverFetch';
+import ProductId from '@/screens/products/ProductId';
+import React from 'react';
 
-const ProductIdPage = () => {
+const ProductIdPage = async ({ params }) => {
+  // const product = await getMetaById(params.id);
   return (
     <>
-      <ProductId />
+      <ProductId params={params} />
     </>
   );
 };

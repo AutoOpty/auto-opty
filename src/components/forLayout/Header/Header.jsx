@@ -1,7 +1,7 @@
 "use client";
 import BurgerMenuBtn from "@/components/forLayout/Header/BurgerMenuBtn/BurgerMenuBtn";
 import LogoutBtn from "@/components/LogoutBtn/LogoutBtn";
-import React, {useState, useCallback, useContext, useEffect } from "react";
+import React, { useState, useCallback, useContext, useEffect } from "react";
 import styles from "./header.module.scss";
 import { useSession } from "next-auth/react";
 import TranslatorBtnBlock from "./TranslatorBtnBlock/TranslatorBtnBlock";
@@ -14,11 +14,13 @@ import SocialLinks from "@/components/SocialLinks/SocialLinks";
 
 const Header = () => {
   const session = useSession();
-  const [isLoad,setIsLoad]=useState(true);
+  const [isLoad, setIsLoad] = useState(true);
 
-  useEffect(()=>{setIsLoad(false)},[])
+  useEffect(() => {
+    setIsLoad(false);
+  }, []);
 
-  const { burgerMenu, setBurgerMenu, isMobile, setIsMobile } =
+  const { burgerMenu, setBurgerMenu, isMobile, setIsMobile, isXs, setIsXs } =
     useContext(SiteContext);
 
   const closeBurgerMenu = () => {
@@ -27,30 +29,44 @@ const Header = () => {
     }, 250);
   };
 
-  const handleResize = useCallback(() => {
-    if (window.innerWidth <= 1279) {
+  // console.log(window.innerWidth);
+
+  const handleResizeXs = useCallback(() => {
+    if (window.innerWidth < 768) {
+      setIsXs(true);
+    } else {
+      setIsXs((prev) => prev !== prev);
+    }
+  }, [setIsXs]);
+
+  const handleResizeMobile = useCallback(() => {
+    if (window.innerWidth < 1280) {
       setIsMobile(true);
     } else {
-      setIsMobile(false);
+      setIsMobile((prev) => prev !== prev);
     }
   }, [setIsMobile]);
-  useEffect(() => {
-    window.addEventListener("resize", handleResize);
 
-    handleResize();
+  useEffect(() => {
+    window.addEventListener("resize", handleResizeXs);
+    window.addEventListener("resize", handleResizeMobile);
+
+    handleResizeXs();
+    handleResizeMobile();
 
     return () => {
-      window.addEventListener("resize", handleResize);
+      window.addEventListener("resize", handleResizeXs);
+      window.addEventListener("resize", handleResizeMobile);
     };
-  }, [handleResize]);
+  }, [handleResizeXs, handleResizeMobile]);
 
   return (
     <header className={styles.header}>
       <div className={`container ${styles.container}`}>
-        {isMobile && <BurgerMenuBtn />}
-        {!isLoad && <LeftLinks />}
+        <BurgerMenuBtn />
+        {!isLoad && <LeftLinks className={styles.headerLink} />}
         <Logo className={styles.logo} />
-        {!isLoad && <RightLinks />}
+        {!isLoad && <RightLinks className={styles.headerLink} />}
         <div className={styles.btnsBlock}>
           <div className={styles.desktopBtnsWrap}>
             {!isMobile && <SocialLinks className={styles.socLinks} />}
@@ -62,7 +78,7 @@ const Header = () => {
           {/* <LogoutBtn /> */}
         </div>
       </div>
-      {isMobile && (
+      {(isXs || isMobile) && (
         <nav
           className={
             burgerMenu
@@ -70,7 +86,9 @@ const Header = () => {
               : styles.mobileNavigation
           }
         >
-          {!isLoad && <Navigation className={styles.navLinks} onClick={closeBurgerMenu}/>}
+          {!isLoad && (
+            <Navigation className={styles.navLinks} onClick={closeBurgerMenu} />
+          )}
           <SocialLinks className={styles.socLinks} />
         </nav>
       )}

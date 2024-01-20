@@ -9,17 +9,17 @@ import { navigationData } from "@/data";
 import { useSession } from "next-auth/react";
 
 const RightLinks = ({ className }) => {
-  const { isMobile } = useContext(SiteContext);
+  const { isXs, isMobile } = useContext(SiteContext);
   const session = useSession();
 
-  const {t}=useTranslation();
+  const { t } = useTranslation();
 
   return (
     <>
       {!isMobile && (
-        <ul className={styles.rightLinks}>
+        <ul className={`${styles.rightLinks} ${className}`}>
           <li>
-            <Link href={"/contacts"}>{t('Navigation.Contacts')}</Link>
+            <Link href={"/contacts"}>{t("Navigation.Contacts")}</Link>
           </li>
 
           {session.status === "authenticated" && (
@@ -34,21 +34,3 @@ const RightLinks = ({ className }) => {
 };
 
 export default RightLinks;
-
-//   const rightLinks = navigationData.slice(3, 6).map((item) => {
-//     return (
-//       <li id={item.id}>
-//         <Link href={item.path}>{item.title}</Link>
-//       </li>
-//     );
-//   });
-
-//   return (
-//     <>
-//       {!isMobile && (
-//         <ul className={styles.leftlinks + " " + `${className}`}>
-//           {rightLinks}
-//         </ul>
-//       )}
-//     </>
-//   );

@@ -1,4 +1,4 @@
-import "./globals.css";
+import "./globals.scss";
 // import { Inter } from 'next/font/google';
 import { Hahmlet } from "next/font/google";
 import Header from "@/components/forLayout/Header/Header";
@@ -7,6 +7,7 @@ import AuthProvider from "@/helpers/AuthProvider/AuthProvider";
 import { SiteProvider } from "@/context/SiteContext";
 import TranslatorProvider from "@/translator/i18Provider";
 import ToastProvider from "@/context/ToastProvider";
+import ModalR from "@/components/Modal/Modal";
 
 const hahmlet = Hahmlet({ subsets: ["latin"] });
 // const inter = Inter({ subsets: ['latin'] });
@@ -25,8 +26,9 @@ export default function RootLayout({ children }) {
           <TranslatorProvider>
             <AuthProvider>
               <Header />
-              <main className="container">{children}</main>
+              <main>{children}</main>
               <Footer />
+              <ModalR />
             </AuthProvider>
             </TranslatorProvider>
             </ToastProvider>
