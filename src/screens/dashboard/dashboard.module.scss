@@ -1,8 +1,14 @@
 @import "../../styles/variables";
 
 .container {
-  padding: 16px;
+  display: flex;
+  justify-content: center;
+  padding: 152px 16px 16px;
   width: 100%;
+
+  @media screen and (min-width: $desktop) {
+    padding-top: 101px;
+  }
 }
 
 .displaySizeMessage {
@@ -18,19 +24,23 @@
 }
 
 .contentWrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex: 1;
+  // display: -webkit-box;
+  // display: -ms-flexbox;
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
+  // flex: 1;
+  display: none;
 
   @media screen and (min-width: $tablet) {
-    align-items: normal;
-    justify-content: normal;
-    gap: 50px;
+    display: flex;
     width: 100%;
-    flex: none;
+    // flex: 1;
+    // align-items: normal;
+    // justify-content: normal;
+    gap: 50px;
+    // width: 100%;
+    // flex: none;
   }
 
   @media screen and (min-width: $desktop) {
@@ -76,7 +86,7 @@
 }
 
 .product:not(:last-child) {
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
 
 .imgsWrapper {
@@ -135,13 +145,13 @@
   height: 20px;
 }
 
+.editIcon:hover {
+  fill: yellow;
+}
+
 .deleteIcon {
   width: 20px;
   height: 20px;
-}
-
-.editIcon:hover {
-  fill: yellow;
 }
 
 .deleteIcon:hover {

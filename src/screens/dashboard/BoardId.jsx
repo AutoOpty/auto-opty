@@ -46,66 +46,68 @@ const BoardId = ({ params }) => {
         {isLoading ? (
           <p>Loading...</p>
         ) : (
-          <div key={data._id} className={styles.product}>
-            <h2>Артикул: {data.article}</h2>
-            <p className={styles.textContent}>Назва: {data.title}</p>
-            <p className={styles.textContent}>Бренд: {data.brand}</p>
-            <p className={styles.textContent}>Фото:</p>
+          <div className={styles.contentWrapper}>
+            <div key={data._id} className={styles.product}>
+              <h2>Артикул: {data.article}</h2>
+              <p className={styles.textContent}>Назва: {data.title}</p>
+              <p className={styles.textContent}>Бренд: {data.brand}</p>
+              <p className={styles.textContent}>Фото:</p>
 
-            <ul className={styles.imgsWrapper}>
-              {data.photos.map((item, index) => (
-                <li className={styles.imgsItem} key={index}>
-                  <div className={styles.imgCont}>
-                    <CldImage
-                      width="200"
-                      height="100"
-                      crop="fill"
-                      src={item}
-                      alt="Automotive optics"
-                    />
-                  </div>
-                  <svg
-                    className={styles.deleteIcon}
-                    onClick={async () => {
-                      handleDeleteImgFromMongoDB(data, data._id, item, mutate);
+              <ul className={styles.imgsWrapper}>
+                {data.photos.map((item, index) => (
+                  <li className={styles.imgsItem} key={index}>
+                    <div className={styles.imgCont}>
+                      <CldImage
+                        width="200"
+                        height="100"
+                        crop="fill"
+                        src={item}
+                        alt="Automotive optics"
+                      />
+                    </div>
+                    <svg
+                      className={styles.deleteIcon}
+                      onClick={async () => {
+                        handleDeleteImgFromMongoDB(
+                          data,
+                          data._id,
+                          item,
+                          mutate
+                        );
 
-                      handleDeleteImgFromCloudinary(item);
-                    }}
-                  >
-                    <use href="/sprite.svg#icon-delete" />
-                  </svg>
-                </li>
-              ))}
-            </ul>
-            <p className={styles.textContent}>Опис: {data.description}</p>
-            <p className={styles.textContent}>Сторона: {data.side}</p>
-            <p className={styles.textContent}>Ціна: {data.price}</p>
-            <p className={styles.textContent}>Марка авто: {data.carBrand}</p>
-            <p className={styles.textContent}>Моделі авто:</p>
-            <ul className={styles.models}>
-              {data.carModels.map((item, index) => (
-                <li key={index}>- {item}</li>
-              ))}
-            </ul>
-            <p className={styles.textContent}>Кузови авто:</p>
-            <ul className={styles.bodies}>
-              {data.carBodies.map((item, index) => (
-                <li key={index}>- {item}</li>
-              ))}
-            </ul>
-            <p className={styles.textContent}>
-              Початок використання: {data.installedFrom}
-            </p>
-            <p className={styles.textContent}>
-              Кінець використання: {data.installedUntil}
-            </p>
+                        handleDeleteImgFromCloudinary(item);
+                      }}
+                    >
+                      <use href="/sprite.svg#icon-delete" />
+                    </svg>
+                  </li>
+                ))}
+              </ul>
+              <p className={styles.textContent}>Опис: {data.description}</p>
+              <p className={styles.textContent}>Сторона: {data.side}</p>
+              <p className={styles.textContent}>Ціна: {data.price}</p>
+              <p className={styles.textContent}>Марка авто: {data.carBrand}</p>
+              <p className={styles.textContent}>Моделі авто:</p>
+              <ul className={styles.models}>
+                {data.carModels.map((item, index) => (
+                  <li key={index}>- {item}</li>
+                ))}
+              </ul>
+              <p className={styles.textContent}>Кузови авто:</p>
+              <ul className={styles.bodies}>
+                {data.carBodies.map((item, index) => (
+                  <li key={index}>- {item}</li>
+                ))}
+              </ul>
+              <p className={styles.textContent}>
+                Початок використання: {data.installedFrom}
+              </p>
+              <p className={styles.textContent}>
+                Кінець використання: {data.installedUntil}
+              </p>
+            </div>
+            <DashboardUpdateForm id={id} data={data} mutate={mutate} />
           </div>
-        )}
-
-        {isLoading ? (
-          <p>Loading</p>
-        ) : (
-          <DashboardUpdateForm id={id} data={data} mutate={mutate} />
         )}
       </div>
     );
