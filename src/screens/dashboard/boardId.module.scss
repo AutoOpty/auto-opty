@@ -6,21 +6,22 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 103px 10px 10px;
+  // padding: 103px 10px 10px;
+  padding: 16px;
   flex: 1;
 
   @media screen and (min-width: $tablet) {
     align-items: normal;
     justify-content: normal;
     gap: 50px;
-    padding: 99px 20px 20px;
+    // padding: 99px 20px 20px;
     width: 100%;
     flex: none;
   }
 
   @media screen and (min-width: $desktop) {
     gap: 100px;
-    padding: 149px 40px 40px;
+    // padding: 149px 40px 40px;
   }
 }
 

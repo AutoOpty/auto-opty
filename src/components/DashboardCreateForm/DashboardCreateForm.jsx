@@ -42,7 +42,7 @@ const DashboardCreateForm = () => {
       mutate();
       // обнуляє форму
       actions.resetForm();
-      toast.success(`Нову картку: ${values.article} створено.`);
+      toast.success(`Нову картку з артикулем ${values.article} створено.`);
     } catch (err) {
       console.log(err);
       toast.error("Помилка! Картка не створена.");
