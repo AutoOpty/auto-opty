@@ -24,11 +24,11 @@ const BurgerMenuBtn = () => {
       </svg> */}
           {burgerMenu ? (
             <svg className={styles.iconClose}>
-              <use href="/symbol-defs.svg#icon-close" />
+              <use href="/sprite.svg#icon-close" />
             </svg>
           ) : (
             <svg>
-              <use href="symbol-defs.svg#icon-burgerMenu"></use>
+              <use href="sprite.svg#icon-burgerMenu"></use>
             </svg>
           )}
         </button>
