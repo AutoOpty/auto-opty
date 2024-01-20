@@ -14,11 +14,18 @@
   display: inline-block;
   /* width: calc(100% - 24px);
   height: calc(100% - 24px); */
-  width: 100%;
-  height: 100%;
+  width: 90%;
+  height: 90%;
   position: relative;
   overflow: hidden;
-  /* box-shadow: 0 0 12px rgba(0, 0, 0, 0.1); */
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+  /* box-shadow: inset 0px 0px 24px rgba(0, 0, 0, 0.06); */
+  /* border: 1px solid rgba(0, 0, 0, 0.1); */
+}
+
+.HomeSliderSwiper .swiper-slide a:hover,
+.HomeSliderSwiper .swiper-slide a:focus {
+  scale: 0.99;
   box-shadow: inset 0px 0px 24px rgba(0, 0, 0, 0.06);
 }
 
@@ -27,61 +34,15 @@
 
   object-fit: contain;
   object-position: center;
+  z-index: 0;
 }
-/* .HomeSliderSwiper .link[data-title]:hover:after {
-  content: attr(data-title);
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  color: white;
-  background-color: rgba(0, 0, 0, 0.4);
-  margin-top: 12px;
-  text-align: center;
-  font-size: 12px;
-  text-shadow: 0 0 8px black;
-  padding: 4px;
+
+/* .HomeSliderSwiper .swiper-slide a:hover > img,
+.HomeSliderSwiper .swiper-slide a:focus > img {
+  box-shadow: inset 0px 0px 24px rgba(0, 0, 0, 0.06);
 } */
 
-/* .HomeSliderSwiper .div {
-  width: 196px;
-  height: 218px;
-  position: relative;
-} */
-
-/* .HomeSliderSwiper .div img {
-  -o-object-fit: cover;
-  object-fit: cover;
-  -o-object-position: center;
-  object-position: center;
-} */
-
-/* .HomeSliderSwiper .slideDescr {
-  position: absolute;
-  bottom: 0;
-
-  width: 110px;
-  height: 16px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  background-color: #2d2d2d;
-  color: white;
-
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-} */
-
-/* .HomeSliderSwiper .swiper-button-prev,
+.HomeSliderSwiper .swiper-button-prev,
 .HomeSliderSwiper .swiper-button-next {
   background-repeat: no-repeat;
   background-size: contain;
@@ -89,81 +50,52 @@
   width: 52px;
   height: 12px;
   color: transparent;
-  bottom: 8px;
   top: auto;
-} */
+  bottom: 0px;
 
-/* .HomeSliderSwiper .swiper-button-prev::after,
-.HomeSliderSwiper .swiper-button-next::after {
-  width: 100%;
-} */
-
-/* .HomeSliderSwiper .swiper-button-prev {
-  background-image: url("../../../public/png/ArrowLeft.webp");
-  left: 10%;
-} */
-
-/* .HomeSliderSwiper .swiper-button-next {
-  background-image: url("../../../public/png/ArrowRight.webp");
-  right: 10%;
-} */
-
-/* .HomeSliderSwiper .swiper-pagination-bullet {
-  background-color: #7d7d7d;
-  width: 12px;
-  height: 12px;
-} */
-
-/* .HomeSliderSwiper .swiper-pagination-bullet-active-prev,
-.HomeSliderSwiper .swiper-pagination-bullet-active-next {
-  opacity: 0.6;
-} */
-
-/* @media screen and (min-width: 768px) {
-  .HomeSliderSwiper .link[data-title]:hover:after {
-    font-size: 16px;
-  }
-
-  .HomeSliderSwiper .swiper-button-prev,
-  .HomeSliderSwiper .swiper-button-next {
+  @media screen and (min-width: 768px) {
     height: 16px;
     width: 124px;
   }
-  .HomeSliderSwiper .swiper-button-prev {
-    left: 20%;
-  }
-  .HomeSliderSwiper .swiper-button-next {
-    right: 20%;
-  }
-} */
+}
 
-/* @media screen and (min-width: 1366px) {
-  .HomeSliderSwiper .swiper-slide {
-    margin-bottom: 38px;
-  }
+.HomeSliderSwiper .swiper-button-prev::after,
+.HomeSliderSwiper .swiper-button-next::after {
+  width: 100%;
+}
 
-  .HomeSliderSwiper .div {
-    width: 300px;
-    height: 333px;
-  }
-
-  .HomeSliderSwiper .slideDescr {
-    width: 169px;
-    height: 24px;
-    -ms-flex-negative: 0;
-    flex-shrink: 0;
-    font-size: 12px;
-  }
-
-  .HomeSliderSwiper .swiper-button-prev {
+.HomeSliderSwiper .swiper-button-prev {
+  background-image: url("../../../public/png/ArrowLeft.webp");
+  left: 10%;
+  @media screen and (min-width: 1280px) {
     left: 30%;
   }
-  .HomeSliderSwiper .swiper-button-next {
+}
+
+.HomeSliderSwiper .swiper-button-next {
+  background-image: url("../../../public/png/ArrowRight.webp");
+  right: 10%;
+
+  @media screen and (min-width: 1280px) {
     right: 30%;
   }
+}
 
-  .HomeSliderSwiper .swiper-pagination-bullet {
+.HomeSliderSwiper .swiper-pagination {
+  bottom: 0px;
+}
+
+.HomeSliderSwiper .swiper-pagination-bullet {
+  background-color: #7d7d7d;
+  width: 12px;
+  height: 12px;
+  @media screen and (min-width: 768px) {
     width: 16px;
     height: 16px;
   }
-} */
+}
+
+.HomeSliderSwiper .swiper-pagination-bullet-active-prev,
+.HomeSliderSwiper .swiper-pagination-bullet-active-next {
+  opacity: 0.6;
+}
