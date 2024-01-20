@@ -23,7 +23,7 @@ const Dashboard = () => {
     } catch (error) {
       console.log(error);
     }
-    toast.success(`Деталь ${article} видалено`, { theme: "dark" });
+    toast.success(`Картка з артикулем ${article} видалена`, { theme: "dark" });
   };
 
   if (session.status === "loading") {
@@ -51,84 +51,86 @@ const Dashboard = () => {
           Для користування цим функціоналом розмір Вашого екрану повинен бути не
           менше 768 пікселів.
         </p>
-        <div className={styles.products}>
-          {isLoading ? (
-            <p>Loading...</p>
-          ) : (
-            data?.map((product) => (
-              <div key={product._id} className={styles.product}>
-                <h2>Артикул : {product.article}</h2>
-                <p className={styles.textContent}>Назва: {product.title}</p>
-                <p className={styles.textContent}>Бренд: {product.brand}</p>
-                <p className={styles.textContent}>Фото:</p>
-                <ul className={styles.imgsWrapper}>
-                  {product.photos.map((item, index) => (
-                    <li className={styles.imgCont} key={index}>
-                      <CldImage
-                        width="200"
-                        height="100"
-                        crop="fill"
-                        src={item}
-                        alt="Automotive optic"
-                      />
-                    </li>
-                  ))}
-                </ul>
-                <p className={styles.textContent}>
-                  Опис: {product.description}
-                </p>
-                <p className={styles.textContent}>Сторона: {product.side}</p>
-                <p className={styles.textContent}>Ціна: {product.price}</p>
-                <p className={styles.textContent}>
-                  Марка авто: {product.carBrand}
-                </p>
-                <ul className={styles.models}>
-                  Моделі авто:{" "}
-                  {product.carModels.map((item, index) => (
-                    <li key={index}>{item}</li>
-                  ))}
-                </ul>
-                <ul className={styles.bodies}>
-                  Кузови авто:{" "}
-                  {product.carBodies.map((item, index) => (
-                    <li key={index}>{item}</li>
-                  ))}
-                </ul>
-                <p className={styles.textContent}>
-                  Початок використання: {product.installedFrom}
-                </p>
-                <p className={styles.textContent}>
-                  Кінець використання: {product.installedUntil}
-                </p>
+        {isLoading ? (
+          <p>Loading...</p>
+        ) : (
+          <div className={styles.contentWrapper}>
+            <div className={styles.products}>
+              {data?.map((product) => (
+                <div key={product._id} className={styles.product}>
+                  <h2>{product.article}</h2>
+                  <p className={styles.textContent}>Назва: {product.title}</p>
+                  <p className={styles.textContent}>Бренд: {product.brand}</p>
+                  <p className={styles.textContent}>Фото:</p>
+                  <ul className={styles.imgsWrapper}>
+                    {product.photos.map((item, index) => (
+                      <li className={styles.imgCont} key={index}>
+                        <CldImage
+                          width="200"
+                          height="100"
+                          crop="fill"
+                          src={item}
+                          alt="Automotive optic"
+                        />
+                      </li>
+                    ))}
+                  </ul>
+                  <p className={styles.textContent}>
+                    Опис: {product.description}
+                  </p>
+                  <p className={styles.textContent}>Сторона: {product.side}</p>
+                  <p className={styles.textContent}>Ціна: {product.price}</p>
+                  <p className={styles.textContent}>
+                    Марка авто: {product.carBrand}
+                  </p>
+                  <p className={styles.textContent}>Моделі авто:</p>
+                  <ul className={styles.models}>
+                    {product.carModels.map((item, index) => (
+                      <li key={index}>- {item}</li>
+                    ))}
+                  </ul>
+                  <p className={styles.textContent}>Кузови авто:</p>
+                  <ul className={styles.bodies}>
+                    {product.carBodies.map((item, index) => (
+                      <li key={index}>- {item}</li>
+                    ))}
+                  </ul>
+                  <p className={styles.textContent}>
+                    Початок використання: {product.installedFrom}
+                  </p>
+                  <p className={styles.textContent}>
+                    Кінець використання: {product.installedUntil}
+                  </p>
 
-                <div className={styles.btnsWrapper}>
-                  <Link
-                    className={styles.editLink}
-                    href={`/dashboard/${product._id}`}
-                  >
-                    <svg className={styles.editIcon}>
-                      <use href="/sprite.svg#icon-edit" />
+                  <div className={styles.btnsWrapper}>
+                    <Link
+                      className={styles.editLink}
+                      href={`/dashboard/${product._id}`}
+                    >
+                      <svg className={styles.editIcon}>
+                        <use href="/sprite.svg#icon-edit" />
+                      </svg>
+                    </Link>
+
+                    <svg
+                      className={styles.deleteIcon}
+                      onClick={() => {
+                        product.photos.map((item) =>
+                          handleDeleteImgFromCloudinary(item)
+                        );
+
+                        handleDeleteProductFromDB(product._id, product.article);
+                      }}
+                    >
+                      <use href="/sprite.svg#icon-delete" />
                     </svg>
-                  </Link>
-
-                  <svg
-                    className={styles.deleteIcon}
-                    onClick={() => {
-                      product.photos.map((item) =>
-                        handleDeleteImgFromCloudinary(item)
-                      );
-
-                      handleDeleteProductFromDB(product._id, product.article);
-                    }}
-                  >
-                    <use href="/sprite.svg#icon-delete" />
-                  </svg>
+                  </div>
                 </div>
-              </div>
-            ))
-          )}
-        </div>
-        <DashboardCreateForm />
+              ))}
+            </div>
+            <DashboardCreateForm />
+          </div>
+        )}
       </div>
     );
   }

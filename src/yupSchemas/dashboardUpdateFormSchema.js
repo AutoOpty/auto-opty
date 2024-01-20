@@ -1,48 +1,32 @@
 import * as Yup from "yup";
 
-export const dashboardCreateFormSchema = Yup.object({
-    article: Yup.string()
-        .required("Артикул це обовʼязкове поле")
-        .test({
-            name: "article",
-            test(value, ctx) {
-                // console.log('this.options:', this.options)
-                const listOfArticles = this.options.context;
-                if (listOfArticles.includes(String(value)) && value) {
-                    return ctx.createError({
-                        message: "Такий артикул вже існує !",
-                    });
-                }
-
-                return true;
-            },
-        }),
-    title: Yup.string()
+export const dashboardUpdateFormSchema = Yup.object({
+    newTitle: Yup.string()
         .required("Назва це обовʼязкове поле"),
-    brand: Yup.string()
+    newBrand: Yup.string()
         .required("Бренд це обовʼязкове поле"),
-    photos: Yup.array()
+    newPhotos: Yup.array()
         .min(1, "Мінімум одна фотографія")
         .required("Фото це обовʼязкове поле"),
-    description: Yup.string()
+    newDescription: Yup.string()
         .required("Опис це обовʼязкове поле"),
-    side: Yup.string()
+    newSide: Yup.string()
         .required("Сторона це обовʼязкове поле"),
-    price: Yup.number()
+    newPrice: Yup.number()
         .moreThan(-1, "Тільки додатні числа")
         .typeError("Тільки числа")
         .required("Ціна це обовʼязкове поле"),
-    carBrand: Yup.string()
+    newCarBrand: Yup.string()
         .required("Марка авто це обовʼязкове поле"),
-    carModels: Yup.string()
+    newCarModels: Yup.string()
         .required("Моделі авто це обовʼязкове поле"),
-    carBodies: Yup.array()
+    newCarBodies: Yup.array()
         .required("Кузови це обовʼязкове поле"),
-    installedFrom: Yup.number()
+    newInstalledFrom: Yup.number()
         .moreThan(-1, "Тільки додатні числа")
         .typeError("Тільки числа")
         .required("Початок використання це обовʼязкове поле"),
-    installedUntil: Yup.number()
+    newInstalledUntil: Yup.number()
         .moreThan(-1, "Тільки додатні числа")
         .typeError("Тільки числа")
         .required("Кінець використання це обовʼязкове поле"),

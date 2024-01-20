@@ -6,6 +6,7 @@ import Footer from "@/components/forLayout/Footer/Footer";
 import AuthProvider from "@/helpers/AuthProvider/AuthProvider";
 import { SiteProvider } from "@/context/SiteContext";
 import TranslatorProvider from "@/translator/i18Provider";
+import ToastProvider from "@/context/ToastProvider";
 import ModalR from "@/components/Modal/Modal";
 
 const hahmlet = Hahmlet({ subsets: ["latin"] });
@@ -21,6 +22,7 @@ export default function RootLayout({ children }) {
     <html lang="uk">
       <body className={hahmlet.className}>
         <SiteProvider>
+          <ToastProvider>
           <TranslatorProvider>
             <AuthProvider>
               <Header />
@@ -28,7 +30,8 @@ export default function RootLayout({ children }) {
               <Footer />
               <ModalR />
             </AuthProvider>
-          </TranslatorProvider>
+            </TranslatorProvider>
+            </ToastProvider>
         </SiteProvider>
       </body>
     </html>
