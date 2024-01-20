@@ -7,6 +7,7 @@ import { CldImage } from "next-cloudinary";
 import { handleDeleteImgFromMongoDB } from "@/helpers/handleDeleteImgFromMongoDB";
 import { handleDeleteImgFromCloudinary } from "@/helpers/handleDeleteImgFromCloudinary";
 import { GetDataById } from "@/fetch/clientFetch";
+import DashboardUpdateForm from "@/components/DashboardUpdateForm/DashboardUpdateForm";
 
 const BoardId = ({ params }) => {
   const { id } = params;
@@ -46,7 +47,7 @@ const BoardId = ({ params }) => {
           <p>Loading...</p>
         ) : (
           <div key={data._id} className={styles.product}>
-            <h2>Артикул : {data.article}</h2>
+            <h2>Артикул: {data.article}</h2>
             <p className={styles.textContent}>Назва: {data.title}</p>
             <p className={styles.textContent}>Бренд: {data.brand}</p>
             <p className={styles.textContent}>Фото:</p>
@@ -80,16 +81,16 @@ const BoardId = ({ params }) => {
             <p className={styles.textContent}>Сторона: {data.side}</p>
             <p className={styles.textContent}>Ціна: {data.price}</p>
             <p className={styles.textContent}>Марка авто: {data.carBrand}</p>
+            <p className={styles.textContent}>Моделі авто:</p>
             <ul className={styles.models}>
-              Моделі авто:{" "}
               {data.carModels.map((item, index) => (
-                <li key={index}>{item}</li>
+                <li key={index}>- {item}</li>
               ))}
             </ul>
+            <p className={styles.textContent}>Кузови авто:</p>
             <ul className={styles.bodies}>
-              Кузови авто:{" "}
               {data.carBodies.map((item, index) => (
-                <li key={index}>{item}</li>
+                <li key={index}>- {item}</li>
               ))}
             </ul>
             <p className={styles.textContent}>
@@ -101,11 +102,11 @@ const BoardId = ({ params }) => {
           </div>
         )}
 
-        {/* {isLoading ? (
+        {isLoading ? (
           <p>Loading</p>
         ) : (
-          <UpdatingFormik id={id} apart={data} mutate={mutate} />
-        )} */}
+          <DashboardUpdateForm id={id} data={data} mutate={mutate} />
+        )}
       </div>
     );
   }
