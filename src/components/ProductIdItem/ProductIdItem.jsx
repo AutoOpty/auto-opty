@@ -10,7 +10,8 @@ const ProductsIdItem = ({ dataId }) => {
             {item.title} :{' '}
             {item.title !== 'Installed From - Until'
               ? dataId[item.info]
-              : `${dataId.installedFrom} - ${dataId.installedUntil}`}
+              : `${dataId.installedFrom} - ${dataId.installedUntil}`}{' '}
+            {item.title === 'Price' && <span>$</span>}
           </p>
         </li>
       ))}

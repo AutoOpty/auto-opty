@@ -44,7 +44,7 @@ const ProductId = ({ params }) => {
             {/* <h4 className={seoStyles.titleHidden}>
               Detailed information about the amenities
             </h4> */}
-            {/* <hr style={{ width: '100%' }} /> */}
+
             <ProductsIdItem dataId={dataId} />
             <button type="button" className={styles.orderBtn}>
               Забронювати
