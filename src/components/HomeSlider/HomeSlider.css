@@ -12,8 +12,7 @@
 
 .HomeSliderSwiper .swiper-slide a {
   display: inline-block;
-  /* width: calc(100% - 24px);
-  height: calc(100% - 24px); */
+
   width: 90%;
   height: 90%;
   position: relative;
@@ -36,11 +35,6 @@
   object-position: center;
   z-index: 0;
 }
-
-/* .HomeSliderSwiper .swiper-slide a:hover > img,
-.HomeSliderSwiper .swiper-slide a:focus > img {
-  box-shadow: inset 0px 0px 24px rgba(0, 0, 0, 0.06);
-} */
 
 .HomeSliderSwiper .swiper-button-prev,
 .HomeSliderSwiper .swiper-button-next {
