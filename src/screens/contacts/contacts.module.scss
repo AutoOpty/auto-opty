@@ -7,24 +7,36 @@
   -webkit-box-align: start;
   -ms-flex-align: start;
   align-items: flex-start;
-  padding: 24px 0px 35px 0px;
-
+  padding: 104px 0px 35px 0px;
   @media screen and (min-width: $tablet) {
-    padding: 40px 24px 72px 24px;
+    padding: 176px 24px 72px 24px;
   }
-
-  @media screen and (min-width: $desktop) {
-    padding: 27px 24px 72px 24px;
+  @media screen and (min-width: 1280px) {
+    padding: 101px 32px 72px 32px;
   }
   @media screen and (min-width: 1440px) {
-    max-width: 1920px;
+    padding: 101px 24px 72px 24px;
+    max-width: 1440px;
   }
+  // padding: 24px 0px 35px 0px;
+
+  // @media screen and (min-width: $tablet) {
+  //   padding: 40px 24px 72px 24px;
+  // }
+
+  // @media screen and (min-width: $desktop) {
+  //   padding: 27px 24px 72px 24px;
+  // }
+  // @media screen and (min-width: 1440px) {
+  //   max-width: 1920px;
+  // }
 }
 
 .toBackContainer {
   padding-left: 20px;
   @media screen and (min-width: $tablet) {
     padding-left: 0px;
+    margin-bottom: 14px;
   }
 }
 
@@ -93,9 +105,9 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+  // -webkit-box-align: center;
+  // -ms-flex-align: center;
+  // align-items: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
@@ -104,6 +116,7 @@
   -webkit-box-align: start;
   -ms-flex-align: start;
   align-items: flex-start;
+
   @media screen and (min-width: 1024px) {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
