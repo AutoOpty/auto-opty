@@ -1,8 +1,9 @@
 @import '../../styles/variables';
 
 .description {
+  width: 272px;
   height: 336px;
-  color: #373737;
+  color: $acentColor;
   font-family: 'Crimson Text';
   font-size: 16px;
   font-style: normal;
@@ -10,7 +11,11 @@
   line-height: 31.2px;
 
   @media screen and (min-width: $tablet) {
+    width: 100%;
     height: 446px;
     font-size: 24px;
+  }
+  @media screen and (min-width: 1366px) {
+    padding: 0px 40px;
   }
 }

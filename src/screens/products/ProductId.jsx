@@ -10,6 +10,8 @@ import ProductSlider from '@/components/ProductSlider/ProductSlider';
 import IsLoading from '@/components/share/IsLoading/IsLoading';
 import ProductsIdItem from '@/components/ProductIdItem/ProductIdItem';
 import ProductDescription from '@/components/ProductDescription/ProductDescription';
+import Button from '@/components/Button/Button';
+import ItemSlider from '@/components/ItemSlider/ItemSlider';
 
 const ProductId = ({ params }) => {
   const [activeTab, setActiveTab] = useState('features');
@@ -31,10 +33,19 @@ const ProductId = ({ params }) => {
     }
   }, []);
 
+  useEffect(() => {
+    if (windowWidth >= 1280) {
+      setActiveTab('features');
+    }
+    return;
+  }, [windowWidth]);
+
   const { id } = params;
   const { data, error, isLoading } = GetDataById(id);
 
   const dataId = data && !isLoading ? data : error;
+
+  console.log(dataId);
 
   const handleTabClick = (tab) => {
     setActiveTab(tab);
@@ -51,9 +62,6 @@ const ProductId = ({ params }) => {
           </figure>
         )}
       </nav>
-      {/* <ModalR isOpen={isModalOpen} closeModal={closeModal}>
-        <OrderForm isOpen={isModalOpen} closeModal={closeModal} />
-      </ModalR> */}
       {/* <h1 className="visuallyHidden">ApartId Page</h1> */}
       {isLoading ? (
         <IsLoading />
@@ -62,6 +70,7 @@ const ProductId = ({ params }) => {
           <h3 className={seoStyles.titleHidden}>
             Detailed information about the apartments
           </h3>
+          {/* <ItemSlider dataId={dataId} /> */}
           <ProductSlider dataId={dataId} />
           <article className={styles.content}>
             {/* <h4 className={seoStyles.titleHidden}>
@@ -91,38 +100,17 @@ const ProductId = ({ params }) => {
                 </button>
               </figure>
             )}
-
             {activeTab === 'description' ? (
               <ProductDescription dataId={dataId} />
             ) : null}
             {activeTab === 'features' ? (
               <ProductsIdItem dataId={dataId} />
             ) : null}
-
-            <button type="button" className={styles.orderBtn}>
-              Забронювати
-            </button>
-            {/* <OrderBtn className={styles.orderBtn} openModal={openModal} /> */}
+            <Button className={styles.orderBtn} />
           </article>
         </article>
       )}
-
-      <article className={styles.textGrid}>
-        <h6 className={styles.textWelcome}>
-          {/* {!isLoading && t('ApartIdItem.TextWelcome')} */}
-        </h6>
-        {windowWidth >= 1280 ? <ProductDescription dataId={dataId} /> : null}
-        {/* <ul className={styles.textInfo}>
-          {!isLoading &&
-            textInfoAppartId.map((el) => {
-              return (
-                <li key={el.id}>
-                  {i18n.language === currentLanguages.EN ? el.textEN : el.text}
-                </li>
-              );
-            })}
-        </ul> */}
-      </article>
+      {windowWidth >= 1280 ? <ProductDescription dataId={dataId} /> : null}
     </section>
   );
 };
