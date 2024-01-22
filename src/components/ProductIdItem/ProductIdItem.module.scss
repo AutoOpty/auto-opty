@@ -1,6 +1,7 @@
 @import '../../styles/variables';
 
 .container {
+  height: 336px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -9,6 +10,10 @@
   -ms-flex-direction: column;
   flex-direction: column;
   row-gap: 16px;
+
+  @media screen and (min-width: $tablet) {
+    height: 446px;
+  }
 }
 .text {
   color: #373737;
