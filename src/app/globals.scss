@@ -1,5 +1,7 @@
-@import '../styles/_variables';
-* {
+@import "../styles/_variables";
+*,
+*::before,
+*::after {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   padding: 0;
@@ -10,10 +12,19 @@
   // outline: red 1px solid;
 }
 
-html,
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  width: 100vw;
+  width: 100%;
   min-height: 100vh;
+  // border: 5px solid red;
+}
+header,
+footer {
+  width: inherit;
+  max-width: inherit;
 }
 
 body,

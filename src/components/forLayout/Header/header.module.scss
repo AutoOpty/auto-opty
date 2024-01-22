@@ -2,8 +2,6 @@
 
 .header {
   z-index: 10;
-  width: 100%;
-  width: inherit;
   padding: 10px 0;
   height: 80px;
   background-color: aqua;
@@ -19,6 +17,7 @@
     margin: 0px 24px;
     align-items: center;
     justify-content: space-between;
+    position: relative;
   }
   @media screen and (min-width: $tablet) {
     height: 136px;
@@ -57,13 +56,25 @@
 }
 
 .logo {
-  margin-left: clamp(1px, 8vw, 172px);
+  // margin-left: clamp(1px, 8vw, 172px);
+
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
   & span {
     color: $lightFontColor;
     background-color: $darckFontColor;
     padding: 4px;
     margin-right: 4px;
   }
+}
+
+.rightContent {
+  display: flex;
+  gap: 20px;
+  align-items: center;
 }
 
 .btnsBlock {
@@ -76,6 +87,9 @@
     flex-direction: column;
     align-items: center;
     gap: 16px;
+    @media (min-width: $desktop) {
+      flex-direction: row;
+    }
   }
 }
 
