@@ -66,16 +66,18 @@ const Header = () => {
         <BurgerMenuBtn />
         {!isLoad && <LeftLinks className={styles.headerLink} />}
         <Logo className={styles.logo} />
-        {!isLoad && <RightLinks className={styles.headerLink} />}
-        <div className={styles.btnsBlock}>
-          <div className={styles.desktopBtnsWrap}>
-            {!isMobile && <SocialLinks className={styles.socLinks} />}
+        <div className={styles.rightContent}>
+          {!isLoad && <RightLinks className={styles.headerLink} />}
+          <div className={styles.btnsBlock}>
+            <div className={styles.desktopBtnsWrap}>
+              {!isXs && <SocialLinks className={styles.socLinks} />}
 
-            <TranslatorBtnBlock />
+              <TranslatorBtnBlock />
+            </div>
+            {/* {session.status === "authenticated" && !isLoading &&   {/* <LogoutBtn />} */}
+            {/* {session.status === "authenticated" && <LogoutBtn />} */}
+            <LogoutBtn />
           </div>
-          {/* {session.status === "authenticated" && !isLoading &&   {/* <LogoutBtn />} */}
-          {session.status === "authenticated" && <LogoutBtn />}
-          {/* <LogoutBtn /> */}
         </div>
       </div>
       {(isXs || isMobile) && (
