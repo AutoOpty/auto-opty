@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useContext } from "react";
+import {useTranslation} from "react-i18next";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -35,7 +36,7 @@ const handleSubmit = (values, actions, closeModal) => {
 
 const OrderForm = () => {
     const { isModalOpen, closeModal } = useContext(SiteContext);
-
+    const {t}=useTranslation();
     useEffect(() => {
         if (isModalOpen) {
             document.body.style.overflow = "hidden";
@@ -82,7 +83,7 @@ const OrderForm = () => {
                                             type='text'
                                             name='userName'
                                             id='userName'
-                                            placeholder='Ім’я *'
+                                            placeholder={t('Form.name')}
                                             autoComplete='off'
                                             maxLength='30'
                                             className={
@@ -106,7 +107,7 @@ const OrderForm = () => {
                                             type='text'
                                             name='phone'
                                             id='phone'
-                                            placeholder='Номер телефону *'
+                                            placeholder={t('Form.phone')}
                                             autoComplete='off'
                                             maxLength='14'
                                             className={
@@ -152,7 +153,7 @@ const OrderForm = () => {
                                                                 ? `${styles.input} ${styles.inputError}`
                                                                 : styles.input
                                                         }
-                                                        placeholderText='Дата відправки'
+                                                        placeholderText={t('Form.dateOfShipment')}
                                                         {...field}
                                                         selected={value}
                                                         onFocus={(e) =>
@@ -186,7 +187,7 @@ const OrderForm = () => {
                                             type='text'
                                             name='postOfficeNumber'
                                             id='postOfficeNumber'
-                                            placeholder='Відділення пошти'
+                                            placeholder={t('Form.postOffice')}
                                             autoComplete='off'
                                             maxLength='30'
                                             className={
