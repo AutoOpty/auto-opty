@@ -19,6 +19,7 @@ html {
 body {
   width: 100%;
   min-height: 100vh;
+  color: $darckFontColor;
   // border: 5px solid red;
 }
 header,
@@ -50,7 +51,7 @@ main {
 
 article,
 section {
-  // width: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -108,7 +109,6 @@ button {
   &:focus,
   &:hover {
     background: transparent;
-    // border-color: $darckFontColor;
     background-color: $darckFontColor;
     color: $lightFontColor;
     scale: 0.96;
@@ -125,5 +125,37 @@ button {
     width: 288px;
     height: 53px;
     font-size: 16px;
+  }
+}
+
+.linkHover,
+.linkActive {
+  position: relative;
+  & ::after {
+    content: " ";
+    position: absolute;
+    height: 1px;
+    background-color: $darckFontColor;
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+  }
+}
+
+.linkHover {
+  & ::after {
+    width: 0px;
+  }
+  & :hover,
+  & :focus {
+    &::after {
+      width: 100%;
+    }
+  }
+}
+
+.linkActive {
+  & ::after {
+    width: 100%;
   }
 }

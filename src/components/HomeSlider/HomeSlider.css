@@ -18,14 +18,12 @@
   position: relative;
   overflow: hidden;
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
-  /* box-shadow: inset 0px 0px 24px rgba(0, 0, 0, 0.06); */
-  /* border: 1px solid rgba(0, 0, 0, 0.1); */
 }
 
 .HomeSliderSwiper .swiper-slide a:hover,
 .HomeSliderSwiper .swiper-slide a:focus {
   scale: 0.99;
-  box-shadow: inset 0px 0px 24px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
 }
 
 .HomeSliderSwiper a img {

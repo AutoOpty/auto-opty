@@ -11,6 +11,10 @@ const detailSchema = new Schema({
         type: String,
         required: true,
     },
+     titleEn: {
+        type: String,
+        required: true,
+    },
     brand: {
         type: String,
         required: true,
@@ -19,6 +23,9 @@ const detailSchema = new Schema({
         type: Array,
     },
     description: {
+        type: String,
+    },
+    descriptionEn: {
         type: String,
     },
     side: {
