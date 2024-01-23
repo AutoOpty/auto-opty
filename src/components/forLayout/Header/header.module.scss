@@ -42,16 +42,35 @@
 }
 
 .headerLink {
-  color: var(--main-color);
+  // color: $darckFontColor;
   font-size: 12px;
   font-weight: 300;
   @media screen and (min-width: $tablet) {
     font-size: 16px;
     font-weight: 400;
   }
-  // @media screen and (min-width: 1024px) {
-  //   font-size: 20px;
-  //   font-weight: 500;
+  // & li {
+  //   position: relative;
+  //   & ::after {
+  //     content: " ";
+  //     position: absolute;
+  //     width: 0px;
+  //     height: 1px;
+  //     background-color: $darckFontColor;
+  //     position: absolute;
+  //     top: 24px;
+  //     z-index: 20;
+  //     left: 0;
+  //   }
+  //   & :hover,
+  //   & :focus {
+  //     & a {
+  //       color: aqua;
+  //     }
+  //     &::after {
+  //       width: 100%;
+  //     }
+  //   }
   // }
 }
 

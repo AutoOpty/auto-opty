@@ -5,12 +5,13 @@ import { SiteContext } from "@/context/SiteContext";
 import { useTranslation } from "react-i18next";
 import styles from "./Navigation.module.scss";
 import Link from "next/link";
-import { navigationData } from "@/data";
 import { useSession } from "next-auth/react";
+import { usePathname } from "next/navigation";
 
 const RightLinks = ({ className }) => {
-  const { isXs, isMobile } = useContext(SiteContext);
+  const { isMobile } = useContext(SiteContext);
   const session = useSession();
+  const pathname = usePathname();
 
   const { t } = useTranslation();
 
@@ -18,12 +19,14 @@ const RightLinks = ({ className }) => {
     <>
       {!isMobile && (
         <ul className={`${styles.rightLinks} ${className}`}>
-          <li>
+          <li className={pathname === "/contacts" ? "linkActive" : "linkHover"}>
             <Link href={"/contacts"}>{t("Navigation.Contacts")}</Link>
           </li>
 
           {session.status === "authenticated" && (
-            <li>
+            <li
+              className={pathname === "/dashboard" ? "linkActive" : "linkHover"}
+            >
               <Link href={"/dashboard"}>Адмінпанель</Link>
             </li>
           )}

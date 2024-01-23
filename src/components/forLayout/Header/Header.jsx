@@ -74,9 +74,9 @@ const Header = () => {
 
               <TranslatorBtnBlock />
             </div>
-            {/* {session.status === "authenticated" && !isLoading &&   {/* <LogoutBtn />} */}
-            {/* {session.status === "authenticated" && <LogoutBtn />} */}
-            <LogoutBtn />
+
+            {session.status === "authenticated" && <LogoutBtn />}
+            {/* <LogoutBtn /> */}
           </div>
         </div>
       </div>

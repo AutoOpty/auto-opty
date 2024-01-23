@@ -5,16 +5,22 @@ import styles from "./Navigation.module.scss";
 import Link from "next/link";
 import { navigationData, currentLanguages } from "@/data";
 import { useSession } from "next-auth/react";
+import { usePathname } from "next/navigation";
 
 const Navigation = ({ className, onClick, id }) => {
   const { i18n } = useTranslation();
-
   const session = useSession();
+  const pathname = usePathname();
+
   let navLink;
   if (session.status === "authenticated") {
     navLink = navigationData.map((item) => {
       return (
-        <li key={item.id} onClick={onClick}>
+        <li
+          key={item.id}
+          onClick={onClick}
+          className={pathname === item.path ? "linkActive" : "linkHover"}
+        >
           <Link href={item.path}>
             {i18n.language === currentLanguages.EN ? item.titleEN : item.title}
           </Link>
@@ -24,7 +30,11 @@ const Navigation = ({ className, onClick, id }) => {
   } else {
     navLink = navigationData.slice(0, 4).map((item) => {
       return (
-        <li key={item.id} onClick={onClick}>
+        <li
+          key={item.id}
+          onClick={onClick}
+          className={pathname === item.path ? "linkActive" : "linkHover"}
+        >
           <Link href={item.path}>
             {i18n.language === currentLanguages.EN ? item.titleEN : item.title}
           </Link>
