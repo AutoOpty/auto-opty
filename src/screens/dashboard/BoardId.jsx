@@ -50,6 +50,9 @@ const BoardId = ({ params }) => {
             <div key={data._id} className={styles.product}>
               <h2>Артикул: {data.article}</h2>
               <p className={styles.textContent}>Назва: {data.title}</p>
+              <p className={styles.textContent}>
+                Назва англійською: {data.titleEn}
+              </p>
               <p className={styles.textContent}>Бренд: {data.brand}</p>
               <p className={styles.textContent}>Фото:</p>
 
@@ -84,6 +87,9 @@ const BoardId = ({ params }) => {
                 ))}
               </ul>
               <p className={styles.textContent}>Опис: {data.description}</p>
+              <p className={styles.textContent}>
+                Опис англійською: {data.descriptionEn}
+              </p>
               <p className={styles.textContent}>Сторона: {data.side}</p>
               <p className={styles.textContent}>Ціна: {data.price}</p>
               <p className={styles.textContent}>Марка авто: {data.carBrand}</p>

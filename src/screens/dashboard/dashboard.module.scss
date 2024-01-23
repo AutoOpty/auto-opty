@@ -106,9 +106,9 @@
 
 .textContent {
   display: block;
-  width: 40vw;
-  overflow: hidden;
-  white-space: nowrap;
+  // width: 40vw;
+  // overflow: hidden;
+  // white-space: nowrap;
 }
 
 .models {
@@ -146,7 +146,7 @@
 }
 
 .editIcon:hover {
-  fill: yellow;
+  fill: #ffff59;
 }
 
 .deleteIcon {
@@ -156,5 +156,5 @@
 
 .deleteIcon:hover {
   cursor: pointer;
-  fill: red;
+  fill: #ff2828;
 }

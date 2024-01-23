@@ -9,10 +9,6 @@
   padding: 136px 16px 16px;
   flex: 1;
 
-  // @media screen and (min-width: $tablet) {
-  //   padding: 99px 20px 20px;
-  // }
-
   @media screen and (min-width: $desktop) {
     padding-top: 85px;
   }
@@ -47,7 +43,6 @@
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    gap: 20px;
   }
 }
 
@@ -61,30 +56,32 @@
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  gap: 20px;
+  gap: 10px;
 }
 
 .input {
-  padding: 20px;
+  padding: 10px;
   background-color: transparent;
   border: 2px solid #bbb;
-  border-radius: 5px;
+  // border-radius: 5px;
   font-size: 20px;
   font-weight: bold;
 }
 
 .registerBtn {
-  padding: 20px;
-  background-color: #86ebb8;
-  color: #eee;
-  border-radius: 5px;
+  padding: 10px;
+  background-color: #d3d3d3;
+  color: white;
+  // border-radius: 5px;
   border: none;
+  font-size: 20px;
   font-weight: bold;
+  cursor: not-allowed;
 }
 
 .active {
   cursor: pointer;
-  background-color: #53c28b;
+  background-color: #686868;
 }
 
 .error {
