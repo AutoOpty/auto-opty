@@ -68,7 +68,8 @@
     "Contacts": "Contacts",
     
     "Documents": "Documents",
-    "Rules": "Rules"
+    "Rules": "Rules",
+    "Dashboard":"Dashboard"
   },
   "Buttons": {
     "CalltBtn": "Contact Us",
@@ -87,10 +88,10 @@
   },
   "Form": {
     "SeoTitleH3":"Rent a flat Sumy. Sumy flat. Rent a flat Sumy. Sumy.",
-    "name": "Name",
+    "name": "Name *",
     "phone": "Phone number *",
-    "dateOfEntry": "Date of entry",
-    "departureDate": "Departure date",
+    "dateOfShipment": "Ship-out Date",
+    "postOffice": "Post Office",
     "numberOfObject": "Number of object",
     "fieldsDesc": "required fields",
     "formSubmitedMsg1": "Your application has been successfully sent!",
