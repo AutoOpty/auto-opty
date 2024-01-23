@@ -17,9 +17,11 @@ const DashboardCreateForm = () => {
   const initialValues = {
     article: "",
     title: "",
+    titleEn: "",
     brand: "",
     photos: [],
     description: "",
+    descriptionEn: "",
     side: "",
     price: "",
     carBrand: "",
@@ -107,6 +109,21 @@ const DashboardCreateForm = () => {
               className={styles.input}
             />
 
+            <label htmlFor="titleEn">Назва англійською:</label>
+            <ErrorMessage
+              name="titleEn"
+              className={styles.error}
+              component="p"
+            />
+            <Field
+              type="text"
+              name="titleEn"
+              id="titleEn"
+              maxLength="40"
+              placeholder="Front headlight"
+              className={styles.input}
+            />
+
             <label htmlFor="brand">Бренд:</label>
             <ErrorMessage name="brand" className={styles.error} component="p" />
             <Field
@@ -148,7 +165,22 @@ const DashboardCreateForm = () => {
               name="description"
               id="description"
               maxLength="200"
-              placeholder="Фара з електроприводом."
+              placeholder="LED-фара. Встановлюється в штатне місце."
+              className={styles.input}
+            />
+
+            <label htmlFor="descriptionEn">Опис англійською:</label>
+            <ErrorMessage
+              name="descriptionEn"
+              className={styles.error}
+              component="p"
+            />
+            <Field
+              type="text"
+              name="descriptionEn"
+              id="descriptionEn"
+              maxLength="200"
+              placeholder="LED-headlight. Installed in regular place."
               className={styles.input}
             />
 
