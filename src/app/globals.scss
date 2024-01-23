@@ -51,7 +51,7 @@ main {
 
 article,
 section {
-  // width: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -109,7 +109,6 @@ button {
   &:focus,
   &:hover {
     background: transparent;
-    // border-color: $darckFontColor;
     background-color: $darckFontColor;
     color: $lightFontColor;
     scale: 0.96;
@@ -138,8 +137,7 @@ button {
     height: 1px;
     background-color: $darckFontColor;
     position: absolute;
-    top: 24px;
-    z-index: 20;
+    bottom: 0px;
     left: 0;
   }
 }

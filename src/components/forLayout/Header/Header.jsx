@@ -16,12 +16,22 @@ const Header = () => {
   const session = useSession();
   const [isLoad, setIsLoad] = useState(true);
 
+  const isDocument = typeof document !== "undefined";
+
   useEffect(() => {
     setIsLoad(false);
   }, []);
 
-  const { burgerMenu, setBurgerMenu, isMobile, setIsMobile, isXs, setIsXs } =
-    useContext(SiteContext);
+  const {
+    burgerMenu,
+    setBurgerMenu,
+    isMobile,
+    setIsMobile,
+    isXs,
+    setIsXs,
+    scrolledWindow,
+    setScrolledWindow,
+  } = useContext(SiteContext);
 
   const closeBurgerMenu = () => {
     setTimeout(() => {
@@ -29,7 +39,22 @@ const Header = () => {
     }, 250);
   };
 
-  // console.log(window.innerWidth);
+  const header = isDocument && document.getElementById("header");
+
+  const headerScrollclassName = useCallback(() => {
+    if (window.scrollY <= 12) {
+      header.classList.remove(`${styles.Hidden}`);
+      header.classList.add(`${styles.Visible}`);
+    } else if (window.scrollY > scrolledWindow) {
+      header.classList.add(`${styles.Hidden}`);
+      header.classList.remove(`${styles.Visible}`);
+    } else {
+      header.classList.remove(`${styles.Hidden}`);
+      header.classList.add(`${styles.Visible}`);
+    }
+
+    setScrolledWindow(window.scrollY);
+  }, [scrolledWindow, setScrolledWindow, header.classList]);
 
   const handleResizeXs = useCallback(() => {
     if (window.innerWidth < 768) {
@@ -50,6 +75,7 @@ const Header = () => {
   useEffect(() => {
     window.addEventListener("resize", handleResizeXs);
     window.addEventListener("resize", handleResizeMobile);
+    window.addEventListener("scroll", headerScrollclassName, { passive: true });
 
     handleResizeXs();
     handleResizeMobile();
@@ -57,11 +83,14 @@ const Header = () => {
     return () => {
       window.addEventListener("resize", handleResizeXs);
       window.addEventListener("resize", handleResizeMobile);
+      window.removeEventListener("scroll", headerScrollclassName, {
+        passive: true,
+      });
     };
-  }, [handleResizeXs, handleResizeMobile]);
+  }, [handleResizeXs, handleResizeMobile, headerScrollclassName]);
 
   return (
-    <header className={styles.header}>
+    <header className={styles.header} id="header">
       <div className={`container ${styles.container}`}>
         <BurgerMenuBtn />
         {!isLoad && <LeftLinks className={styles.headerLink} />}
