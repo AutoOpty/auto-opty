@@ -19,7 +19,7 @@ export const SiteProvider = ({ children }) => {
 
   const [isModalOpen, setModalOpen] = useState(false);
 
-  //   const [scrolledWindow, setScrolledWindow] = useState(0);
+  const [scrolledWindow, setScrolledWindow] = useState(0);
 
   const openModal = () => {
     setModalOpen(true);
@@ -47,8 +47,8 @@ export const SiteProvider = ({ children }) => {
         isModalOpen,
         openModal,
         closeModal,
-        // scrolledWindow,
-        // setScrolledWindow,
+        scrolledWindow,
+        setScrolledWindow,
       }}
     >
       {children}

@@ -3,10 +3,9 @@
 import { useEffect, useContext } from "react";
 import {useTranslation} from "react-i18next";
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
 import { SiteContext } from "@/context/SiteContext";
 import { orderSchema } from "@/yupSchemas/orderSchema";
+import CustomDatePicker from "./CustomDatePicker";
 import SuccessContent from "./SuccessContent";
 import Select from "./Select";
 
@@ -22,7 +21,7 @@ const initialValues = {
 };
 
 const handleSubmit = (values, actions, closeModal) => {
-    console.log("values:", values);
+    console.log("OrderFormData:", values);
     actions.setSubmitting(true);
 
     setTimeout(() => {
@@ -55,8 +54,14 @@ const OrderForm = () => {
             }}
         >
             {(formik) => {
-                const { errors, touched, isValid, values, isSubmitting } =
-                    formik;
+                const {
+                    errors,
+                    touched,
+                    isValid,
+                    values,
+                    isSubmitting,
+                    setFieldValue,
+                } = formik;
 
                 return (
                     <div className={styles.container}>
@@ -135,47 +140,19 @@ const OrderForm = () => {
                                         >
                                             <use href='/sprite.svg#icon-chevron-down' />
                                         </svg>
+                                        <CustomDatePicker
+                                            name='sendDate'
+                                            value={values.sendDate}
+                                            onChange={setFieldValue}
+                                        />
 
-                                        <Field name='sendDate' id='sendDate'>
-                                            {({ form, field }) => {
-                                                const { setFieldValue } = form;
-                                                const { value } = field;
-
-                                                return (
-                                                    <DatePicker
-                                                        id='sendDate'
-                                                        autoComplete='off'
-                                                        dateFormat='dd/MM/yyyy'
-                                                        selectsStart
-                                                        className={
-                                                            errors.sendDate &&
-                                                            touched.sendDate
-                                                                ? `${styles.input} ${styles.inputError}`
-                                                                : styles.input
-                                                        }
-                                                        placeholderText={t('Form.dateOfShipment')}
-                                                        {...field}
-                                                        selected={value}
-                                                        onFocus={(e) =>
-                                                            e.target.blur()
-                                                        }
-                                                        onChange={(val) =>
-                                                            setFieldValue(
-                                                                "sendDate",
-                                                                val
-                                                            )
-                                                        }
-                                                    />
-                                                );
-                                            }}
-                                        </Field>
                                         <ErrorMessage
                                             name='sendDate'
                                             className={styles.error}
                                             component='p'
                                         />
                                     </div>
-                                    {/* check_Out  */}
+
                                     <div className={styles.wrapError}>
                                         <svg
                                             className={`${styles.icon} ${styles.iconPicker}`}
