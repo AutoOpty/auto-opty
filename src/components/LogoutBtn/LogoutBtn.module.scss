@@ -5,6 +5,17 @@
 
   @media screen and (min-width: $tablet) {
     display: block;
+    border: transparent;
     cursor: pointer;
   }
+}
+
+.exitIcon {
+  display: block;
+  width: 28px;
+  height: 28px;
+}
+
+.exitIcon:hover {
+  fill: #ff2828;
 }

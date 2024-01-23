@@ -3,6 +3,8 @@ import * as Yup from "yup";
 export const dashboardUpdateFormSchema = Yup.object({
     newTitle: Yup.string()
         .required("Назва це обовʼязкове поле"),
+    newTitleEn: Yup.string()
+        .required("Назва англійською це обовʼязкове поле"),
     newBrand: Yup.string()
         .required("Бренд це обовʼязкове поле"),
     newPhotos: Yup.array()
@@ -10,6 +12,8 @@ export const dashboardUpdateFormSchema = Yup.object({
         .required("Фото це обовʼязкове поле"),
     newDescription: Yup.string()
         .required("Опис це обовʼязкове поле"),
+    newDescriptionEn: Yup.string()
+        .required("Опис англійською це обовʼязкове поле"),
     newSide: Yup.string()
         .required("Сторона це обовʼязкове поле"),
     newPrice: Yup.number()

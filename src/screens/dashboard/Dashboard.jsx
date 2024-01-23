@@ -60,6 +60,9 @@ const Dashboard = () => {
                 <div key={product._id} className={styles.product}>
                   <h2>{product.article}</h2>
                   <p className={styles.textContent}>Назва: {product.title}</p>
+                  <p className={styles.textContent}>
+                    Назва англійською: {product.titleEn}
+                  </p>
                   <p className={styles.textContent}>Бренд: {product.brand}</p>
                   <p className={styles.textContent}>Фото:</p>
                   <ul className={styles.imgsWrapper}>
@@ -77,6 +80,9 @@ const Dashboard = () => {
                   </ul>
                   <p className={styles.textContent}>
                     Опис: {product.description}
+                  </p>
+                  <p className={styles.textContent}>
+                    Опис англійською: {product.descriptionEn}
                   </p>
                   <p className={styles.textContent}>Сторона: {product.side}</p>
                   <p className={styles.textContent}>Ціна: {product.price}</p>
