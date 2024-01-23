@@ -68,7 +68,8 @@
     "Contacts": "Contacts",
     
     "Documents": "Documents",
-    "Rules": "Rules"
+    "Rules": "Rules",
+    "Dashboard":"Dashboard"
   },
   "Buttons": {
     "CalltBtn": "Contact Us",
