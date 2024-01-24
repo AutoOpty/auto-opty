@@ -1,10 +1,18 @@
 "use client";
 
 import { useEffect, useContext } from "react";
-import {useTranslation} from "react-i18next";
-import { Formik, Form, Field, ErrorMessage } from "formik";
+import { useTranslation } from "react-i18next";
+import {
+    Formik,
+    Form,
+    Field,
+    ErrorMessage,
+    validateYupSchema,
+    yupToFormErrors,
+} from "formik";
 import { SiteContext } from "@/context/SiteContext";
 import { orderSchema } from "@/yupSchemas/orderSchema";
+import { useFetcherProductsArticles } from "@/hooks/useFetcher";
 import CustomDatePicker from "./CustomDatePicker";
 import SuccessContent from "./SuccessContent";
 import Select from "./Select";
@@ -35,7 +43,7 @@ const handleSubmit = (values, actions, closeModal) => {
 
 const OrderForm = () => {
     const { isModalOpen, closeModal } = useContext(SiteContext);
-    const {t}=useTranslation();
+    const { t } = useTranslation();
     useEffect(() => {
         if (isModalOpen) {
             document.body.style.overflow = "hidden";
@@ -45,10 +53,25 @@ const OrderForm = () => {
         };
     }, [isModalOpen]);
 
+    const listOfProductsArticles = useFetcherProductsArticles();
+
     return (
         <Formik
             initialValues={initialValues}
-            validationSchema={orderSchema}
+            validate={(values) => {
+                try {
+                    validateYupSchema(
+                        values,
+                        orderSchema,
+                        true,
+                        listOfProductsArticles
+                    );
+                } catch (err) {
+                    return yupToFormErrors(err); //for rendering validation errors
+                }
+
+                return {};
+            }}
             onSubmit={(values, actions) => {
                 handleSubmit(values, actions, closeModal);
             }}
@@ -88,7 +111,7 @@ const OrderForm = () => {
                                             type='text'
                                             name='userName'
                                             id='userName'
-                                            placeholder={t('Form.name')}
+                                            placeholder={t("Form.name")}
                                             autoComplete='off'
                                             maxLength='30'
                                             className={
@@ -112,7 +135,7 @@ const OrderForm = () => {
                                             type='text'
                                             name='phone'
                                             id='phone'
-                                            placeholder={t('Form.phone')}
+                                            placeholder={t("Form.phone")}
                                             autoComplete='off'
                                             maxLength='14'
                                             className={
@@ -164,7 +187,7 @@ const OrderForm = () => {
                                             type='text'
                                             name='postOfficeNumber'
                                             id='postOfficeNumber'
-                                            placeholder={t('Form.postOffice')}
+                                            placeholder={t("Form.postOffice")}
                                             autoComplete='off'
                                             maxLength='30'
                                             className={
@@ -192,7 +215,7 @@ const OrderForm = () => {
                                             name='itemNumber'
                                             id='itemNumber'
                                             autoComplete='off'
-                                            maxLength='3'
+                                            maxLength='30'
                                             placeholder='Номер запчастини'
                                             className={
                                                 errors.itemNumber &&
