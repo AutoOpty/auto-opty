@@ -34,6 +34,21 @@
   z-index: 0;
 }
 
+.HomeSliderSwiper a p {
+  position: absolute;
+  bottom: 0px;
+  width: 152px;
+  height: 24px;
+  color: white;
+  background-color: #2d2d2d;
+  text-align: center;
+
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
 .HomeSliderSwiper .swiper-button-prev,
 .HomeSliderSwiper .swiper-button-next {
   background-repeat: no-repeat;
