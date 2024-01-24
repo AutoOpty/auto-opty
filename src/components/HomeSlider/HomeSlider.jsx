@@ -20,7 +20,7 @@ import Loading from "../Loading/Loading";
 const HomeSlider = () => {
   const { data, error, isLoading } = GetData();
   const isClient = typeof window !== "undefined";
-
+  console.log(data);
   const [slidesPerView, setSlidesPerView] = useState(5); // Default value for slidesPerView
 
   // Function to update slidesPerView based on viewport width
@@ -62,11 +62,11 @@ const HomeSlider = () => {
           <Swiper
             slidesPerView={slidesPerView}
             loop={true}
-            speed={1200}
-            autoplay={{
-              delay: 2400,
-              pauseOnMouseEnter: true,
-            }}
+            // speed={1200}
+            // autoplay={{
+            //   delay: 2400,
+            //   pauseOnMouseEnter: true,
+            // }}
             effect="slide"
             pagination={{
               dynamicBullets: true,
@@ -88,6 +88,7 @@ const HomeSlider = () => {
                     alt={el.title}
                     loading="lazy"
                   />
+                  <p className="slideDescr">{el.article}</p>
                 </Link>
               </SwiperSlide>
             ))}
