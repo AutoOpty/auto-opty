@@ -1,0 +1,35 @@
+.filter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  //   flex-direction: column;
+  border: 1px black solid;
+  padding: 15px;
+}
+
+.priceContainer {
+  //   display: flex;
+  //   flex-direction: column;
+}
+
+.filterSelect {
+  width: 125px;
+  height: 24px;
+  flex-shrink: 0;
+  border: 1px solid #6d6d6d;
+}
+
+.filterItem {
+  padding: 10px;
+}
+
+.filterTitle {
+  color: #242424;
+
+  /* FILTER */
+  font-family: "Crimson Text";
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}

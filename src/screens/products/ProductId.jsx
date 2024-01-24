@@ -1,20 +1,21 @@
-'use client';
+"use client";
 
-import { GetDataById } from '@/fetch/clientFetch';
+import { GetDataById } from "@/fetch/clientFetch";
 // import Link from 'next/link';
-import React from 'react';
-import styles from './productId.module.scss';
-import seoStyles from '@/app/seoStyles.module.css';
-import BreadCrumbs from '@/components/share/BreadCrumbs/BreadCrumbs';
-import ProductSlider from '@/components/ProductSlider/ProductSlider';
-import IsLoading from '@/components/share/IsLoading/IsLoading';
-import ProductsIdItem from '@/components/ProductIdItem/ProductIdItem';
+import React from "react";
+import styles from "./productId.module.scss";
+import seoStyles from "@/app/seoStyles.module.css";
+import BreadCrumbs from "@/components/share/BreadCrumbs/BreadCrumbs";
+import ProductSlider from "@/components/ProductSlider/ProductSlider";
+import IsLoading from "@/components/share/IsLoading/IsLoading";
+import ProductsIdItem from "@/components/ProductIdItem/ProductIdItem";
 
 const ProductId = ({ params }) => {
   const { id } = params;
   const { data, error, isLoading } = GetDataById(id);
 
   const dataId = data && !isLoading ? data : error;
+  console.log(dataId);
 
   return (
     <section className={styles.container}>

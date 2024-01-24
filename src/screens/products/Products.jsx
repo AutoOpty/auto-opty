@@ -1,13 +1,14 @@
-'use client';
+"use client";
 
-import ProductItem from '@/components/ProductItem/ProductItem';
-import React, { useEffect, useRef, useState } from 'react';
+import ProductItem from "@/components/ProductItem/ProductItem";
+import React, { useEffect, useRef, useState } from "react";
 
-import styles from './products.module.scss';
-import FilterButton from '@/components/share/FilterButton/FilterButton';
-import BreadCrumbs from '@/components/share/BreadCrumbs/BreadCrumbs';
-import { GetData } from '@/fetch/clientFetch';
-import IsLoading from '@/components/share/IsLoading/IsLoading';
+import styles from "./products.module.scss";
+import FilterButton from "@/components/share/FilterButton/FilterButton";
+import BreadCrumbs from "@/components/share/BreadCrumbs/BreadCrumbs";
+import { GetData } from "@/fetch/clientFetch";
+import IsLoading from "@/components/share/IsLoading/IsLoading";
+import Filter from "@/components/Filter/Filter";
 
 const Products = () => {
   const { data, error, isLoading } = GetData();
@@ -36,9 +37,9 @@ const Products = () => {
   };
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
     // eslint-disable-next-line
   }, [data, loadedCount]);
@@ -49,6 +50,7 @@ const Products = () => {
         <BreadCrumbs title="Запчастини" />
       </figure>
       <FilterButton />
+      <Filter data={data} />
       {isLoading ? (
         <IsLoading />
       ) : (
