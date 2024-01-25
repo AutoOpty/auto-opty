@@ -1,0 +1,126 @@
+@import "@/styles/_variables.scss";
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  padding: 104px 0px 35px 0px;
+
+  @media screen and (min-width: $tablet) {
+    padding: 176px 24px 72px 24px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    padding: 101px 32px 72px 32px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    padding: 101px 24px 72px 24px;
+    max-width: 1440px;
+  }
+}
+
+.toBackContainer {
+  padding-left: 20px;
+
+  @media screen and (min-width: $tablet) {
+    padding-left: 0px;
+    margin-bottom: 14px;
+  }
+}
+
+.garanteeContainer {
+  width: 100%;
+}
+
+.titleContainer {
+  height: 164px;
+  margin-bottom: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+
+  @media screen and (min-width: 511px) {
+    height: 117px;
+  }
+
+  @media screen and (min-width: $tablet) {
+    height: 160px;
+    margin-bottom: 28px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    height: 90px;
+    margin-bottom: 32px;
+  }
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 400;
+  margin-right: auto;
+  padding: 0px 20px;
+
+  @media screen and (min-width: $tablet) {
+    font-size: 40px;
+    padding: 0px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    font-size: 32px;
+  }
+}
+
+.rulesListItem {
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: uppercase;
+
+  @media (min-width: $tablet) {
+  }
+}
+
+.rulesList {
+  @media (max-width: $tablet) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  font-size: 24px;
+  font-style: normal;
+  line-height: normal;
+}
+
+.decimalListTitle {
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.decimalList {
+  list-style: decimal;
+}
+
+.decimalList > li {
+  margin-left: 25px;
+
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+
+  @media (min-width: $tablet) {
+    font-size: 20px;
+  }
+}
