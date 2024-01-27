@@ -6,7 +6,6 @@ import React, { useEffect, useState } from 'react';
 import styles from './productId.module.scss';
 import seoStyles from '@/app/seoStyles.module.css';
 import BreadCrumbs from '@/components/share/BreadCrumbs/BreadCrumbs';
-import ProductSlider from '@/components/ProductSlider/ProductSlider';
 import IsLoading from '@/components/share/IsLoading/IsLoading';
 import ProductsIdItem from '@/components/ProductIdItem/ProductIdItem';
 import ProductDescription from '@/components/ProductDescription/ProductDescription';
@@ -45,7 +44,7 @@ const ProductId = ({ params }) => {
 
   const dataId = data && !isLoading ? data : error;
 
-  console.log(dataId);
+  // console.log(dataId);
 
   const handleTabClick = (tab) => {
     setActiveTab(tab);
@@ -70,8 +69,7 @@ const ProductId = ({ params }) => {
           <h3 className={seoStyles.titleHidden}>
             Detailed information about the apartments
           </h3>
-          {/* <ItemSlider dataId={dataId} /> */}
-          <ProductSlider dataId={dataId} />
+          <ItemSlider dataId={dataId} />
           <article className={styles.content}>
             {/* <h4 className={seoStyles.titleHidden}>
               Detailed information about the amenities
