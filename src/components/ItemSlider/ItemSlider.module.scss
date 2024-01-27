@@ -1,23 +1,16 @@
 @import '../../styles/_variables.scss';
 
 .swiperContainer {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  width: 100%;
-  min-width: 280px;
+  width: 272px;
   @media screen and (min-width: $tablet) {
     margin-bottom: 0px;
+    width: 719px;
   }
 
-  @media screen and (orientation: landscape) {
-    flex: 1;
+  // @media screen and (orientation: landscape) {
+  //   flex: 1;
+  // }
+  @media screen and (min-width: $desktop) {
+    width: 578px;
   }
 }

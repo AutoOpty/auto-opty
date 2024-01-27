@@ -2,20 +2,27 @@ import React, { useState } from 'react';
 import styles from './ItemSlider.module.scss';
 import { v4 } from 'uuid';
 import { CldImage } from 'next-cloudinary';
+import seoStyles from '@/app/seoStyles.module.css';
+
 import { Swiper, SwiperSlide } from 'swiper/react';
-// import {
-//   Navigation,
-//   Pagination,
-//   Mousewheel,
-//   Keyboard,
-//   FreeMode,
-// } from 'swiper/modules';
+
+import {
+  Navigation,
+  Pagination,
+  Mousewheel,
+  Keyboard,
+  Thumbs,
+  FreeMode,
+} from 'swiper/modules';
+
+// Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import './ItemSliderTop.css';
 import './ItemSliderBottom.css';
 import { useEffect } from 'react';
+import { useMemo } from 'react';
 
 const ItemSlider = ({ dataId }) => {
   const [item, setItem] = useState(null);
@@ -23,28 +30,38 @@ const ItemSlider = ({ dataId }) => {
 
   const images = dataId?.photos;
 
+  const allImages = useMemo(
+    () => [dataId?.photos[0], ...images],
+    [dataId, images]
+  );
+
   const imgPtiority = dataId?.photos[0] ? true : false;
   const imgLoading = dataId?.photos[0] ? 'eager' : 'lazy';
 
   useEffect(() => {
     setItem(
-      images.map((item) => (
-        <SwiperSlide key={v4()}>
-          <CldImage
-            src={item}
-            alt="Flat image"
-            fill={true}
-            loading={imgLoading}
-            sizes="50vw"
-            priority={imgPtiority}
-          />
-        </SwiperSlide>
-      ))
+      allImages.map((item) => {
+        return (
+          <SwiperSlide key={v4()}>
+            <CldImage
+              src={item}
+              alt="Flat image"
+              fill={true}
+              loading={imgLoading}
+              sizes="50vw"
+              priority={imgPtiority}
+            />
+          </SwiperSlide>
+        );
+      })
     );
-  }, [images, imgLoading, imgPtiority]);
+  }, [allImages, imgLoading, imgPtiority]);
 
   return (
     <article className={styles.swiperContainer}>
+      <h4 className={seoStyles.titleHidden}>
+        Detailed images of the apartment
+      </h4>
       {item && (
         <Swiper
           loop={true}
@@ -57,8 +74,12 @@ const ItemSlider = ({ dataId }) => {
           keyboard={{
             enabled: true,
           }}
-          thumbs={{ swiper: thumbsSwiper }}
-          // modules={[FreeMode, Navigation, Pagination, Thumbs, Keyboard]}
+          // thumbs={{ swiper: thumbsSwiper }}
+          thumbs={{
+            swiper:
+              thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null,
+          }}
+          modules={[FreeMode, Navigation, Pagination, Thumbs, Keyboard]}
           className="ItemSliderTop"
         >
           {item}
@@ -77,7 +98,7 @@ const ItemSlider = ({ dataId }) => {
           keyboard={{
             enabled: true,
           }}
-          // modules={[FreeMode, Navigation, Thumbs, Keyboard, Mousewheel]}
+          modules={[FreeMode, Navigation, Thumbs, Keyboard, Mousewheel]}
           className="ItemSliderBottom"
         >
           {item}

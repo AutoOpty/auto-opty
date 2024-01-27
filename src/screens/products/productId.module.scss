@@ -87,15 +87,9 @@
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  // -webkit-box-align: center;
-  // -ms-flex-align: center;
-  // align-items: center;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
-  justify-content: center;
-
-  // width: 100%;
-  // height: 100vh;
+  // justify-content: center;
   justify-content: space-between;
   gap: 16px;
 
@@ -109,23 +103,15 @@
     -webkit-box-align: start;
     -ms-flex-align: start;
     align-items: flex-start;
-    // height: 621px;
     width: 712px;
   }
-  // @media screen and (min-width: 1024px) {
-  //   // height: 551px;
-  //   // width: max-content;
-  // }
-  // @media screen and (min-width: 1024px) and (orientation: portrait) {
-  //   // height: 398px;
-  // }
 
   @media screen and (min-width: $desktop) {
     -webkit-box-align: start;
     -ms-flex-align: start;
     align-items: flex-start;
     height: 562px;
-    max-width: 540px;
+    max-width: 422px;
   }
 }
 

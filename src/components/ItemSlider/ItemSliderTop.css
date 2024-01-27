@@ -1,6 +1,6 @@
 .ItemSliderTop {
   width: 100%;
-  height: 272px;
+  height: 235px;
   margin-bottom: 16px;
 }
 
@@ -15,7 +15,7 @@
 }
 
 .ItemSliderTop .swiper-slide img {
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
 
   -webkit-transform: translate3d(0, 0, 0);
@@ -43,10 +43,12 @@
 .ItemSliderTop .swiper-button-prev {
   background-image: url('../../../public/png/ArrowLeft.webp');
   left: 16px;
+  width: 32px;
 }
 .ItemSliderTop .swiper-button-next {
   background-image: url('../../../public/png/ArrowRight.webp');
   right: 16px;
+  width: 32px;
 }
 
 .ItemSliderTop .swiper-pagination {
@@ -54,7 +56,7 @@
 }
 
 .ItemSliderTop .swiper-pagination-bullet {
-  background-color: white;
+  background-color: #373737;
   width: 12px;
   height: 12px;
 }
@@ -66,22 +68,24 @@
 
 @media screen and (min-width: 768px) {
   .ItemSliderTop {
-    height: 287px;
+    height: 621px;
   }
 
   .ItemSliderTop .swiper-button-prev {
     left: 28px;
+    width: 124px;
   }
   .ItemSliderTop .swiper-button-next {
     right: 28px;
+    width: 124px;
   }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1280px) {
   .ItemSliderTop {
     height: 440px;
   }
-  @media screen and (min-width: 1024px) and (orientation: portrait) {
+  @media screen and (min-width: 1280px) and (orientation: portrait) {
     .ItemSliderTop {
       height: 287px;
     }
@@ -97,7 +101,7 @@
 
 @media screen and (min-width: 1366px) {
   .ItemSliderTop {
-    height: 470px;
+    height: 386px;
   }
 
   .ItemSliderTop .swiper-button-prev,
@@ -124,7 +128,7 @@
 
 @media screen and (min-width: 1500px) {
   .ItemSliderTop {
-    height: 480px;
+    height: 386px;
   }
 
   .ItemSliderTop .swiper-button-prev,
@@ -151,7 +155,7 @@
 
 @media screen and (min-width: 1920px) {
   .ItemSliderTop {
-    height: 621px;
+    /* height: 621px; */
   }
 
   .ItemSliderTop .swiper-button-prev,
