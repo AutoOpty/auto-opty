@@ -9,12 +9,33 @@ import BreadCrumbs from "@/components/share/BreadCrumbs/BreadCrumbs";
 import { GetData } from "@/fetch/clientFetch";
 import IsLoading from "@/components/share/IsLoading/IsLoading";
 import Filter from "@/components/Filter/Filter";
+import { useFilter } from "@/hooks/useFilter";
 
 const Products = () => {
   const { data, error, isLoading } = GetData();
   const [loadedCount, setLoadedCount] = useState(12);
   const [showLoading, setShowLoading] = useState(false);
+  const [carBrand, setCarBrand] = useState(null);
+  const [carModel, setCarModel] = useState(null);
+  const [carBody, setCarBody] = useState(null);
+  const [carYear, setCarYear] = useState(null);
+  const [carPriceFrom, setCarPriceFrom] = useState("");
+  const [carPriceTo, setCarPriceTo] = useState("");
+  const [carSide, setCarSide] = useState(null);
   const containerRef = useRef();
+
+  const filteredData = useFilter(
+    data,
+    carBrand,
+    carModel,
+    carBody,
+    carYear,
+    carPriceFrom,
+    carPriceTo,
+    carSide
+  );
+
+  console.log(data);
 
   const handleScroll = () => {
     const container = containerRef.current;
@@ -50,13 +71,23 @@ const Products = () => {
         <BreadCrumbs title="Запчастини" />
       </figure>
       <FilterButton />
-      <Filter data={data} />
+      <Filter
+        data={data}
+        filteredData={filteredData}
+        setCarBrand={setCarBrand}
+        setCarModel={setCarModel}
+        setCarBody={setCarBody}
+        setCarYear={setCarYear}
+        setCarPriceFrom={setCarPriceFrom}
+        setCarPriceTo={setCarPriceTo}
+        setCarSide={setCarSide}
+      />
       {isLoading ? (
         <IsLoading />
       ) : (
         <ul ref={containerRef} className={styles.containerProducts}>
-          {data?.length > 0 &&
-            data.slice(0, loadedCount).map((item) => (
+          {filteredData?.length > 0 &&
+            filteredData.slice(0, loadedCount).map((item) => (
               <ProductItem
                 key={item._id}
                 // item={item}
@@ -72,9 +103,10 @@ const Products = () => {
             ))}
         </ul>
       )}
-      {data?.length <= 0 && (
+      {filteredData?.length <= 0 && (
         <div className={styles.notFoundTextStyles}>
-          <p>{notFoundText()} Запчастини не знайдено</p>
+          {/* {notFoundText()} */}
+          <p> Запчастини не знайдено</p>
         </div>
       )}
       {showLoading && (
