@@ -20,7 +20,7 @@ import Loading from "../Loading/Loading";
 const HomeSlider = () => {
   const { data, error, isLoading } = GetData();
   const isClient = typeof window !== "undefined";
-  console.log(data);
+  // console.log(data);
   const [slidesPerView, setSlidesPerView] = useState(5); // Default value for slidesPerView
 
   // Function to update slidesPerView based on viewport width
