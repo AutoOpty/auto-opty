@@ -169,39 +169,30 @@ const Filter = ({
   };
 
   const handleFilterReset = () => {
+    const carBrandSelect = document.getElementsByName("carBrand");
+    const carModelsSelect = document.getElementsByName("carModels");
+    const carBodiesSelect = document.getElementsByName("carBodies");
+    const carYearSelect = document.getElementsByName("carYear");
+    const carSideSelect = document.getElementsByName("carSide");
+    carBrandSelect[0].options.selectedIndex = 0;
+    carModelsSelect[0].options.selectedIndex = 0;
+    carBodiesSelect[0].options.selectedIndex = 0;
+    carYearSelect[0].options.selectedIndex = 0;
+    carSideSelect[0].options.selectedIndex = 0;
+
     setCarBrand(null);
     setCarModel(null);
     setCarBody(null);
     setCarYear(null);
     setCarPriceFrom("");
+    setCarPriceFromTemp("");
     setCarPriceTo("");
+    setCarPriceToTemp("");
     setCarSide(null);
   };
 
   const isFilterShown = filterShown ? styles.filter : styles.filter_hidden;
 
-  //   event.target.options[event.target.selectedIndex].text
-
-  //   console.log(select);
-
-  //   const carPrice = () => {
-  //     const arr = [];
-  //     data.map((item) => {
-  //       if (!arr.includes(item.price)) {
-  //         arr.push(item.price);
-  //       }
-  //     });
-
-  //     return arr.sort((a, b) => a - b); //сортування від найменшої ціни до найбільшої
-  //   };
-  //   const brands = data?.reduce((acc, item) => {
-  //     console.log(acc);
-  //     if (!acc?.includes(item.brand)) {
-  //       acc?.push(item.brand);
-  //     }
-  //   }, []);
-
-  //   console.log(dataId);
   return (
     <ul className={isFilterShown}>
       <li className={styles.filterItem}>

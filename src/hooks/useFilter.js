@@ -14,8 +14,8 @@ export const useFilter = (
       carModel === null &&
       carBody === null &&
       carYear === null &&
-      carPriceFrom === null &&
-      carPriceTo === null &&
+      carPriceFrom === "" &&
+      carPriceTo === "" &&
       carSide === null
     ) {
       return true; //якщо фільтр пустий, одразу виводимо картку(і всі інші також)
@@ -50,10 +50,13 @@ export const useFilter = (
       return false;
     }
 
-    if (
+    skip: if (
       (car.price < Number(carPriceFrom) || car.price > Number(carPriceTo)) &&
       (carPriceFrom != "" || carPriceTo != "")
     ) {
+      if (carPriceFrom != "" && carPriceTo == "") {
+        break skip;
+      }
       //якщо ціна менше мін.встановленої або більше мах.встановленої, скіп
       //   console.log("carprice");
       return false;
