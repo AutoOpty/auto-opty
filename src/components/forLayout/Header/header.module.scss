@@ -50,41 +50,15 @@
 }
 
 .headerLink {
-  // color: $darckFontColor;
   font-size: 12px;
   font-weight: 300;
   @media screen and (min-width: $tablet) {
     font-size: 16px;
     font-weight: 400;
   }
-  // & li {
-  //   position: relative;
-  //   & ::after {
-  //     content: " ";
-  //     position: absolute;
-  //     width: 0px;
-  //     height: 1px;
-  //     background-color: $darckFontColor;
-  //     position: absolute;
-  //     top: 24px;
-  //     z-index: 20;
-  //     left: 0;
-  //   }
-  //   & :hover,
-  //   & :focus {
-  //     & a {
-  //       color: aqua;
-  //     }
-  //     &::after {
-  //       width: 100%;
-  //     }
-  //   }
-  // }
 }
 
 .logo {
-  // margin-left: clamp(1px, 8vw, 172px);
-
   position: absolute;
   left: 50%;
   top: 50%;

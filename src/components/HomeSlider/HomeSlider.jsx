@@ -20,7 +20,6 @@ import Loading from "../Loading/Loading";
 const HomeSlider = () => {
   const { data, error, isLoading } = GetData();
   const isClient = typeof window !== "undefined";
-  console.log(data);
   const [slidesPerView, setSlidesPerView] = useState(5); // Default value for slidesPerView
 
   // Function to update slidesPerView based on viewport width
@@ -56,17 +55,17 @@ const HomeSlider = () => {
   return (
     <section className={styles.hero}>
       <div className={`container ${styles.container}`}>
-        <h2>Lorem ipsum</h2>
+        <h2>Ми рекомендуємо</h2>
 
         {isClient && !isLoading ? (
           <Swiper
             slidesPerView={slidesPerView}
             loop={true}
-            // speed={1200}
-            // autoplay={{
-            //   delay: 2400,
-            //   pauseOnMouseEnter: true,
-            // }}
+            speed={1200}
+            autoplay={{
+              delay: 2400,
+              pauseOnMouseEnter: true,
+            }}
             effect="slide"
             pagination={{
               dynamicBullets: true,
