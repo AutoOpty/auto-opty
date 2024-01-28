@@ -2,22 +2,8 @@
 
 .dropdownDark,
 .dropdown {
-  // position: relative;
   z-index: 30;
   display: inline-block;
-  color: $lightFontColor;
-
-  // margin-right: 0;
-  // margin-left: auto;
-
-  // @media screen and (min-width: $mobile) {
-  //   scale: 1;
-  // }
-  // @media screen and (min-width: $tablet) {
-  //   margin-right: 0;
-  //   border-color: $darckFontColor;
-  //   color: $darckFontColor;
-  // }
 }
 .dropdownDark {
   & .dropBtn {
@@ -45,55 +31,32 @@
   -webkit-column-gap: 8px;
   -moz-column-gap: 8px;
   column-gap: 8px;
-  // padding: 4px 16px;
   border-radius: 24px;
   border: 1px solid $lightFontColor;
   background-color: transparent;
-  color: $lightFontColor;
   outline: none;
   cursor: pointer;
   font-size: 10px;
   font-weight: 500;
   text-transform: uppercase;
-  // @media screen and (min-width: $tablet) {
-  //   padding: 8px 16px;
-  //   -webkit-column-gap: 4px;
-  //   -moz-column-gap: 4px;
-  //   column-gap: 4px;
-  //   font-size: 12px;
-  //   color: $darckFontColor;
-  //   border: 1px solid $darckFontColor;
-  // }
 }
 
 .langSwitcher {
-  // width: 66px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  // width: 20px;
   height: 6px;
-  // -webkit-box-pack: center;
-  // -ms-flex-pack: center;
-  // justify-content: center;
-  // @media screen and (min-width: $tablet) {
-  //   width: 101px;
-  // }
 }
 
 .langIndicator {
   margin-right: 13px;
-  font-size: clamp(0.75rem, 0.179rem + 1.19vw, 1.25rem);
-  // font-size: 14px;
-  line-height: 18.2px;
-  color: $darckFontColor;
-  // @media screen and (min-width: $tablet) {
-  //   font-size: 20px;
-  //   line-height: 26px;
-  // }
+  font-size: 12px;
+  @media screen and (min-width: $tablet) {
+    font-size: 16px;
+  }
 }
 
 .langToggle {
@@ -109,35 +72,16 @@
   align-items: center;
   width: 24px;
   height: 10px;
-  height: 6px;
-  width: 19px;
+  transform: translateY(22%);
 
-  // padding: 5px;
   border-radius: 10px;
   background-color: black;
-  color: white;
-  font-size: 10px;
-  font-weight: 500;
-  line-height: 12.1px;
+
   cursor: pointer;
-  // @media screen and (min-width: $tablet) {
-  //   width: 36px;
-  //   height: 15px;
-  // }
 }
 
+.ball,
 .ballEng {
-  -webkit-transform: translateX(-21px);
-  -ms-transform: translateX(-21px);
-  transform: translateX(-21px);
-  @media screen and (min-width: $tablet) {
-    -webkit-transform: translateX(-27px);
-    -ms-transform: translateX(-27px);
-    transform: translateX(-27px);
-  }
-}
-
-.ball {
   position: absolute;
   z-index: 8;
   -webkit-box-shadow: 0px 2px 8px 0px #00000029;
@@ -148,7 +92,11 @@
   border-radius: 50%;
   background-color: #ffff;
 
-  left: 0;
+  left: 10%;
   top: 50%;
   transform: translate(-50%, -50%);
+}
+
+.ballEng {
+  left: 90%;
 }

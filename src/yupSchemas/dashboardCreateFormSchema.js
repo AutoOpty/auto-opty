@@ -19,6 +19,8 @@ export const dashboardCreateFormSchema = Yup.object({
         }),
     title: Yup.string()
         .required("Назва це обовʼязкове поле"),
+    titleEn: Yup.string()
+        .required("Назва англійською це обовʼязкове поле"),
     brand: Yup.string()
         .required("Бренд це обовʼязкове поле"),
     photos: Yup.array()
@@ -26,6 +28,8 @@ export const dashboardCreateFormSchema = Yup.object({
         .required("Фото це обовʼязкове поле"),
     description: Yup.string()
         .required("Опис це обовʼязкове поле"),
+    descriptionEn: Yup.string()
+        .required("Опис англійською це обовʼязкове поле"),
     side: Yup.string()
         .required("Сторона це обовʼязкове поле"),
     price: Yup.number()
@@ -37,6 +41,7 @@ export const dashboardCreateFormSchema = Yup.object({
     carModels: Yup.string()
         .required("Моделі авто це обовʼязкове поле"),
     carBodies: Yup.array()
+        .min(1, "Мінімум один варіант")
         .required("Кузови це обовʼязкове поле"),
     installedFrom: Yup.number()
         .moreThan(-1, "Тільки додатні числа")

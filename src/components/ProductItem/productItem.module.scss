@@ -35,25 +35,6 @@
   object-fit: contain;
 }
 
-// .codeProduct {
-//   position: absolute;
-//   bottom: 0;
-//   left: 0;
-//   width: 100%;
-//   border-bottom: 34px solid #373737;
-//   border-left: 50px solid transparent;
-//   border-right: 50px solid transparent;
-// }
-
-// .codeProductItem {
-//   color: #ffffff;
-//   font-size: 13px;
-//   font-weight: 700;
-//   position: absolute;
-//   bottom: -25px;
-//   left: 35%;
-// }
-
 .productContent {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -86,7 +67,7 @@
 
 .priceProduct {
   font-family: Pridi;
-  color: #373737;
+  color: $acentColor;
   font-size: 20px;
   font-weight: 400;
   margin-top: 12px;
@@ -109,8 +90,8 @@
   background-color: transparent;
   cursor: pointer;
   outline: none;
-  border: 1px solid #373737;
-  color: #373737;
+  border: 1px solid $acentColor;
+  color: $acentColor;
   font-family: Segoe UI;
   font-size: 14px;
   font-weight: 400;
@@ -118,7 +99,7 @@
 
   &:hover,
   &:focus {
-    background-color: #373737;
-    color: #ffffff;
+    background-color: $acentColor;
+    color: $lightFontColor;
   }
 }

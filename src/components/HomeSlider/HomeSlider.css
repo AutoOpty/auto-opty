@@ -1,7 +1,13 @@
 .HomeSliderSwiper {
   width: 100%;
-  height: 380px;
-  padding-bottom: 40px;
+  height: 100%;
+}
+
+.HomeSliderSwiper .swiper-wrapper {
+  height: 92%;
+  @media screen and (min-width: 1280px) {
+    height: 88%;
+  }
 }
 
 .HomeSliderSwiper .swiper-slide {
@@ -18,14 +24,12 @@
   position: relative;
   overflow: hidden;
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
-  /* box-shadow: inset 0px 0px 24px rgba(0, 0, 0, 0.06); */
-  /* border: 1px solid rgba(0, 0, 0, 0.1); */
 }
 
 .HomeSliderSwiper .swiper-slide a:hover,
 .HomeSliderSwiper .swiper-slide a:focus {
   scale: 0.99;
-  box-shadow: inset 0px 0px 24px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
 }
 
 .HomeSliderSwiper a img {
@@ -34,6 +38,21 @@
   object-fit: contain;
   object-position: center;
   z-index: 0;
+}
+
+.HomeSliderSwiper a p {
+  position: absolute;
+  bottom: 0px;
+  width: 152px;
+  height: 24px;
+  color: white;
+  background-color: #2d2d2d;
+  text-align: center;
+
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
 }
 
 .HomeSliderSwiper .swiper-button-prev,

@@ -1,0 +1,36 @@
+@import "../../styles/variables";
+
+.loading {
+  width: 100%;
+  height: 100%;
+  background-color: aquamarine;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(20px, 3vw, 40px);
+  font-weight: normal;
+
+  background-image: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.9374343487394958) 0%,
+    rgba(4, 4, 4, 1) 50%,
+    rgba(250, 250, 250, 1) 100%
+  );
+
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-position: 0;
+
+  animation: textclip 2s linear infinite;
+}
+
+@keyframes textclip {
+  to {
+    background-position: -100%;
+  }
+}

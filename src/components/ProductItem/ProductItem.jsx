@@ -32,13 +32,13 @@ const ProductItem = ({
           </figcaption> */}
         </figure>
       </Link>
-      <div className={styles.productContent}>
-        <p className={styles.infoProduct}>Article : {article}</p>
-        <p className={styles.infoProduct}>Title : {title}</p>
-        <p className={styles.infoProduct}>Brand : {brand}</p>
-        <p className={styles.infoProduct}>Car Brand : {carBrand}</p>
-        <p className={styles.priceProduct}>{price}$</p>
-      </div>
+      <ul className={styles.productContent}>
+        <li className={styles.infoProduct}>Article : {article}</li>
+        <li className={styles.infoProduct}>Title : {title}</li>
+        <li className={styles.infoProduct}>Brand : {brand}</li>
+        <li className={styles.infoProduct}>Car Brand : {carBrand}</li>
+        <li className={styles.priceProduct}>{price}₴</li>
+      </ul>
       <Link href={`/products/${id}`} className={styles.btnProduct}>
         Детальніше
       </Link>

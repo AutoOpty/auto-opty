@@ -38,7 +38,7 @@ const BoardId = ({ params }) => {
     session.data.user.email === process.env.NEXT_PUBLIC_ADMIN
   ) {
     return (
-      <div className={styles.container}>
+      <section className={styles.container}>
         <p className={styles.displaySizeMessage}>
           Для користування цим функціоналом розмір Вашого екрану повинен бути не
           менше 768 пікселів.
@@ -50,6 +50,9 @@ const BoardId = ({ params }) => {
             <div key={data._id} className={styles.product}>
               <h2>Артикул: {data.article}</h2>
               <p className={styles.textContent}>Назва: {data.title}</p>
+              <p className={styles.textContent}>
+                Назва англійською: {data.titleEn}
+              </p>
               <p className={styles.textContent}>Бренд: {data.brand}</p>
               <p className={styles.textContent}>Фото:</p>
 
@@ -84,6 +87,9 @@ const BoardId = ({ params }) => {
                 ))}
               </ul>
               <p className={styles.textContent}>Опис: {data.description}</p>
+              <p className={styles.textContent}>
+                Опис англійською: {data.descriptionEn}
+              </p>
               <p className={styles.textContent}>Сторона: {data.side}</p>
               <p className={styles.textContent}>Ціна: {data.price}</p>
               <p className={styles.textContent}>Марка авто: {data.carBrand}</p>
@@ -109,7 +115,7 @@ const BoardId = ({ params }) => {
             <DashboardUpdateForm id={id} data={data} mutate={mutate} />
           </div>
         )}
-      </div>
+      </section>
     );
   }
 };

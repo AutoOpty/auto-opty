@@ -1,0 +1,16 @@
+@import '../../styles/_variables.scss';
+
+.swiperContainer {
+  width: 272px;
+  @media screen and (min-width: $tablet) {
+    margin-bottom: 0px;
+    width: 719px;
+  }
+
+  // @media screen and (orientation: landscape) {
+  //   flex: 1;
+  // }
+  @media screen and (min-width: $desktop) {
+    width: 578px;
+  }
+}

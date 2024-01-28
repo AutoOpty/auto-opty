@@ -1,11 +1,19 @@
 "use client";
 
 import { useEffect, useContext } from "react";
-import { Formik, Form, Field, ErrorMessage } from "formik";
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
+import { useTranslation } from "react-i18next";
+import {
+    Formik,
+    Form,
+    Field,
+    ErrorMessage,
+    validateYupSchema,
+    yupToFormErrors,
+} from "formik";
 import { SiteContext } from "@/context/SiteContext";
 import { orderSchema } from "@/yupSchemas/orderSchema";
+import { useFetcherProductsArticles } from "@/hooks/useFetcher";
+import CustomDatePicker from "./CustomDatePicker";
 import SuccessContent from "./SuccessContent";
 import Select from "./Select";
 
@@ -21,7 +29,7 @@ const initialValues = {
 };
 
 const handleSubmit = (values, actions, closeModal) => {
-    console.log("values:", values);
+    console.log("OrderFormData:", values);
     actions.setSubmitting(true);
 
     setTimeout(() => {
@@ -35,7 +43,7 @@ const handleSubmit = (values, actions, closeModal) => {
 
 const OrderForm = () => {
     const { isModalOpen, closeModal } = useContext(SiteContext);
-
+    const { t } = useTranslation();
     useEffect(() => {
         if (isModalOpen) {
             document.body.style.overflow = "hidden";
@@ -45,17 +53,38 @@ const OrderForm = () => {
         };
     }, [isModalOpen]);
 
+    const listOfProductsArticles = useFetcherProductsArticles();
+
     return (
         <Formik
             initialValues={initialValues}
-            validationSchema={orderSchema}
+            validate={(values) => {
+                try {
+                    validateYupSchema(
+                        values,
+                        orderSchema,
+                        true,
+                        listOfProductsArticles
+                    );
+                } catch (err) {
+                    return yupToFormErrors(err); //for rendering validation errors
+                }
+
+                return {};
+            }}
             onSubmit={(values, actions) => {
                 handleSubmit(values, actions, closeModal);
             }}
         >
             {(formik) => {
-                const { errors, touched, isValid, values, isSubmitting } =
-                    formik;
+                const {
+                    errors,
+                    touched,
+                    isValid,
+                    values,
+                    isSubmitting,
+                    setFieldValue,
+                } = formik;
 
                 return (
                     <div className={styles.container}>
@@ -82,7 +111,7 @@ const OrderForm = () => {
                                             type='text'
                                             name='userName'
                                             id='userName'
-                                            placeholder='Ім’я *'
+                                            placeholder={t("Form.name")}
                                             autoComplete='off'
                                             maxLength='30'
                                             className={
@@ -106,7 +135,7 @@ const OrderForm = () => {
                                             type='text'
                                             name='phone'
                                             id='phone'
-                                            placeholder='Номер телефону *'
+                                            placeholder={t("Form.phone")}
                                             autoComplete='off'
                                             maxLength='14'
                                             className={
@@ -134,47 +163,19 @@ const OrderForm = () => {
                                         >
                                             <use href='/sprite.svg#icon-chevron-down' />
                                         </svg>
+                                        <CustomDatePicker
+                                            name='sendDate'
+                                            value={values.sendDate}
+                                            onChange={setFieldValue}
+                                        />
 
-                                        <Field name='sendDate' id='sendDate'>
-                                            {({ form, field }) => {
-                                                const { setFieldValue } = form;
-                                                const { value } = field;
-
-                                                return (
-                                                    <DatePicker
-                                                        id='sendDate'
-                                                        autoComplete='off'
-                                                        dateFormat='dd/MM/yyyy'
-                                                        selectsStart
-                                                        className={
-                                                            errors.sendDate &&
-                                                            touched.sendDate
-                                                                ? `${styles.input} ${styles.inputError}`
-                                                                : styles.input
-                                                        }
-                                                        placeholderText='Дата відправки'
-                                                        {...field}
-                                                        selected={value}
-                                                        onFocus={(e) =>
-                                                            e.target.blur()
-                                                        }
-                                                        onChange={(val) =>
-                                                            setFieldValue(
-                                                                "sendDate",
-                                                                val
-                                                            )
-                                                        }
-                                                    />
-                                                );
-                                            }}
-                                        </Field>
                                         <ErrorMessage
                                             name='sendDate'
                                             className={styles.error}
                                             component='p'
                                         />
                                     </div>
-                                    {/* check_Out  */}
+
                                     <div className={styles.wrapError}>
                                         <svg
                                             className={`${styles.icon} ${styles.iconPicker}`}
@@ -186,7 +187,7 @@ const OrderForm = () => {
                                             type='text'
                                             name='postOfficeNumber'
                                             id='postOfficeNumber'
-                                            placeholder='Відділення пошти'
+                                            placeholder={t("Form.postOffice")}
                                             autoComplete='off'
                                             maxLength='30'
                                             className={
@@ -214,7 +215,7 @@ const OrderForm = () => {
                                             name='itemNumber'
                                             id='itemNumber'
                                             autoComplete='off'
-                                            maxLength='3'
+                                            maxLength='30'
                                             placeholder='Номер запчастини'
                                             className={
                                                 errors.itemNumber &&

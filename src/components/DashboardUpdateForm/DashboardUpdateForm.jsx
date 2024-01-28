@@ -4,7 +4,6 @@ import { CldUploadButton } from "next-cloudinary";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { toast } from "react-toastify";
 import { dashboardUpdateFormSchema } from "@/yupSchemas/dashboardUpdateFormSchema";
-import { handleDeleteImgFromCloudinary } from "@/helpers/handleDeleteImgFromCloudinary";
 import { isDeepEqual } from "@/helpers/deepEqual";
 import styles from "./DashboardUpdateForm.module.scss";
 
@@ -12,9 +11,11 @@ const DashboardUpdateForm = ({ id, data, mutate }) => {
   const {
     article,
     title,
+    titleEn,
     brand,
     photos,
     description,
+    descriptionEn,
     side,
     price,
     carBrand,
@@ -27,9 +28,11 @@ const DashboardUpdateForm = ({ id, data, mutate }) => {
   const currentValues = {
     article,
     title,
+    titleEn,
     brand,
     photos,
     description,
+    descriptionEn,
     side,
     price,
     carBrand,
@@ -44,9 +47,11 @@ const DashboardUpdateForm = ({ id, data, mutate }) => {
   const initialValues = {
     newArticle: article,
     newTitle: title,
+    newTitleEn: titleEn,
     newBrand: brand,
     newPhotos: photos,
     newDescription: description,
+    newDescriptionEn: descriptionEn,
     newSide: side,
     newPrice: price,
     newCarBrand: carBrand,
@@ -60,9 +65,11 @@ const DashboardUpdateForm = ({ id, data, mutate }) => {
     const {
       newArticle,
       newTitle,
+      newTitleEn,
       newBrand,
       newPhotos,
       newDescription,
+      newDescriptionEn,
       newSide,
       newPrice,
       newCarBrand,
@@ -77,9 +84,11 @@ const DashboardUpdateForm = ({ id, data, mutate }) => {
     const updatedValues = {
       article: newArticle,
       title: newTitle,
+      titleEn: newTitleEn,
       brand: newBrand,
       photos: newPhotos,
       description: newDescription,
+      descriptionEn: newDescriptionEn,
       side: newSide,
       price: newPrice,
       carBrand: newCarBrand,
@@ -141,6 +150,21 @@ const DashboardUpdateForm = ({ id, data, mutate }) => {
                 className={styles.input}
               />
 
+              <label htmlFor="newTitleEn">Назва англійською:</label>
+              <ErrorMessage
+                name="newTitleEn"
+                className={styles.error}
+                component="p"
+              />
+              <Field
+                type="text"
+                name="newTitleEn"
+                id="newTitleEn"
+                maxLength="40"
+                value={values.newTitleEn}
+                className={styles.input}
+              />
+
               <label htmlFor="newBrand">Бренд:</label>
               <ErrorMessage
                 name="newBrand"
@@ -187,6 +211,21 @@ const DashboardUpdateForm = ({ id, data, mutate }) => {
                 id="newDescription"
                 maxLength="200"
                 value={values.newDescription}
+                className={styles.input}
+              />
+
+              <label htmlFor="newDescriptionEn">Опис англійською:</label>
+              <ErrorMessage
+                name="newDescriptionEn"
+                className={styles.error}
+                component="p"
+              />
+              <Field
+                type="text"
+                name="newDescriptionEn"
+                id="newDescriptionEn"
+                maxLength="200"
+                value={values.newDescriptionEn}
                 className={styles.input}
               />
 

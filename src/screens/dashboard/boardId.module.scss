@@ -87,9 +87,9 @@
 
 .textContent {
   display: block;
-  width: 40vw;
-  overflow: hidden;
-  white-space: nowrap;
+  // width: 40vw;
+  // overflow: hidden;
+  // white-space: nowrap;
 }
 
 .imgsWrapper {
@@ -126,7 +126,7 @@
 
 .deleteIcon:hover {
   cursor: pointer;
-  fill: red;
+  fill: #ff2828;
 }
 
 .models {
