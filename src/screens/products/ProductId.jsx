@@ -1,40 +1,40 @@
-'use client';
+"use client";
 
-import { GetDataById } from '@/fetch/clientFetch';
+import { GetDataById } from "@/fetch/clientFetch";
 // import Link from 'next/link';
-import React, { useEffect, useState } from 'react';
-import styles from './productId.module.scss';
-import seoStyles from '@/app/seoStyles.module.css';
-import BreadCrumbs from '@/components/share/BreadCrumbs/BreadCrumbs';
-import IsLoading from '@/components/share/IsLoading/IsLoading';
-import ProductsIdItem from '@/components/ProductIdItem/ProductIdItem';
-import ProductDescription from '@/components/ProductDescription/ProductDescription';
-import Button from '@/components/Button/Button';
-import ItemSlider from '@/components/ItemSlider/ItemSlider';
+import React, { useEffect, useState } from "react";
+import styles from "./productId.module.scss";
+import seoStyles from "@/app/seoStyles.module.css";
+import BreadCrumbs from "@/components/share/BreadCrumbs/BreadCrumbs";
+import IsLoading from "@/components/share/IsLoading/IsLoading";
+import ProductsIdItem from "@/components/ProductIdItem/ProductIdItem";
+import ProductDescription from "@/components/ProductDescription/ProductDescription";
+import Button from "@/components/Button/Button";
+import ItemSlider from "@/components/ItemSlider/ItemSlider";
 
 const ProductId = ({ params }) => {
-  const [activeTab, setActiveTab] = useState('features');
+  const [activeTab, setActiveTab] = useState("features");
   const [windowWidth, setWindowWidth] = useState(0);
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
+    if (typeof window !== "undefined") {
       setWindowWidth(window.innerWidth);
 
       const handleResize = () => {
         setWindowWidth(window.innerWidth);
       };
 
-      window.addEventListener('resize', handleResize);
+      window.addEventListener("resize", handleResize);
 
       return () => {
-        window.removeEventListener('resize', handleResize);
+        window.removeEventListener("resize", handleResize);
       };
     }
   }, []);
 
   useEffect(() => {
     if (windowWidth >= 1280) {
-      setActiveTab('features');
+      setActiveTab("features");
     }
     return;
   }, [windowWidth]);
@@ -43,8 +43,6 @@ const ProductId = ({ params }) => {
   const { data, error, isLoading } = GetDataById(id);
 
   const dataId = data && !isLoading ? data : error;
-
-  // console.log(dataId);
 
   const handleTabClick = (tab) => {
     setActiveTab(tab);
@@ -77,20 +75,20 @@ const ProductId = ({ params }) => {
             {windowWidth >= 1280 ? null : (
               <figure className={styles.btnChangeContainer}>
                 <button
-                  onClick={() => handleTabClick('features')}
+                  onClick={() => handleTabClick("features")}
                   className={
-                    activeTab === 'features'
-                      ? styles.btnChangeFeatures + ' ' + styles.active
+                    activeTab === "features"
+                      ? styles.btnChangeFeatures + " " + styles.active
                       : styles.btnChangeFeatures
                   }
                 >
                   Характеристики
                 </button>
                 <button
-                  onClick={() => handleTabClick('description')}
+                  onClick={() => handleTabClick("description")}
                   className={
-                    activeTab === 'description'
-                      ? styles.btnChangeFeatures + ' ' + styles.active
+                    activeTab === "description"
+                      ? styles.btnChangeFeatures + " " + styles.active
                       : styles.btnChangeFeatures
                   }
                 >
@@ -98,10 +96,10 @@ const ProductId = ({ params }) => {
                 </button>
               </figure>
             )}
-            {activeTab === 'description' ? (
+            {activeTab === "description" ? (
               <ProductDescription dataId={dataId} />
             ) : null}
-            {activeTab === 'features' ? (
+            {activeTab === "features" ? (
               <ProductsIdItem dataId={dataId} />
             ) : null}
             <Button className={styles.orderBtn} />

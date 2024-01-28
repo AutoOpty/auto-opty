@@ -15,7 +15,7 @@ export const SiteProvider = ({ children }) => {
 
   const [scrollY, setScrollY] = useState(0);
 
-  //   const [filterShown, setFilterShown] = useState(false);
+  const [filterShown, setFilterShown] = useState(false);
 
   const [isModalOpen, setModalOpen] = useState(false);
 
@@ -42,8 +42,8 @@ export const SiteProvider = ({ children }) => {
         setLanguage,
         scrollY,
         setScrollY,
-        // filterShown,
-        // setFilterShown,
+        filterShown,
+        setFilterShown,
         isModalOpen,
         openModal,
         closeModal,
