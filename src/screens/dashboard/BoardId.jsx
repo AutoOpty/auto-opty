@@ -38,7 +38,7 @@ const BoardId = ({ params }) => {
     session.data.user.email === process.env.NEXT_PUBLIC_ADMIN
   ) {
     return (
-      <div className={styles.container}>
+      <section className={styles.container}>
         <p className={styles.displaySizeMessage}>
           Для користування цим функціоналом розмір Вашого екрану повинен бути не
           менше 768 пікселів.
@@ -115,7 +115,7 @@ const BoardId = ({ params }) => {
             <DashboardUpdateForm id={id} data={data} mutate={mutate} />
           </div>
         )}
-      </div>
+      </section>
     );
   }
 };

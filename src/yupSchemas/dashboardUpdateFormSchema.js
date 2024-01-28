@@ -25,6 +25,7 @@ export const dashboardUpdateFormSchema = Yup.object({
     newCarModels: Yup.string()
         .required("Моделі авто це обовʼязкове поле"),
     newCarBodies: Yup.array()
+        .min(1, "Мінімум один варіант")
         .required("Кузови це обовʼязкове поле"),
     newInstalledFrom: Yup.number()
         .moreThan(-1, "Тільки додатні числа")

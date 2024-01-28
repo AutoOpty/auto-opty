@@ -42,7 +42,7 @@ const Register = () => {
   };
 
   return (
-    <div className={styles.container}>
+    <section className={styles.container}>
       <p className={styles.displaySizeMessage}>
         Для користування цим функціоналом розмір Вашого екрану повинен бути не
         менше 768 пікселів.
@@ -113,7 +113,7 @@ const Register = () => {
         {err && "Щось трапилося ((("}
         <Link href="/dashboard/login">Ви вже зареєстровані ?</Link>
       </div>
-    </div>
+    </section>
   );
 };
 

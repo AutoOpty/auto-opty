@@ -45,7 +45,7 @@ const Login = () => {
   };
 
   return (
-    <div className={styles.container}>
+    <section className={styles.container}>
       <p className={styles.displaySizeMessage}>
         Для користування цим функціоналом розмір Вашого екрану повинен бути не
         менше 768 пікселів.
@@ -112,7 +112,7 @@ const Login = () => {
           Залогінитися за допомогою Google
         </button>
       </div>
-    </div>
+    </section>
   );
 };
 

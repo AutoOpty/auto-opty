@@ -89,6 +89,10 @@
   background-color: #686868;
 }
 
+.active:hover {
+  background-color: #000;
+}
+
 .googleLoginBtn {
   padding: 5px;
   cursor: pointer;

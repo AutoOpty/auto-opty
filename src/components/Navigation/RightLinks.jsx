@@ -27,7 +27,7 @@ const RightLinks = ({ className }) => {
             <li
               className={pathname === "/dashboard" ? "linkActive" : "linkHover"}
             >
-              <Link href={"/dashboard"}>Адмінпанель</Link>
+              <Link href={"/dashboard"}>{t("Navigation.Dashboard")}</Link>
             </li>
           )}
         </ul>
