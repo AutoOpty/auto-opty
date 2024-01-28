@@ -1,9 +1,12 @@
-'use client';
+"use client";
 
-import { useEffect, useState } from 'react';
-import styles from './FilterButton.module.scss';
+import { useEffect, useState } from "react";
+import { useContext } from "react";
+import { SiteContext } from "@/context/SiteContext";
+import styles from "./FilterButton.module.scss";
 
 const FilterButton = () => {
+  const { filterShown, setFilterShown } = useContext(SiteContext);
   const [isLoad, setIsLoad] = useState(true);
   useEffect(() => {
     setIsLoad(false);
@@ -15,6 +18,9 @@ const FilterButton = () => {
         <button
           type="button"
           className={styles.filterBtnContainer}
+          onClick={() => {
+            setFilterShown(!filterShown);
+          }}
           // onClick={() => {
           //   setFilterShown(!filterShown);
           // }}

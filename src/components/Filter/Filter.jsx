@@ -1,10 +1,11 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 // import React, { useState, useContext, useEffect } from "react";
 // import { useTranslation } from "react-i18next";
 // import { SiteContext } from "@/context/SiteContext";
 import styles from "./Filter.module.scss";
 import { filterData } from "@/data";
+import { SiteContext } from "@/context/SiteContext";
 // import { beds } from "@/data";
 // import { amenities, currentLanguages } from "@/data";
 // import FilterItem from "./FilterItem/FilterItem";
@@ -25,6 +26,7 @@ const Filter = ({
 }) => {
   const [carPriceFromTemp, setCarPriceFromTemp] = useState("");
   const [carPriceToTemp, setCarPriceToTemp] = useState("");
+  const { filterShown, setFilterShown } = useContext(SiteContext);
 
   //
   console.log(data);
@@ -166,6 +168,18 @@ const Filter = ({
     }
   };
 
+  const handleFilterReset = () => {
+    setCarBrand(null);
+    setCarModel(null);
+    setCarBody(null);
+    setCarYear(null);
+    setCarPriceFrom("");
+    setCarPriceTo("");
+    setCarSide(null);
+  };
+
+  const isFilterShown = filterShown ? styles.filter : styles.filter_hidden;
+
   //   event.target.options[event.target.selectedIndex].text
 
   //   console.log(select);
@@ -189,7 +203,7 @@ const Filter = ({
 
   //   console.log(dataId);
   return (
-    <ul className={styles.filter}>
+    <ul className={isFilterShown}>
       <li className={styles.filterItem}>
         <p className={styles.filterTitle}>Car Brand</p>
         <select
@@ -313,8 +327,15 @@ const Filter = ({
         </select>
       </li>
       <div>
-        <button className={styles.filterButton}>Reset</button>
-        <button className={styles.filterButton}>Hide</button>
+        <button className={styles.filterButton} onClick={handleFilterReset}>
+          Reset
+        </button>
+        <button
+          className={styles.filterButton}
+          onClick={() => setFilterShown(!filterShown)}
+        >
+          Hide
+        </button>
       </div>
     </ul>
   );
