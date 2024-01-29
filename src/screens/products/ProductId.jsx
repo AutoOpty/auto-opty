@@ -11,10 +11,12 @@ import ProductsIdItem from "@/components/ProductIdItem/ProductIdItem";
 import ProductDescription from "@/components/ProductDescription/ProductDescription";
 import Button from "@/components/Button/Button";
 import ItemSlider from "@/components/ItemSlider/ItemSlider";
+import { useTranslation } from "react-i18next";
 
 const ProductId = ({ params }) => {
   const [activeTab, setActiveTab] = useState("features");
   const [windowWidth, setWindowWidth] = useState(0);
+  const {t}=useTranslation()
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -55,7 +57,7 @@ const ProductId = ({ params }) => {
       <nav className={styles.backContainer}>
         {!isLoading && (
           <figure>
-            <BreadCrumbs title="Запчастини" />
+            <BreadCrumbs title={t('Navigation.PartsPage')} />
           </figure>
         )}
       </nav>

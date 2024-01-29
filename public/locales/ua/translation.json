@@ -27,13 +27,11 @@
     "TextOfDescAdress": "-кімнатна за адресою",
     "TextOfDescOptions": "Що буде в апартаментах"
   },
-  "ApartIdItem": {
-    "SeoTitleH1": "Оренда квартири суми. Суми квартири. Зняти квартиру суми. Сумы.",
-    "SeoTitleH2": "Навігація",
-    "SeoTitleH3": "Детальна інформація про апартаменти",
-    "SeoTitleH4": "Детальна інформація про зручності",
-    "SeoTitleItemSliderH4": "Детальні зображення квартири",
-    "TextWelcome": "Ласкаво просимо до DailyRent."
+  "PartItems": {
+    "Article": "Артикул",
+    "Title": "Деталь",
+    "Brand": "Бренд",
+    "CarBrand": "Марка"
   },
   "ContactsPage": {
     "SeoTitleH1": "Оренда квартири суми. Суми квартири. Зняти квартиру суми. Сумы.",
@@ -63,7 +61,7 @@
   },
   "Navigation": {
     "MainPage": "Головна",
-    "Apartments": "Апартаменти",
+    "PartsPage": "Запчастини",
     "Contacts": "Контакти",
     "Documents": "Документи",
     "Rules": "Правила",
