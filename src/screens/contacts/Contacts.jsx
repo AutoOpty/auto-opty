@@ -100,11 +100,11 @@ const Contacts = () => {
                 <use href="symbol-defs.svg#icon-phone" />
               </svg>
               <figure className={styles.telContent}>
-                <a href="tel:+380357960808" className={styles.tel}>
-                  +38 035 796 08 08
+                <a href="tel:+380966058605" className={styles.tel}>
+                  +38 096 605 86 05
                 </a>
-                <a href="tel:+380357960808" className={styles.tel}>
-                  +38 035 796 08 08
+                <a href="tel:+380966058605" className={styles.tel}>
+                  +38 096 605 86 05
                 </a>
               </figure>
             </address>
