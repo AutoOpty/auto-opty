@@ -1,15 +1,15 @@
-"use client";
+'use client';
 
-import ProductItem from "@/components/ProductItem/ProductItem";
-import React, { useEffect, useRef, useState } from "react";
+import ProductItem from '@/components/ProductItem/ProductItem';
+import React, { useEffect, useRef, useState } from 'react';
 
-import styles from "./products.module.scss";
-import FilterButton from "@/components/share/FilterButton/FilterButton";
-import BreadCrumbs from "@/components/share/BreadCrumbs/BreadCrumbs";
-import { GetData } from "@/fetch/clientFetch";
-import IsLoading from "@/components/share/IsLoading/IsLoading";
-import Filter from "@/components/Filter/Filter";
-import { useFilter } from "@/hooks/useFilter";
+import styles from './products.module.scss';
+import FilterButton from '@/components/share/FilterButton/FilterButton';
+import BreadCrumbs from '@/components/share/BreadCrumbs/BreadCrumbs';
+import { GetData } from '@/fetch/clientFetch';
+import IsLoading from '@/components/share/IsLoading/IsLoading';
+import Filter from '@/components/Filter/Filter';
+import { useFilter } from '@/hooks/useFilter';
 
 const Products = () => {
   const { data, error, isLoading } = GetData();
@@ -19,8 +19,8 @@ const Products = () => {
   const [carModel, setCarModel] = useState(null);
   const [carBody, setCarBody] = useState(null);
   const [carYear, setCarYear] = useState(null);
-  const [carPriceFrom, setCarPriceFrom] = useState("");
-  const [carPriceTo, setCarPriceTo] = useState("");
+  const [carPriceFrom, setCarPriceFrom] = useState('');
+  const [carPriceTo, setCarPriceTo] = useState('');
   const [carSide, setCarSide] = useState(null);
   const containerRef = useRef();
 
@@ -35,7 +35,7 @@ const Products = () => {
     carSide
   );
 
-  console.log(data);
+  // console.log(data);
 
   const handleScroll = () => {
     const container = containerRef.current;
@@ -58,9 +58,9 @@ const Products = () => {
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener('scroll', handleScroll);
     };
     // eslint-disable-next-line
   }, [data, loadedCount]);
