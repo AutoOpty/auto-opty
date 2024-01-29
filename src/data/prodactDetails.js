@@ -3,20 +3,20 @@ import { v4 } from 'uuid';
 export const prodactDetails = [
   {
     id: v4(),
-    title: 'Article',
+    title: 'Артикул',
     titleEN: 'Article',
     info: 'article',
   },
   {
     id: v4(),
-    title: 'Title',
+    title: 'Назва деталі',
     titleEN: 'Title',
     info: 'titleEn',
     infoEN: 'title',
   },
   {
     id: v4(),
-    title: 'Side',
+    title: 'Сторона',
     titleEN: 'Side',
     info: 'side',
   },
@@ -40,7 +40,7 @@ export const prodactDetails = [
   },
   {
     id: v4(),
-    title: 'Bodies',
+    title: 'Комплектація',
     titleEN: 'Bodies',
     info: 'carBodies',
   },
