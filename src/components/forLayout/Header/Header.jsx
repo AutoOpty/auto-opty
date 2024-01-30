@@ -54,7 +54,7 @@ const Header = () => {
     }
 
     setScrolledWindow(window.scrollY);
-  }, [scrolledWindow, setScrolledWindow, header.classList]);
+  }, [scrolledWindow, setScrolledWindow]);
 
   const handleResizeXs = useCallback(() => {
     if (window.innerWidth < 768) {
