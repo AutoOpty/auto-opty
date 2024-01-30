@@ -6,8 +6,7 @@ import styles from "./BurgerMenuBtn.module.scss";
 
 const BurgerMenuBtn = () => {
   const { burgerMenu, setBurgerMenu, isMobile } = useContext(SiteContext);
-  console.log("burgerMenu", burgerMenu);
-  console.log("isMobile", isMobile);
+
   return (
     <>
       {isMobile && (
