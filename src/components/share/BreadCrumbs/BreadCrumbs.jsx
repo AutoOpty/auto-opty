@@ -2,11 +2,13 @@
 
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { useTranslation } from 'react-i18next';
 import Link from 'next/link';
 import styles from './BreadCrumbs.module.scss';
 
 const BreadCrumbs = ({ title }) => {
   const [isLoading, setIsLoading] = useState(true);
+  const {t}=useTranslation()
   const router = useRouter();
 
   useEffect(() => {
@@ -28,7 +30,7 @@ const BreadCrumbs = ({ title }) => {
         <article className={styles.textLink}>
           {/* <h2 className={seoStyles.titleHidden}>Navigation</h2>  */}
           <Link href="/" prefetch={false} className={styles.textLinkAnimation}>
-            Головна
+            {t('Navigation.MainPage')}
           </Link>
           / <span className={styles.active}>{title}</span>
         </article>

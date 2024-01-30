@@ -2,7 +2,7 @@
 
 import ProductItem from '@/components/ProductItem/ProductItem';
 import React, { useEffect, useRef, useState } from 'react';
-
+import { useTranslation } from 'react-i18next';
 import styles from './products.module.scss';
 import FilterButton from '@/components/share/FilterButton/FilterButton';
 import BreadCrumbs from '@/components/share/BreadCrumbs/BreadCrumbs';
@@ -23,7 +23,7 @@ const Products = () => {
   const [carPriceTo, setCarPriceTo] = useState('');
   const [carSide, setCarSide] = useState(null);
   const containerRef = useRef();
-
+  const {t}=useTranslation()
   const filteredData = useFilter(
     data,
     carBrand,
@@ -68,7 +68,7 @@ const Products = () => {
   return (
     <section className={styles.container}>
       <figure className={styles.toBackContainer}>
-        <BreadCrumbs title="Запчастини" />
+        <BreadCrumbs title={t('Navigation.PartsPage')} />
       </figure>
       <FilterButton />
       <Filter
