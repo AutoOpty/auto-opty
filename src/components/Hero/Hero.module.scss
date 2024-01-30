@@ -80,11 +80,36 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  scale: 0;
+  filter: brightness(0.5);
+
+  animation: car 3s cubic-bezier(0, 0.865, 0.215, 1.1) forwards;
+
+  @keyframes car {
+    to {
+      scale: 1;
+      filter: brightness(1);
+    }
+  }
+
   @media screen and (min-width: $tablet) {
-    scale: 2;
+    // scale: 2;
+    @keyframes car {
+      to {
+        scale: 2;
+        filter: brightness(1);
+      }
+    }
   }
   @media screen and (min-width: $desktop) {
-    scale: 2.5;
+    // scale: 2.5;
+
+    @keyframes car {
+      to {
+        scale: 2.5;
+        filter: brightness(1);
+      }
+    }
   }
 
   & a {
@@ -108,3 +133,9 @@
     }
   }
 }
+
+// @keyframes car {
+//   to {
+//     scale: 2;
+//   }
+// }
