@@ -23,7 +23,7 @@ const Products = () => {
   const [carPriceTo, setCarPriceTo] = useState('');
   const [carSide, setCarSide] = useState(null);
   const containerRef = useRef();
-  const {t}=useTranslation()
+  const { t } = useTranslation();
   const filteredData = useFilter(
     data,
     carBrand,
@@ -99,6 +99,7 @@ const Products = () => {
                 side={item.side}
                 photos={item.photos}
                 id={item._id}
+                titleEn={item.titleEn}
               />
             ))}
         </ul>

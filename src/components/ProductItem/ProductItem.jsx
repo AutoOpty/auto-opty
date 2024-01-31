@@ -5,6 +5,7 @@ import Link from 'next/link';
 import React from 'react';
 import styles from './productItem.module.scss';
 import { useTranslation } from 'react-i18next';
+import { currentLanguages } from '@/data';
 
 const ProductItem = ({
   photos,
@@ -12,10 +13,11 @@ const ProductItem = ({
   article,
   id,
   title,
+  titleEn,
   brand,
   price,
 }) => {
-  const {t}=useTranslation()
+  const { i18n, t } = useTranslation();
   return (
     <li className={styles.productContainer}>
       <Link href={`/products/${id}`}>
@@ -34,10 +36,19 @@ const ProductItem = ({
         </figure>
       </Link>
       <ul className={styles.productContent}>
-        <li className={styles.infoProduct}>{t('PartItems.Article')} : {article}</li>
-        <li className={styles.infoProduct}>{t('PartItems.Title')} : {title}</li>
-        <li className={styles.infoProduct}>{t('PartItems.Brand')} : {brand}</li>
-        <li className={styles.infoProduct}>{t('PartItems.CarBrand')} : {carBrand}</li>
+        <li className={styles.infoProduct}>
+          {t('PartItems.Article')} : {article}
+        </li>
+        <li className={styles.infoProduct}>
+          {t('PartItems.Title')} :{' '}
+          {i18n.language === currentLanguages.EN ? titleEn : title}
+        </li>
+        <li className={styles.infoProduct}>
+          {t('PartItems.Brand')} : {brand}
+        </li>
+        <li className={styles.infoProduct}>
+          {t('PartItems.CarBrand')} : {carBrand}
+        </li>
         <li className={styles.priceProduct}>{price}₴</li>
       </ul>
       <Link href={`/products/${id}`} className={styles.btnProduct}>
