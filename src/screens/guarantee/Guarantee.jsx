@@ -20,7 +20,7 @@ const Guarantee = () => {
           Оренда квартири Суми. Сумы квартиры. Квартири подобово.
         </h1>
         <figure className={styles.toBackContainer}>
-          <BreadCrumbs title="Гаранія" />
+          <BreadCrumbs title="Гарантія" />
         </figure>
         <div className={styles.garanteeContainer}>
           <article>
