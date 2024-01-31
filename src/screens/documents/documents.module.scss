@@ -1,0 +1,58 @@
+@import "@/styles/_variables.scss";
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  padding: 104px 0px 35px 0px;
+
+  @media screen and (min-width: $tablet) {
+    padding: 176px 24px 72px 24px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    padding: 101px 32px 72px 32px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    padding: 101px 24px 72px 24px;
+    max-width: 1440px;
+  }
+}
+
+.toBackContainer {
+  padding-left: 20px;
+
+  @media screen and (min-width: $tablet) {
+    padding-left: 0px;
+    margin-bottom: 14px;
+  }
+}
+
+.garanteeContainer {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 400;
+  padding-top: 100px;
+  padding-bottom: 100px;
+
+  @media screen and (min-width: $tablet) {
+    font-size: 40px;
+    padding-top: 150px;
+    padding-bottom: 150px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    font-size: 54px;
+    padding-top: 200px;
+    padding-bottom: 200px;
+  }
+}
