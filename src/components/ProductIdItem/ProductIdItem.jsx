@@ -4,7 +4,6 @@ import { useTranslation } from 'react-i18next';
 import { currentLanguages } from '@/data';
 
 const ProductsIdItem = ({ dataId }) => {
-  console.log(dataId);
   const { i18n } = useTranslation();
   return (
     <ul className={styles.container}>
