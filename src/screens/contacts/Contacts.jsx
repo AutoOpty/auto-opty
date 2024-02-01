@@ -26,8 +26,7 @@ const Contacts = () => {
       <figure className={styles.toBackContainer}>
         <BreadCrumbs title={t('Navigation.Contacts')} />
       </figure>
-
-      <div className={styles.contactContainer}>
+        <div className={styles.contactContainer}>
         <article className={styles.titleContainer}>
           {!isLoading && (
             <>
