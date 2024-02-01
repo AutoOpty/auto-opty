@@ -38,7 +38,7 @@
     "CountryAndSity": "Ukraine, Sumy",
     "Adress": "Voskresenska Street, 8"
   },
-  "RulesPage": {
+  "GuaranteePage": {
     "SeoTitleH1": "Rent a flat Sumy. Sumy flat. Rent a flat Sumy. Sumy.",
     "SeoTitleH2": "Navigation",
     "MainTitle": "rules of residence:",
@@ -47,9 +47,6 @@
     "TitleSection3": "The administration has the right to immediately evict the tenant without refunding the rent in case of:"
   },
   "DocumentsPage": {
-    "SeoTitleH1": "Rent a flat Sumy. Sumy flat. Rent a flat Sumy. Sumy.",
-    "SeoTitleH2": "Navigation",
-    "SeoTitleH3": "Documents files",
     "Document1": "Extract from the Unified State Register of Legal Entities",
     "Document2": "Extract from the Unified State Register of Legal Entities",
     "Document3": "Extract from the register of taxpayers"
@@ -59,7 +56,7 @@
     "PartsPage": "Spare Parts",
     "Contacts": "Contacts",
     "Documents": "Documents",
-    "Rules": "Rules",
+    "Guarantee": "Guarantee",
     "Dashboard": "Dashboard"
   },
   "Buttons": {
@@ -106,5 +103,8 @@
     "DateOfEntry": "Choose a date",
     "DepartureDate": "Choose a date",
     "NumberObject": "Enter the object number"
+  },
+  "Loader":{
+    "Loading":"Loading"
   }
 }
