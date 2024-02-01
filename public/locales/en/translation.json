@@ -8,9 +8,8 @@
   },
   "MainPage": {
     "SeoTitleH1": "Rent a flat Sumy. Sumy flat. Rent a flat Sumy. Sumy.",
-    "heroTitle": "Buy the best - drive safer",
-    "heroSubTitle": "Top housing offers for a comfortable stay",
-    "galleryTittle": "Аpartments",
+    "HeroTitle": "Buy the best - drive safer",
+    "SliderTitle": "We recommend",
     "contactsTitle": "Contact Us"
   },
   "ApartmentsPage": {
@@ -34,11 +33,7 @@
     "CarBrand": "Car brand"
   },
   "ContactsPage": {
-    "SeoTitleH1": "Rent a flat Sumy. Sumy flat. Rent a flat Sumy. Sumy.",
-    "SeoTitleH2": "Navigation",
-    "SeoTitleH4": "Contact information",
-    "Title": "Cozy apartments in Sumy are waiting for your call.",
-    "Title1": "Contacts",
+    "Title": "Contacts",
     "Text": "Feel free to call us or write to us on any of the social media. We will be happy to help and communicate with you!",
     "CountryAndSity": "Ukraine, Sumy",
     "Adress": "Voskresenska Street, 8"
