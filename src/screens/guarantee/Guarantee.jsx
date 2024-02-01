@@ -28,7 +28,7 @@ const Guarantee = () => {
           <article>
             {!isLoading && (
               <>
-                <h2 className={styles.title}>Гарантійні забов&apos;язання</h2>
+                <h2 className={styles.title}>{t('GuaranteePage.MainTitle')}</h2>
                 <ul className={styles.rulesList}>
                   <li>
                     <h3 className={styles.decimalListTitle}>
