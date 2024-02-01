@@ -111,7 +111,7 @@ const OrderForm = () => {
                                             type='text'
                                             name='userName'
                                             id='userName'
-                                            placeholder={t("Form.name")}
+                                            placeholder={t("Form.Name")}
                                             autoComplete='off'
                                             maxLength='30'
                                             className={
@@ -135,7 +135,7 @@ const OrderForm = () => {
                                             type='text'
                                             name='phone'
                                             id='phone'
-                                            placeholder={t("Form.phone")}
+                                            placeholder={t("Form.Phone")}
                                             autoComplete='off'
                                             maxLength='14'
                                             className={
@@ -167,6 +167,7 @@ const OrderForm = () => {
                                             name='sendDate'
                                             value={values.sendDate}
                                             onChange={setFieldValue}
+                                            placeholder={t('Form.DispatchData')}
                                         />
 
                                         <ErrorMessage
@@ -187,7 +188,7 @@ const OrderForm = () => {
                                             type='text'
                                             name='postOfficeNumber'
                                             id='postOfficeNumber'
-                                            placeholder={t("Form.postOffice")}
+                                            placeholder={t("Form.PostOffice")}
                                             autoComplete='off'
                                             maxLength='30'
                                             className={
@@ -216,7 +217,7 @@ const OrderForm = () => {
                                             id='itemNumber'
                                             autoComplete='off'
                                             maxLength='30'
-                                            placeholder='Номер запчастини'
+                                            placeholder={t('Form.NumberOfPart')}
                                             className={
                                                 errors.itemNumber &&
                                                 touched.itemNumber
@@ -241,7 +242,7 @@ const OrderForm = () => {
                                         />
                                     </div>
                                     <p className={styles.explainText}>
-                                        * - поле, обовʼязкове для заповнення
+                                        * - {t('Form.RequiredField')}
                                     </p>
                                 </div>
 
@@ -254,7 +255,7 @@ const OrderForm = () => {
                                             : styles.button
                                     }
                                 >
-                                    Забронювати
+                                    {t('Buttons.OrderBtn')}
                                 </button>
                             </Form>
                         )}

@@ -1,6 +1,8 @@
+import { useTranslation } from "react-i18next";
 import styles from "./OrderForm.module.scss";
 
 const Select = (props) => {
+    const {t}=useTranslation();
     return (
         <select {...props} className={styles.select}>
             {/* <input type='text' {...field} {...props} />
@@ -8,16 +10,16 @@ const Select = (props) => {
             <div className='error'>{errors[field.name]}</div>
         )} */}
             <option className={styles.paymentMethod} hidden value=''>
-                Оплата під час отримання товару
+                {t('Form.PaymentMethodPlaceholder')}
             </option>
             <option value='privat' className={styles.paymentMethod}>
-                Переказ на карту Приватбанк
+            {t('Form.PaymentInPrivatBank')}
             </option>
             <option value='mono' className={styles.paymentMethod}>
-                Переказ на карту Монобанк
+            {t('Form.PaymentInMonobank')}
             </option>
             <option value='postOffice' className={styles.paymentMethod}>
-                Оплата у відділенні пошти
+            {t('Form.PaymentInPostOffice')}
             </option>
         </select>
     );

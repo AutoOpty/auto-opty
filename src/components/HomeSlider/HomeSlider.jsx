@@ -4,6 +4,7 @@ import React, { useCallback, useEffect, useState } from "react";
 import { GetData } from "@/fetch/clientFetch";
 import { CldImage } from "next-cloudinary";
 import Link from "next/link";
+import { useTranslation } from "react-i18next";
 import styles from "./HomeSlider.module.scss";
 
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -19,6 +20,7 @@ import Loading from "../Loading/Loading";
 
 const HomeSlider = () => {
   const { data, error, isLoading } = GetData();
+  const {t}=useTranslation();
   const isClient = typeof window !== "undefined";
   const [slidesPerView, setSlidesPerView] = useState(5); // Default value for slidesPerView
 
@@ -55,7 +57,7 @@ const HomeSlider = () => {
   return (
     <section className={styles.hero}>
       <div className={`container ${styles.container}`}>
-        <h2>Ми рекомендуємо</h2>
+        {!isLoading && <h2>{t('MainPage.SliderTitle')}</h2>}
 
         {isClient && !isLoading ? (
           <Swiper

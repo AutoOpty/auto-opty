@@ -8,9 +8,8 @@
   },
   "MainPage": {
     "SeoTitleH1": "Rent a flat Sumy. Sumy flat. Rent a flat Sumy. Sumy.",
-    "heroTitle": "Buy the best - drive safer",
-    "heroSubTitle": "Top housing offers for a comfortable stay",
-    "galleryTittle": "Аpartments",
+    "HeroTitle": "Buy the best - drive safer",
+    "SliderTitle": "We recommend",
     "contactsTitle": "Contact Us"
   },
   "ApartmentsPage": {
@@ -34,16 +33,12 @@
     "CarBrand": "Car brand"
   },
   "ContactsPage": {
-    "SeoTitleH1": "Rent a flat Sumy. Sumy flat. Rent a flat Sumy. Sumy.",
-    "SeoTitleH2": "Navigation",
-    "SeoTitleH4": "Contact information",
-    "Title": "Cozy apartments in Sumy are waiting for your call.",
-    "Title1": "Contacts",
+    "Title": "Contacts",
     "Text": "Feel free to call us or write to us on any of the social media. We will be happy to help and communicate with you!",
     "CountryAndSity": "Ukraine, Sumy",
     "Adress": "Voskresenska Street, 8"
   },
-  "RulesPage": {
+  "GuaranteePage": {
     "SeoTitleH1": "Rent a flat Sumy. Sumy flat. Rent a flat Sumy. Sumy.",
     "SeoTitleH2": "Navigation",
     "MainTitle": "rules of residence:",
@@ -52,9 +47,6 @@
     "TitleSection3": "The administration has the right to immediately evict the tenant without refunding the rent in case of:"
   },
   "DocumentsPage": {
-    "SeoTitleH1": "Rent a flat Sumy. Sumy flat. Rent a flat Sumy. Sumy.",
-    "SeoTitleH2": "Navigation",
-    "SeoTitleH3": "Documents files",
     "Document1": "Extract from the Unified State Register of Legal Entities",
     "Document2": "Extract from the Unified State Register of Legal Entities",
     "Document3": "Extract from the register of taxpayers"
@@ -64,7 +56,7 @@
     "PartsPage": "Spare Parts",
     "Contacts": "Contacts",
     "Documents": "Documents",
-    "Rules": "Rules",
+    "Guarantee": "Guarantee",
     "Dashboard": "Dashboard"
   },
   "Buttons": {
@@ -83,12 +75,17 @@
     "Submit": "Submit"
   },
   "Form": {
-    "SeoTitleH3": "Rent a flat Sumy. Sumy flat. Rent a flat Sumy. Sumy.",
-    "name": "Name *",
-    "phone": "Phone number *",
-    "dateOfShipment": "Ship-out Date",
-    "postOffice": "Post Office",
-    "numberOfObject": "Number of object",
+    "Name": "Name *",
+    "Phone": "Phone number *",
+    "DateOfShipment": "Ship-out Date",
+    "PostOffice": "Post Office",
+    "NumberOfPart": "Number of part",
+    "DispatchData":"Dispatch date",
+    "PaymentMethodPlaceholder":"Payment upon delivery of the goods",
+    "PaymentInPrivatBank":"Transfer to a Privatbank card",
+    "PaymentInMonobank":"Transfer to a Monobank card",
+    "PaymentInPostOffice":"Payment at a post office",
+    "RequiredField":"field is required",
     "fieldsDesc": "required fields",
     "formSubmitedMsg1": "Your application has been successfully sent!",
     "formSubmitedMsg2": "Our manager will contact you shortly.",
@@ -100,11 +97,14 @@
     "errorNumberOfObject3": "Only numbers",
     "errorTooManySpases": "Too many spases"
   },
-  "formErrors": {
-    "name": "Incorrect name entered",
-    "phone": "Phone number",
-    "dateOfEntry": "Choose a date",
-    "departureDate": "Choose a date",
-    "numberObject": "Enter the object number"
+  "FormErrors": {
+    "Name": "Incorrect name entered",
+    "Phone": "Phone number",
+    "DateOfEntry": "Choose a date",
+    "DepartureDate": "Choose a date",
+    "NumberObject": "Enter the object number"
+  },
+  "Loader":{
+    "Loading":"Loading"
   }
 }

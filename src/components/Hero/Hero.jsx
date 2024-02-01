@@ -18,7 +18,7 @@ const Hero = () => {
     <section className={styles.hero}>
       <div className={styles.titleWrapper}>
         <h1>Auto Opty</h1>
-        {!isLoad && <p>{t("MainPage.heroTitle")}</p>}
+        {!isLoad && <p>{t("MainPage.HeroTitle")}</p>}
       </div>
       <div className={styles.btnWrapper}>
         <CallBtn />
