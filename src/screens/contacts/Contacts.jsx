@@ -24,7 +24,7 @@ const Contacts = () => {
         Оренда квартири Суми. Сумы квартиры. Квартири подобово.
       </h1>
       <figure className={styles.toBackContainer}>
-        <BreadCrumbs title="Контакти" />
+        <BreadCrumbs title={t('Navigation.Contacts')} />
       </figure>
 
       <div className={styles.contactContainer}>
@@ -75,8 +75,7 @@ const Contacts = () => {
                   sizes="36px"
                 />
               </figure>
-
-               <figcaption>{t('ContactsPage.Adress')}</figcaption></>}
+              <figcaption>{t('ContactsPage.Adress')}</figcaption></>}
             </a>
 
             <figure className={styles.cityContainerMobile}>
