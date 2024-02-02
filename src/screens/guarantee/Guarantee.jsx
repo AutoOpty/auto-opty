@@ -6,10 +6,11 @@ import { useTranslation } from "react-i18next";
 import styles from "./garantee.module.scss";
 import seoStyles from "@/app/seoStyles.module.css";
 import HomeSlider from "@/components/HomeSlider/HomeSlider";
-import {GuaranteeRules, DocumentsForGuarantee} from "@/data";
+import {listGuaranteeRules, listDocumentsForGuarantee, currentLanguages} from "@/data";
 
 const Guarantee = () => {
   const {t}=useTranslation()
+  const {i18n}=useTranslation()
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -36,7 +37,12 @@ const Guarantee = () => {
                       {t('GuaranteePage.TitleSection1')}
                     </h3>
                     <ol className={styles.decimalList}>
-                      <li>
+                      {listGuaranteeRules.map(({id,rule,ruleEN})=>{
+                       return (<li key={id}>
+                        {i18n.language === currentLanguages.EN ? ruleEN : rule}
+                       </li>)
+                      })}
+                      {/* <li>
                         При підборі деталі за каталогом було допущено помилку
                         (установка деталі проводилася на невідповідний
                         автомобіль);
@@ -66,7 +72,7 @@ const Guarantee = () => {
                       <li>
                         Деталь експлуатувалася в екстремальних умовах (спортивні
                         заходи);
-                      </li>
+                      </li> */}
                     </ol>
                   </li>
                   <li>
@@ -74,7 +80,12 @@ const Guarantee = () => {
                       {t('GuaranteePage.TitleSection2')}
                     </h3>
                     <ol className={styles.decimalList}>
-                      <li>
+                      {listDocumentsForGuarantee.map(({id,item,itemEN})=>{
+                        return (<li key={id}>
+                          {i18n.language === currentLanguages.EN ? itemEN : item}
+                        </li>)
+                      })}
+                      {/* <li>
                         Гарантійний талон (якщо передбачений заводом-виробником)
                         з печаткою продавця;
                       </li>
@@ -105,7 +116,7 @@ const Guarantee = () => {
                         Висновок про проведення діагностики несправності (тільки
                         для елементів електрообладнання, вартість яких перевищує
                         200 гривень з ПДВ).
-                      </li>
+                      </li> */}
                     </ol>
                   </li>
                 </ul>

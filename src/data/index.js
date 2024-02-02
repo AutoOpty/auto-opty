@@ -1,3 +1,3 @@
 export { navigationData } from "./navigation";
 export {currentLanguages} from "./languages";
-export {GuaranteeRules, DocumentsForGuarantee} from './guarantee';
+export {listGuaranteeRules, listDocumentsForGuarantee} from './guarantee';
