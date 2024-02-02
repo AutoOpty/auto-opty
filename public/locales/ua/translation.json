@@ -59,6 +59,23 @@
     "Guarantee": "Гарантія",
     "Dashboard": "Aдмiнпанель"
   },
+  "Filter":{
+    "CarBrand":"Бренд",
+    "CarModels":"Модель",
+    "CarBodies":"Тип Кузова",
+    "Year":"Рік",
+    "Price":"Ціна",
+    "Side":"Сторона",
+    "AllBrandsPlaceholder":"Всі Бренди",
+    "AllModelsPlaceholder":"Всі моделі",
+    "AllBodiesPlaceholder":"Всі типи",
+    "PriceFromPlaceholder":"Від",
+    "PriceToPlaceholder":"До",
+    "PlaceholderALL":"Всі",
+    "PlaceholderLeft":"Ліва",
+    "PlaceholderRight":"Права",
+    "PlaceholderLeftRight":"Ліва+Права"
+  },
   "Buttons": {
     "CalltBtn": "Зв’язатись",
     "OrderBtn": "Забронювати",

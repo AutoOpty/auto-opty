@@ -71,7 +71,7 @@ const Products = () => {
         <BreadCrumbs title={t('Navigation.PartsPage')} />
       </figure>
       <FilterButton />
-      <Filter
+      {!isLoading && <Filter
         data={data}
         filteredData={filteredData}
         setCarBrand={setCarBrand}
@@ -81,7 +81,7 @@ const Products = () => {
         setCarPriceFrom={setCarPriceFrom}
         setCarPriceTo={setCarPriceTo}
         setCarSide={setCarSide}
-      />
+      />}
       {isLoading ? (
         <IsLoading />
       ) : (
