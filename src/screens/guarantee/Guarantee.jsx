@@ -6,6 +6,7 @@ import { useTranslation } from "react-i18next";
 import styles from "./garantee.module.scss";
 import seoStyles from "@/app/seoStyles.module.css";
 import HomeSlider from "@/components/HomeSlider/HomeSlider";
+import {GuaranteeRules, DocumentsForGuarantee} from "@/data";
 
 const Guarantee = () => {
   const {t}=useTranslation()
@@ -32,7 +33,7 @@ const Guarantee = () => {
                 <ul className={styles.rulesList}>
                   <li>
                     <h3 className={styles.decimalListTitle}>
-                      Вам буде відмовлено у наданні гарантії, якщо:
+                      {t('GuaranteePage.TitleSection1')}
                     </h3>
                     <ol className={styles.decimalList}>
                       <li>
@@ -70,8 +71,7 @@ const Guarantee = () => {
                   </li>
                   <li>
                     <h3 className={styles.decimalListTitle}>
-                      Обов&apos;язково взяти із собою наступний перелік
-                      документів:
+                      {t('GuaranteePage.TitleSection2')}
                     </h3>
                     <ol className={styles.decimalList}>
                       <li>
