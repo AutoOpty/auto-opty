@@ -32,6 +32,10 @@
     "Brand": "Brand",
     "CarBrand": "Car brand"
   },
+  "PartIdPage":{
+    "Specifications":"Specifications",
+    "Description": "Product description"
+  },
   "ContactsPage": {
     "Title": "Contacts",
     "Text": "Feel free to call us or write to us on any of the social media. We will be happy to help and communicate with you!",
