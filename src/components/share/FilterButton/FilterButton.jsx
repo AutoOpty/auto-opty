@@ -3,10 +3,12 @@
 import { useEffect, useState } from "react";
 import { useContext } from "react";
 import { SiteContext } from "@/context/SiteContext";
+import { useTranslation } from "react-i18next";
 import styles from "./FilterButton.module.scss";
 
 const FilterButton = () => {
   const { filterShown, setFilterShown } = useContext(SiteContext);
+  const {t}=useTranslation();
   const [isLoad, setIsLoad] = useState(true);
   useEffect(() => {
     setIsLoad(false);
@@ -28,7 +30,7 @@ const FilterButton = () => {
           <svg className={styles.filterSvg}>
             <use href="symbol-defs.svg#icon-sliders" />
           </svg>
-          <p className={styles.filter}>Filters</p>
+          <p className={styles.filter}>{t('Buttons.OpenFilterBtn')}</p>
         </button>
       )}
     </div>

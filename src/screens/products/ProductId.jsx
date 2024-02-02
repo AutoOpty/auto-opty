@@ -84,7 +84,7 @@ const ProductId = ({ params }) => {
                       : styles.btnChangeFeatures
                   }
                 >
-                  Характеристики
+                  {t('PartIdPage.Specifications')}
                 </button>
                 <button
                   onClick={() => handleTabClick("description")}
@@ -94,7 +94,7 @@ const ProductId = ({ params }) => {
                       : styles.btnChangeFeatures
                   }
                 >
-                  Опис товару
+                  {t('PartIdPage.Description')}
                 </button>
               </figure>
             )}
