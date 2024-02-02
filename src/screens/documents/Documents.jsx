@@ -28,7 +28,7 @@ const Documents = () => {
           <article>
             {!isLoading && (
               <>
-                <h2 className={styles.title}>Сторінка в процесі розробки...</h2>
+                <h2 className={styles.title}>{t('DocumentsPage.PageInDevelopment')}</h2>
               </>
             )}
           </article>

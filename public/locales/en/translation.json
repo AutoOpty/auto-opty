@@ -48,6 +48,7 @@
     "TitleSection2": "Be sure to bring the following list of documents with you:"
   },
   "DocumentsPage": {
+    "PageInDevelopment":"Page under development...",
     "Document1": "Extract from the Unified State Register of Legal Entities",
     "Document2": "Extract from the Unified State Register of Legal Entities",
     "Document3": "Extract from the register of taxpayers"
