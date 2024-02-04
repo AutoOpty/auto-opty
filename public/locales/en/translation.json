@@ -48,6 +48,7 @@
     "TitleSection2": "Be sure to bring the following list of documents with you:"
   },
   "DocumentsPage": {
+    "PageInDevelopment":"Page under development...",
     "Document1": "Extract from the Unified State Register of Legal Entities",
     "Document2": "Extract from the Unified State Register of Legal Entities",
     "Document3": "Extract from the register of taxpayers"
@@ -60,18 +61,35 @@
     "Guarantee": "Guarantee",
     "Dashboard": "Dashboard"
   },
+  "Filter":{
+    "CarBrand":"Car Brand",
+    "CarModels":"Car Models",
+    "CarBodies":"Car Bodies",
+    "Year":"Year",
+    "Price":"Price",
+    "Side":"Side",
+    "AllBrandsPlaceholder":"All Brands",
+    "AllModelsPlaceholder":"All Models",
+    "AllBodiesPlaceholder":"All Bodies",
+    "PriceFromPlaceholder":"From",
+    "PriceToPlaceholder":"To",
+    "PlaceholderALL":"All",
+    "PlaceholderLeft":"Left",
+    "PlaceholderRight":"Right",
+    "PlaceholderLeftRight":"Left+Right"
+  },
   "Buttons": {
     "CalltBtn": "Contact Us",
     "OrderBtn": "Request to book",
     "CloseBtn": "Close",
     "CardDetailsBtn": "Details",
     "FilterBtn": "Find",
-    "FilterClear": "Clear",
+    "FilterClear": "Reset",
     "FilterQuantRooms": "-rooms",
     "FilterSleepingPlaces": "Sleeping places",
     "ObjectsBtn": "All objects",
     "OpenFilterBtn": "Filters",
-    "CloseFilterBtn": "Close",
+    "CloseFilterBtn": "Hide",
     "LogOutBtn": "LogOut",
     "Submit": "Submit"
   },

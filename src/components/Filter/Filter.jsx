@@ -1,7 +1,7 @@
 "use client";
 import { useContext, useEffect, useState } from "react";
 // import React, { useState, useContext, useEffect } from "react";
-// import { useTranslation } from "react-i18next";
+import { useTranslation } from "react-i18next";
 // import { SiteContext } from "@/context/SiteContext";
 import styles from "./Filter.module.scss";
 import { filterData } from "@/data";
@@ -28,6 +28,9 @@ const Filter = ({
   const [carPriceToTemp, setCarPriceToTemp] = useState("");
   const { filterShown, setFilterShown } = useContext(SiteContext);
 
+  const {t}=useTranslation()
+
+  useEffect
   //
   console.log(data);
   const carBrands = () => {
@@ -196,7 +199,7 @@ const Filter = ({
   return (
     <ul className={isFilterShown}>
       <li className={styles.filterItem}>
-        <p className={styles.filterTitle}>Car Brand</p>
+        <p className={styles.filterTitle}>{t('Filter.CarBrand')}</p>
         <select
           className={styles.filterSelect}
           name="carBrand"
@@ -204,7 +207,7 @@ const Filter = ({
           onChange={handleCarBrandChange}
           //   defaultValue="All Brands"
         >
-          <option value="All Brands">All Brands</option>
+          <option value="All Brands">{t('Filter.AllBrandsPlaceholder')}</option>
           {carBrands()?.map((item) => (
             <option key={item} value={item}>
               {item}
@@ -214,14 +217,14 @@ const Filter = ({
       </li>
 
       <li className={styles.filterItem}>
-        <p className={styles.filterTitle}>Car Models</p>
+        <p className={styles.filterTitle}>{t('Filter.CarModels')}</p>
         <select
           className={styles.filterSelect}
           name="carModels"
           id=""
           onChange={handleCarModelChange}
         >
-          <option value="All Models">All Models</option>
+          <option value="All Models">{t('Filter.AllModelsPlaceholder')}</option>
           {carModels()?.map((item) => (
             <option key={item} value={item}>
               {item}
@@ -231,14 +234,14 @@ const Filter = ({
       </li>
 
       <li className={styles.filterItem}>
-        <p className={styles.filterTitle}>Car Bodies</p>
+        <p className={styles.filterTitle}>{t('Filter.CarBodies')}</p>
         <select
           className={styles.filterSelect}
           name="carBodies"
           id=""
           onChange={handleCarBodyChange}
         >
-          <option value="All Bodies">All Bodies</option>
+          <option value="All Bodies">{t('Filter.AllBodiesPlaceholder')}</option>
           {carBodies()?.map((item) => (
             <option key={item} value={item}>
               {item}
@@ -248,14 +251,14 @@ const Filter = ({
       </li>
 
       <li className={styles.filterItem}>
-        <p className={styles.filterTitle}>Year</p>
+        <p className={styles.filterTitle}>{t('Filter.Year')}</p>
         <select
           className={styles.filterSelect}
           name="carYear"
           id=""
           onChange={handleCarYearChange}
         >
-          <option value="All Years">All</option>
+          <option value="All Years">{t('Filter.PlaceholderALL')}</option>
           {carYears()?.map((item) => (
             <option key={item} value={item}>
               {item}
@@ -265,17 +268,17 @@ const Filter = ({
       </li>
 
       <li className={styles.priceContainer}>
-        <p className={styles.filterTitle}>Price</p>
+        <p className={styles.filterTitle}>{t('Filter.Price')}</p>
         <input
           type="text"
-          placeholder="From"
+          placeholder={t('Filter.PriceFromPlaceholder')}
           className={styles.filterInput}
           value={carPriceFromTemp}
           onChange={handleCarPriceFromChange}
         />
         <input
           type="text"
-          placeholder="To"
+          placeholder={t('Filter.PriceToPlaceholder')}
           className={styles.filterInput}
           value={carPriceToTemp}
           onChange={handleCarPriceToChange}
@@ -304,28 +307,28 @@ const Filter = ({
         </select> */}
       </li>
       <li className={styles.filterItem}>
-        <p className={styles.filterTitle}>Side</p>
+        <p className={styles.filterTitle}>{t('Filter.Side')}</p>
         <select
           className={styles.filterSelect}
           name="carSide"
           id=""
           onChange={handleCarSideChange}
         >
-          <option value="All">All</option>
-          <option value="Left">Left</option>
-          <option value="Right">Right</option>
-          <option value="Left+Right">Left+Right</option>
+          <option value="All">{t('Filter.PlaceholderALL')}</option>
+          <option value="Left">{t('Filter.PlaceholderLeft')}</option>
+          <option value="Right">{t('Filter.PlaceholderRight')}</option>
+          <option value="Left+Right">{t('Filter.PlaceholderLeftRight')}</option>
         </select>
       </li>
       <div>
         <button className={styles.filterButton} onClick={handleFilterReset}>
-          Reset
+          {t('Buttons.FilterClear')}
         </button>
         <button
           className={styles.filterButton}
           onClick={() => setFilterShown(!filterShown)}
         >
-          Hide
+          {t('Buttons.CloseFilterBtn')}
         </button>
       </div>
     </ul>
