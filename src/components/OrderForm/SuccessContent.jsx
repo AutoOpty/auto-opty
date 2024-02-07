@@ -1,14 +1,17 @@
 import styles from "./OrderForm.module.scss";
+import { useTranslation } from "react-i18next";
 
 const SuccessContent = ({ closeModal }) => {
+const {t}=useTranslation();
+
     return (
         <div className={styles.successContainer}>
             <div className={styles.successWrap}>
                 <p className={styles.successTextTop}>
-                    Ваша заявка успішно відправлена!
+                {t('Form.formSubmitedMsg1')}
                 </p>
                 <p className={styles.successText}>
-                    Наш менеджер зв’яжеться з Вами найближчим часом.
+                    {t('Form.formSubmitedMsg2')}
                 </p>
             </div>
             <button

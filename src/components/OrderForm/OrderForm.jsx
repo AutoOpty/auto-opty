@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useContext } from "react";
+import { useEffect, useContext, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import {
     Formik,
@@ -11,7 +11,7 @@ import {
     yupToFormErrors,
 } from "formik";
 import { SiteContext } from "@/context/SiteContext";
-import { orderSchema } from "@/yupSchemas/orderSchema";
+import { getOrderSchema } from "@/yupSchemas/orderSchema";
 import { useFetcherProductsArticles } from "@/hooks/useFetcher";
 import CustomDatePicker from "./CustomDatePicker";
 import SuccessContent from "./SuccessContent";
@@ -44,6 +44,8 @@ const handleSubmit = (values, actions, closeModal) => {
 const OrderForm = () => {
     const { isModalOpen, closeModal } = useContext(SiteContext);
     const { t } = useTranslation();
+    const {i18n}=useTranslation()
+    const orderSchema=useMemo(()=>getOrderSchema(),[i18n.language])
     useEffect(() => {
         if (isModalOpen) {
             document.body.style.overflow = "hidden";

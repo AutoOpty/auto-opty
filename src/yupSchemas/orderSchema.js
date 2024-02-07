@@ -1,19 +1,22 @@
 import * as Yup from "yup";
-
+import i18n from 'i18next';
 const regexPhone = /^\+\d{12}$/;
 
 
-export const orderSchema = Yup.object({
-    userName: Yup.string()
-        .min(3, "Занадто коротке ім’я")
-        .max(29, "Занадто довге ім’я")
-        .required("Заповніть це поле"),
+export const getOrderSchema =()=>{
+
+    return Yup.object( 
+    {
+        userName: Yup.string()
+        .min(3, i18n.t('Form.ErrorShortName'))
+        .max(29,i18n.t('Form.ErrorLongName'))
+        .required(i18n.t('Form.FieldRequiredMsg')),
     phone: Yup.string()
         .matches(regexPhone, "+380123456789")
-        .required("Заповніть це поле"),
+        .required(i18n.t('Form.FieldRequiredMsg')),
     postOfficeNumber: Yup.number()
-        .moreThan(-1, "Тільки додатні числа")
-        .typeError("Тільки числа"),
+        .moreThan(-1, i18n.t('Form.ErrorNumberOfObject2'))
+        .typeError(i18n.t('Form.ErrorNumberOfObject3')),
     itemNumber: Yup.string()
         .test({
             name: "itemNumber",
@@ -22,7 +25,7 @@ export const orderSchema = Yup.object({
                 const listOfArticles = this.options.context;
                 if (!listOfArticles.includes(String(value)) && value) {
                     return ctx.createError({
-                        message: "Такого номеру не існує !",
+                        message: i18n.t('Form.ErrorNumberOfObject'),
                     });
                 }
 
@@ -31,4 +34,4 @@ export const orderSchema = Yup.object({
         }),
     sendDate: Yup.date()
         .nullable(),
-})
+})}
