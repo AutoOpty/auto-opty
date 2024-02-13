@@ -105,24 +105,17 @@
     "PaymentInMonobank":"Transfer to a Monobank card",
     "PaymentInPostOffice":"Payment at a post office",
     "RequiredField":"field is required",
-    "fieldsDesc": "required fields",
-    "formSubmitedMsg1": "Your application has been successfully sent!",
-    "formSubmitedMsg2": "Our manager will contact you shortly.",
-    "fieldRequiredMsg": "Fill in this field",
-    "errorShortName": "The name should be longer",
-    "errorLongName": "The name should be shorter",
-    "errorNumberOfObject": "There's no such number",
-    "errorNumberOfObject2": "Only positive numbers",
-    "errorNumberOfObject3": "Only numbers",
-    "errorTooManySpases": "Too many spases"
+    "FormSubmitedMsg1": "Your application has been successfully sent!",
+    "FormSubmitedMsg2": "Our manager will contact you shortly.",
+    "FieldRequiredMsg": "Fill in this field",
+    "ErrorShortName": "Name is too short",
+    "ErrorLongName": "Name is too long",
+    "ErrorNumberOfObject": "There's no such number",
+    "ErrorNumberOfObject2": "Only positive numbers",
+    "ErrorNumberOfObject3": "Only numbers",
+    "ErrorTooManySpases": "Too many spases"
   },
-  "FormErrors": {
-    "Name": "Incorrect name entered",
-    "Phone": "Phone number",
-    "DateOfEntry": "Choose a date",
-    "DepartureDate": "Choose a date",
-    "NumberObject": "Enter the object number"
-  },
+
   "Loader":{
     "Loading":"Loading"
   }
