@@ -15,4 +15,9 @@
   @media screen and (min-width: $desktop) {
     font-size: 36px;
   }
+
+  & svg {
+    width: clamp(100px, 30vw, 200px);
+    height: clamp(40px, 30vw, 60px);
+  }
 }
