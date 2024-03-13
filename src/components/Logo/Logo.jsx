@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./Logo.module.scss";
 import Link from "next/link";
+import Image from "next/image";
 
 const Logo = ({ className }) => {
   return (
@@ -9,7 +10,9 @@ const Logo = ({ className }) => {
       prefetch={false}
       className={styles.container + " " + `${className}`}
     >
-      <span>Auto</span>Opty
+      <svg>
+        <use href="/sprite.svg#icon-AutoOpti"></use>
+      </svg>
     </Link>
   );
 };
